@@ -15,8 +15,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="57dp"
-        android:text="Start"
-        android:textSize="40dip" />
+        android:text="@string/start_button"
+        android:textSize="40sp" />
 
     <Button
         android:id="@+id/game_settings"
@@ -25,6 +25,6 @@
         android:layout_below="@+id/game_start"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="44dp"
-        android:text="Settings" />
+        android:text="@string/settings_button" /> 
 
 </RelativeLayout>
