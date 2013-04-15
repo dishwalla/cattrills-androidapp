@@ -3,11 +3,13 @@
 
     <string name="app_name">Cat Trills</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="start_button">Start</string>
     <string name="settings_button">Settings</string>
-    <string name="name_text">Enter your name</string>
+    <string name="username_text_hint">Enter your name</string>
     <string name="connect_button">"Connect"</string>
-	<string name="wait_button">"Wait for ivitation"</string>
-	  
+    <string name="wait_button">"Wait for ivitation"</string>
+    <string name="cancel_button">"Cancel"</string>
+    <string name="done_button">"Done"</string>
+    <string name="username_text">"username"</string>
+
 </resources>

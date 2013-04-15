@@ -10,7 +10,10 @@ public class Activity2 extends Activity implements OnClickListener{
 
 	protected Button Connect;
 	protected Button Wait;
-
+	protected Button Cancel;
+	protected Button Done;
+	protected String Name;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -19,7 +22,10 @@ public class Activity2 extends Activity implements OnClickListener{
 		// Connect interface elements to properties
 		Connect = (Button)findViewById(R.id.game_connect);
 		Wait = (Button)findViewById(R.id.game_wait);
-
+		Cancel = (Button)findViewById(R.id.game_cancel);
+		Done = (Button)findViewById(R.id.game_done);
+	//	Name = (Text)findViewById(R.id.)
+		
 		// Setup ClickListeners
 		Connect.setOnClickListener(this);
 		Wait.setOnClickListener(this);
