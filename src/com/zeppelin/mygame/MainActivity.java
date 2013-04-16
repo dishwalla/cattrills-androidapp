@@ -8,7 +8,12 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+<<<<<<< HEAD
 ////TEST
+=======
+import android.content.Intent;
+
+>>>>>>> Switching between screens works
 public class MainActivity extends Activity implements OnClickListener {
 
 	protected Button Start;
@@ -32,21 +37,29 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		if (v == Start){
+	//	if (v == Start){
 			try {
-				service.connect();
+			//	service.connect();
+				switch (v.getId()) 
+				{
+				    case R.id.game_start:
+				    	service.connect();
+				        Intent intent = new Intent(MainActivity.this, Activity2.class);
+				        startActivity(intent);
+				        break;
+			    }
 				
 				
-				
-			} catch (Exception e) {
+			} 
+	catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		else if (v == Settings){
+	//	else if (v == Settings){
 
-		}
-	}
+		//}
+	//}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

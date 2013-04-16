@@ -9,15 +9,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
-public class Activity2 extends Activity implements OnClickListener{
+public class Activity3 extends Activity implements OnClickListener{
 
-	//protected Button Connect;
-	//protected Button Wait;
-	protected Button Cancel;
-	protected Button Done;
-	public static String Name;
-	protected EditText yourName;
+	protected Button Connect;
+	protected Button Wait;
+	protected TextView yourName;
 
 	protected CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
 	//TextViev 
@@ -25,34 +23,28 @@ public class Activity2 extends Activity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity2);
+		setContentView(R.layout.activity3);
 
 		// Connect interface elements to properties
 		//Connect = (Button)findViewById(R.id.game_connect);
 		//Wait = (Button)findViewById(R.id.game_wait);
-		Cancel = (Button)findViewById(R.id.game_cancel);
-		Done = (Button)findViewById(R.id.game_done);
+		Connect = (Button)findViewById(R.id.game_connect);
+		Wait = (Button)findViewById(R.id.game_wait);
 		yourName = (EditText)findViewById(R.id.game_setyouname);
 
 		// Setup ClickListeners
 		//Connect.setOnClickListener(this);
 		//Wait.setOnClickListener(this);
-		Cancel.setOnClickListener(this);
-		Done.setOnClickListener(this);
+		Connect.setOnClickListener(this);
+		Wait.setOnClickListener(this);
 		}
 
 
 		public void onClick(View v) {
-		
-	/*Done.setOnClickListener(new View.OnClickListener() {
-				public void onClick(View v) {
-
-					try {
-						Name = (yourName.getText().toString());}*/
-
+		/*
 
 						try {	
-							Name = (yourName.getText().toString());
+						//	Name = (yourName.getText().toString());
 			switch (v.getId()) 
 			{
 			case R.id.game_cancel:
@@ -63,7 +55,7 @@ public class Activity2 extends Activity implements OnClickListener{
 			case R.id.game_done:
 				// Intent intent = new Intent(MainActivity.this, Activity2.class);
 				//  startActivity(intent);
-				Intent intent = new Intent(Activity2.this, Activity3.class);
+				Intent intent = new Intent(Activity3.this, Activity3.class);
 		        startActivity(intent);
 		        break;
 				//break;
@@ -74,7 +66,7 @@ public class Activity2 extends Activity implements OnClickListener{
 					catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					}
+					}*/
 				}
 			
 			}
