@@ -8,12 +8,10 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-<<<<<<< HEAD
-////TEST
-=======
+
 import android.content.Intent;
 
->>>>>>> Switching between screens works
+
 public class MainActivity extends Activity implements OnClickListener {
 
 	protected Button Start;
