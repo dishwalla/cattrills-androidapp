@@ -30,7 +30,7 @@ public class Activity3 extends Activity implements OnClickListener{
 		//Wait = (Button)findViewById(R.id.game_wait);
 		Connect = (Button)findViewById(R.id.game_connect);
 		Wait = (Button)findViewById(R.id.game_wait);
-		yourName = (EditText)findViewById(R.id.game_setyouname);
+		yourName = (TextView)findViewById(R.id.game_setyouname);
 
 		// Setup ClickListeners
 		//Connect.setOnClickListener(this);
@@ -41,18 +41,18 @@ public class Activity3 extends Activity implements OnClickListener{
 
 
 		public void onClick(View v) {
-		/*
-
+		
+/*
 						try {	
 						//	Name = (yourName.getText().toString());
 			switch (v.getId()) 
 			{
-			case R.id.game_cancel:
+			case R.id.game_connect:
 				//service.list();
 				//  Intent intent = new Intent(MainActivity.this, Activity2.class);
 				// startActivity(intent);
 				break;
-			case R.id.game_done:
+			case R.id.game_wait:
 				// Intent intent = new Intent(MainActivity.this, Activity2.class);
 				//  startActivity(intent);
 				Intent intent = new Intent(Activity3.this, Activity3.class);

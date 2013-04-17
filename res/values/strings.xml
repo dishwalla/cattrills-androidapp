@@ -10,6 +10,7 @@
     <string name="wait_button">"Wait for ivitation"</string>
     <string name="cancel_button">"Cancel"</string>
     <string name="done_button">"Done"</string>
-    <string name="username_text">"username"</string>
+    <string name="username_text"></string>
+     <string name="xxx">(TextView)findViewById(R.id.game_setyouname)</string>
 
 </resources>

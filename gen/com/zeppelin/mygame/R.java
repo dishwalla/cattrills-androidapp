@@ -52,6 +52,7 @@ public final class R {
         public static final int username_text=0x7f050009;
         public static final int username_text_hint=0x7f050004;
         public static final int wait_button=0x7f050006;
+        public static final int xxx=0x7f05000a;
     }
     public static final class style {
         /** 

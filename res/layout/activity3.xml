@@ -18,7 +18,7 @@
         android:scrollbars="vertical"
         android:textColor="#000000"
         android:textSize="20sp"
-        android:text="@string/username_text" >
+        android:text="@string/xxx">
     </TextView>
 
      <Button

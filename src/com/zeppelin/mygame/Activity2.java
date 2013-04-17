@@ -43,6 +43,7 @@ public class Activity2 extends Activity implements OnClickListener{
 
 
 		public void onClick(View v) {
+		Source k = new Source();
 		
 	/*Done.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
@@ -53,18 +54,22 @@ public class Activity2 extends Activity implements OnClickListener{
 
 						try {	
 							Name = (yourName.getText().toString());
+							k.setName(Name);
 			switch (v.getId()) 
 			{
 			case R.id.game_cancel:
+				Intent intent = new Intent(Activity2.this, MainActivity.class);
+		        startActivity(intent);
+		        break;
 				//service.list();
 				//  Intent intent = new Intent(MainActivity.this, Activity2.class);
 				// startActivity(intent);
-				break;
+				//break;
 			case R.id.game_done:
 				// Intent intent = new Intent(MainActivity.this, Activity2.class);
 				//  startActivity(intent);
-				Intent intent = new Intent(Activity2.this, Activity3.class);
-		        startActivity(intent);
+				Intent intent2 = new Intent(Activity2.this, Activity3.class);
+		        startActivity(intent2);
 		        break;
 				//break;
 			}
