@@ -10,11 +10,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Activity3 extends Activity implements OnClickListener{
+public class Activity4 extends Activity implements OnClickListener{
 
 	protected Button Connect;
-	protected Button Wait;
-	protected TextView yourNameView;
+	protected TextView standBy;
 
 	protected CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
 	//TextViev 
@@ -22,20 +21,14 @@ public class Activity3 extends Activity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity3);
+		setContentView(R.layout.activity4);
 
 		// Connect interface elements to properties
 		Connect = (Button)findViewById(R.id.game_connect);
-		Wait = (Button)findViewById(R.id.game_wait);
-		yourNameView = (TextView)findViewById(R.id.game_setyouname);
-		String user = "";
-		user = getIntent().getExtras().getString("username");
-		yourNameView.setText("Hi, "+ user + "!");
-
 
 		// Setup ClickListeners
 		Connect.setOnClickListener(this);
-		Wait.setOnClickListener(this);
+
 	}
 
 	public void onClick(View v) {
@@ -46,12 +39,8 @@ public class Activity3 extends Activity implements OnClickListener{
 			{
 			case R.id.game_connect:
 				//service.list();
-				  Intent intent = new Intent(Activity3.this, Activity5.class);
+				  Intent intent = new Intent(Activity4.this, Activity5.class);
 				 startActivity(intent);
-				break;
-			case R.id.game_wait:
-				Intent intent2 = new Intent(Activity3.this, Activity4.class);
-				startActivity(intent2);
 				break;
 			}
 

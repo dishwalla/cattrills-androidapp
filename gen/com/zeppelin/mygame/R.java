@@ -24,19 +24,23 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080007;
+        public static final int action_settings=0x7f080009;
         public static final int game_cancel=0x7f080001;
         public static final int game_connect=0x7f080003;
         public static final int game_done=0x7f080002;
-        public static final int game_settings=0x7f080006;
+        public static final int game_invite=0x7f080006;
+        public static final int game_list=0x7f080005;
+        public static final int game_settings=0x7f080008;
         public static final int game_setyouname=0x7f080000;
-        public static final int game_start=0x7f080005;
+        public static final int game_start=0x7f080007;
         public static final int game_wait=0x7f080004;
     }
     public static final class layout {
         public static final int activity2=0x7f030000;
         public static final int activity3=0x7f030001;
-        public static final int activity_main=0x7f030002;
+        public static final int activity4=0x7f030002;
+        public static final int activity5=0x7f030003;
+        public static final int activity_main=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -47,12 +51,12 @@ public final class R {
         public static final int cancel_button=0x7f050007;
         public static final int connect_button=0x7f050005;
         public static final int done_button=0x7f050008;
+        public static final int invite_button=0x7f05000a;
         public static final int settings_button=0x7f050003;
+        public static final int stand_by_mode=0x7f050009;
         public static final int start_button=0x7f050002;
-        public static final int username_text=0x7f050009;
         public static final int username_text_hint=0x7f050004;
         public static final int wait_button=0x7f050006;
-        public static final int xxx=0x7f05000a;
     }
     public static final class style {
         /** 

@@ -10,7 +10,7 @@
     <string name="wait_button">"Wait for ivitation"</string>
     <string name="cancel_button">"Cancel"</string>
     <string name="done_button">"Done"</string>
-    <string name="username_text"></string>
-     <string name="xxx">(TextView)findViewById(R.id.game_setyouname)</string>
+     <string name="stand_by_mode">"You're in STAND BY MODE.."</string>
+    <string name="invite_button">"Invite"</string>
 
 </resources>

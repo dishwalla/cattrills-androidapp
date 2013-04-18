@@ -18,6 +18,7 @@ public class Activity2 extends Activity implements OnClickListener{
 	protected Button Done;
 	public static String Name;
 	protected EditText yourName;
+	
 
 	protected CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
 	//TextViev 
@@ -28,60 +29,44 @@ public class Activity2 extends Activity implements OnClickListener{
 		setContentView(R.layout.activity2);
 
 		// Connect interface elements to properties
-		//Connect = (Button)findViewById(R.id.game_connect);
-		//Wait = (Button)findViewById(R.id.game_wait);
 		Cancel = (Button)findViewById(R.id.game_cancel);
 		Done = (Button)findViewById(R.id.game_done);
 		yourName = (EditText)findViewById(R.id.game_setyouname);
 
 		// Setup ClickListeners
-		//Connect.setOnClickListener(this);
-		//Wait.setOnClickListener(this);
 		Cancel.setOnClickListener(this);
 		Done.setOnClickListener(this);
-		}
+	}
 
 
-		public void onClick(View v) {
-		Source k = new Source();
-		
-	/*Done.setOnClickListener(new View.OnClickListener() {
-				public void onClick(View v) {
+	public void onClick(View v) {
 
-					try {
-						Name = (yourName.getText().toString());}*/
-
-
-						try {	
-							Name = (yourName.getText().toString());
-							k.setName(Name);
+		try {	
+	
 			switch (v.getId()) 
 			{
 			case R.id.game_cancel:
 				Intent intent = new Intent(Activity2.this, MainActivity.class);
-		        startActivity(intent);
-		        break;
-				//service.list();
-				//  Intent intent = new Intent(MainActivity.this, Activity2.class);
-				// startActivity(intent);
-				//break;
+				
+				startActivity(intent);
+				break;
+
 			case R.id.game_done:
-				// Intent intent = new Intent(MainActivity.this, Activity2.class);
-				//  startActivity(intent);
 				Intent intent2 = new Intent(Activity2.this, Activity3.class);
-		        startActivity(intent2);
-		        break;
-				//break;
+				intent2.putExtra("username", yourName.getText().toString()); // в ключ username пихаем текст из текстового поля
+				startActivity(intent2);
+				break;
+
 			}
 
 
 		} 
-					catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			
-			}
-	
+		catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}
+
 
