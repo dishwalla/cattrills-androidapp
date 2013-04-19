@@ -12,9 +12,7 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 
 	@Override
 	public void connect() throws Exception {
-
 		AsyncTask task = new AsyncTask(){
-
 			@Override
 			protected Object doInBackground(Object... arg0) {
 				try {
@@ -25,13 +23,27 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 				}
 				return null;
 			}
-		};	
+		};
 		task.execute().get();
 	}
 
 	@Override
-	public boolean sendYourName(String name) throws Exception {
-
+	public boolean sendYourName(final String name) throws Exception {
+		//String name = "";
+		AsyncTask task = new AsyncTask(){
+			@Override
+			protected Object doInBackground(Object... arg0) {
+				try {
+					service.sendYourName(name);
+				//	return true;
+				} catch (Exception e) {
+					e.printStackTrace();
+				//	return false;
+				}
+				return true;
+			}
+		};	
+		task.execute().get();
 		return false;
 	}
 

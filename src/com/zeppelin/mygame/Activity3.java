@@ -45,9 +45,11 @@ public class Activity3 extends Activity implements OnClickListener{
 			switch (v.getId()) 
 			{
 			case R.id.game_connect:
+				String name = getIntent().getExtras().getString("username");
+				service.sendYourName(name);
 				//service.list();
-				  Intent intent = new Intent(Activity3.this, Activity5.class);
-				 startActivity(intent);
+				Intent intent = new Intent(Activity3.this, Activity5.class);
+				startActivity(intent);
 				break;
 			case R.id.game_wait:
 				Intent intent2 = new Intent(Activity3.this, Activity4.class);
