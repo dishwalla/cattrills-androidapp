@@ -25,7 +25,7 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 
 	public void connect() throws Exception{
 		//InetAddress addr = InetAddress.getLocalHost();
-		InetAddress addr = InetAddress.getByName("10.34.10.34");
+		InetAddress addr = InetAddress.getByName("192.168.1.101");
 		int port = 1234;
 		this.serverSocket =	new Socket(addr, port);
 		this.is = serverSocket.getInputStream();
@@ -91,8 +91,9 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 	}
 
 	@Override
-	public void putString(String str) throws IOException{
-		wr.write(str + "\n");
+	public void putString(String str) throws Exception{
+		//wr.write(str + "\n");
+		wr.write(str);
 		wr.flush();
 	}
 
@@ -102,7 +103,7 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 	}
 
 	@Override//undone
-	public void goOn(String yn) throws IOException{
+	public void goOn(String yn) throws Exception{
 		putString(yn);
 	}
 	

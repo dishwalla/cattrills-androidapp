@@ -1,6 +1,7 @@
 package com.zeppelin.mygame;
 
 import impl.CatTrillsAsyncClientServiceImpl;
+import impl.CatTrillsClientServiceImpl;
 import service.CatTrillsClientService;
 import android.app.Activity;
 import android.content.Intent;
@@ -21,6 +22,7 @@ public class Activity2 extends Activity implements OnClickListener{
 	
 
 	protected CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
+    protected CatTrillsClientService service2 = new CatTrillsClientServiceImpl(); 
 	//TextViev 
 
 	@Override
@@ -53,11 +55,7 @@ public class Activity2 extends Activity implements OnClickListener{
 			case R.id.game_done:
 				Intent intent2 = new Intent(Activity2.this, Activity3.class);
 				intent2.putExtra("username", yourName.getText().toString()); // в ключ username пихаем текст из текстового поля
-				String name = getIntent().getExtras().getString("username");
-				boolean res;
-				do {
-					res = service.sendYourName(name);
-				} while (res != true);
+			//	String response = service.getResponse();
 				startActivity(intent2);
 				break;
 

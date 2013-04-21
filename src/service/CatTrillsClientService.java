@@ -13,13 +13,13 @@ public interface CatTrillsClientService {
 	
 	boolean select(String name)  throws Exception;
 	
-	String getResponse() throws Exception ;
+	String getResponse() throws Exception;
 	
-	void putString(String str) throws IOException;
+	void putString(String str) throws Exception;
 	
 	String getEntireResult() throws IOException;
 	
-	void goOn(String yn) throws IOException;
+	void goOn(String yn) throws Exception;
 	
 	boolean saveResult(String str);//undone	
 	

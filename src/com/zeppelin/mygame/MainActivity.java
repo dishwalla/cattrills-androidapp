@@ -1,6 +1,7 @@
 package com.zeppelin.mygame;
 
 import impl.CatTrillsAsyncClientServiceImpl;
+import impl.CatTrillsClientServiceImpl;
 import service.CatTrillsClientService;
 import android.app.Activity;
 import android.content.Intent;
@@ -16,7 +17,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected Button Start;
 	protected Button Settings;
 	
-	protected CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
+	public static CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
+	// protected CatTrillsClientService service2 = new CatTrillsClientServiceImpl(); 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				{
 				    case R.id.game_start:
 				    	service.connect();
+				    	String response = service.getResponse();
 				        Intent intent = new Intent(MainActivity.this, Activity2.class);
 				        startActivity(intent);
 				        break;

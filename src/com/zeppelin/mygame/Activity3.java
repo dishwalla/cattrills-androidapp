@@ -17,6 +17,7 @@ public class Activity3 extends Activity implements OnClickListener{
 	protected TextView yourNameView;
 
 	protected CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
+
 	//TextViev 
 
 	@Override
@@ -45,12 +46,18 @@ public class Activity3 extends Activity implements OnClickListener{
 			switch (v.getId()) 
 			{
 			case R.id.game_connect:
-				String name = getIntent().getExtras().getString("username");
-				service.sendYourName(name);
-				//service.list();
-				Intent intent = new Intent(Activity3.this, Activity5.class);
+
+				/*	boolean p;
+					do {
+				p = MainActivity.service.sendYourName(getIntent().getExtras().getString("username"));
+					} while (p != true);
+				//service.list();*/
+				MainActivity.service.sendYourName(getIntent().getExtras().getString("username"));
+				Intent intent = new Intent(Activity3.this, Activity4.class);
 				startActivity(intent);
 				break;
+				//}
+				//else break;
 			case R.id.game_wait:
 				Intent intent2 = new Intent(Activity3.this, Activity4.class);
 				startActivity(intent2);

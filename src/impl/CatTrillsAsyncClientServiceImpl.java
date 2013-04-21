@@ -29,22 +29,22 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 
 	@Override
 	public boolean sendYourName(final String name) throws Exception {
-		//String name = "";
 		AsyncTask task = new AsyncTask(){
 			@Override
 			protected Object doInBackground(Object... arg0) {
 				try {
-					service.sendYourName(name);
-				//	return true;
+				//	if (service.sendYourName(name) == true)
+						service.sendYourName(name);
+					//	return true;
+
+					//else return false;
 				} catch (Exception e) {
 					e.printStackTrace();
-				//	return false;
 				}
-				return true;
+				return null;
 			}
-		};	
-		task.execute().get();
-		return false;
+		};
+		return task.execute().get();
 	}
 
 	@Override
@@ -61,13 +61,37 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 
 	@Override
 	public String getResponse() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+
+		AsyncTask task = new AsyncTask(){
+			String res;
+			protected String doInBackground(Object... params) {
+
+				try {
+					res = service.getResponse();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return res;
+			}
+		};
+		return (String) task.execute().get();
 	}
 
 	@Override
-	public void putString(String str) throws IOException {
-		// TODO Auto-generated method stub
+	public void putString(final String str) throws Exception {
+		AsyncTask task = new AsyncTask(){
+			@Override
+			protected Object doInBackground(Object... arg0) {
+				try {
+					service.putString(str);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				return null;
+			}
+		};
+		task.execute().get();
 
 	}
 
