@@ -13,8 +13,6 @@ import android.widget.EditText;
 
 public class Activity2 extends Activity implements OnClickListener{
 
-	//protected Button Connect;
-	//protected Button Wait;
 	protected Button Cancel;
 	protected Button Done;
 	public static String Name;
@@ -55,7 +53,6 @@ public class Activity2 extends Activity implements OnClickListener{
 			case R.id.game_done:
 				Intent intent2 = new Intent(Activity2.this, Activity3.class);
 				intent2.putExtra("username", yourName.getText().toString()); // в ключ username пихаем текст из текстового поля
-			//	String response = service.getResponse();
 				startActivity(intent2);
 				break;
 

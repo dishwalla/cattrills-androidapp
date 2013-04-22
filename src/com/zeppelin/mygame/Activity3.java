@@ -32,6 +32,7 @@ public class Activity3 extends Activity implements OnClickListener{
 		String user = "";
 		user = getIntent().getExtras().getString("username");
 		yourNameView.setText("Hi, "+ user + "!");
+		
 
 
 		// Setup ClickListeners
@@ -43,6 +44,7 @@ public class Activity3 extends Activity implements OnClickListener{
 
 
 		try {	
+			MainActivity.service.sendYourName(getIntent().getExtras().getString("username"));
 			switch (v.getId()) 
 			{
 			case R.id.game_connect:
@@ -54,9 +56,9 @@ public class Activity3 extends Activity implements OnClickListener{
 					
 				//service.list();*/
 				//String response = MainActivity.service.getResponse();
-				MainActivity.service.sendYourName(getIntent().getExtras().getString("username"));
-				String response = MainActivity.service.getResponse();
-				Intent intent = new Intent(Activity3.this, Activity4.class);
+				//MainActivity.service.sendYourName(getIntent().getExtras().getString("username"));
+				//String response = MainActivity.service.getResponse();
+				Intent intent = new Intent(Activity3.this, Activity5.class);
 				startActivity(intent);
 				break;
 				//}

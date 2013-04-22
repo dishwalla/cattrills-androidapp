@@ -12,26 +12,19 @@
 
     <TextView
         android:id="@+id/game_setyouname"
-        android:textIsSelectable="true"
-        android:layout_width="193dp"
+        android:layout_width="152dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="57dp"
         android:ems="10"
         android:scrollbars="vertical"
         android:textColor="#000000"
+        android:textIsSelectable="true"
         android:textSize="20sp" />
 
-     <ListView
-         android:id="@+id/game_list"
-         android:layout_width="242dp"
-         android:layout_height="214dp" >
-     </ListView>
-     
-     <Button
-        android:id="@+id/game_invite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="@string/invite_button" />
+    <ListView
+        android:id="@+id/game_list"
+        android:layout_width="242dp"
+        android:layout_height="214dp" >
+    </ListView>
 
 </LinearLayout>
