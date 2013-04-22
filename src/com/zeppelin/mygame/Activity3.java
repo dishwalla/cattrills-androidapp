@@ -47,12 +47,15 @@ public class Activity3 extends Activity implements OnClickListener{
 			{
 			case R.id.game_connect:
 
-				/*	boolean p;
+					/*boolean p;
 					do {
 				p = MainActivity.service.sendYourName(getIntent().getExtras().getString("username"));
-					} while (p != true);
+					} while (p != true);*/
+					
 				//service.list();*/
+				//String response = MainActivity.service.getResponse();
 				MainActivity.service.sendYourName(getIntent().getExtras().getString("username"));
+				String response = MainActivity.service.getResponse();
 				Intent intent = new Intent(Activity3.this, Activity4.class);
 				startActivity(intent);
 				break;

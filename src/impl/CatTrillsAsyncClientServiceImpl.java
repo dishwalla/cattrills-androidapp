@@ -30,21 +30,20 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 	@Override
 	public boolean sendYourName(final String name) throws Exception {
 		AsyncTask task = new AsyncTask(){
+			boolean res;
 			@Override
-			protected Object doInBackground(Object... arg0) {
+			protected Object doInBackground(Object... arg0){
 				try {
-				//	if (service.sendYourName(name) == true)
-						service.sendYourName(name);
-					//	return true;
-
-					//else return false;
+					//if (service.sendYourName(name) == true)
+					boolean res2 = service.sendYourName(name);
+					res = res2;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				return null;
+				return res;
 			}
 		};
-		return task.execute().get();
+		return (Boolean) task.execute().get();
 	}
 
 	@Override
