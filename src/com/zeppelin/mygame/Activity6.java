@@ -9,41 +9,36 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class Activity4 extends Activity implements OnClickListener{
+public class Activity6 extends Activity implements OnClickListener{
 
-	protected Button Connect;
-	//protected TextView standBy;
+	protected Button StopWait;
 
 	protected CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
-	//TextViev 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity4);
+		setContentView(R.layout.activity6);
 
-		Connect = (Button)findViewById(R.id.game_connect);
-		Connect.setOnClickListener(this);
+		StopWait = (Button)findViewById(R.id.game_stop_wait);
+
+		StopWait.setOnClickListener(this);	
 	}
-
+	@Override
 	public void onClick(View v) {
-
-		try {	
+		try {				
 			switch (v.getId()) 
 			{
-			case R.id.game_connect:
-
-				Intent intent = new Intent(Activity4.this, Activity5.class);
+			case R.id.game_stop_wait:
+				Intent intent = new Intent(Activity6.this, Activity3.class);
 				startActivity(intent);
 				break;
 			}
-			
 		} 
 		catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 }
-
-
