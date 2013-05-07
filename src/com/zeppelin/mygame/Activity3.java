@@ -15,6 +15,7 @@ public class Activity3 extends Activity implements OnClickListener{
 	protected Button Connect;
 	protected Button Wait;
 	protected TextView yourNameView;
+	protected String user;
 
 	protected CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
 
@@ -29,7 +30,7 @@ public class Activity3 extends Activity implements OnClickListener{
 		Connect = (Button)findViewById(R.id.game_connect);
 		Wait = (Button)findViewById(R.id.game_wait);
 		yourNameView = (TextView)findViewById(R.id.game_setyouname);
-		String user = "";
+		//String user = "";
 		user = getIntent().getExtras().getString("username");
 		yourNameView.setText("Hi, "+ user + "!");
 		
@@ -48,23 +49,20 @@ public class Activity3 extends Activity implements OnClickListener{
 					do {
 				p = MainActivity.service.sendYourName(getIntent().getExtras().getString("username"));
 					} while (p != true);*/
-					
-				//service.list();*/
-				//String response = MainActivity.service.getResponse();
-				//MainActivity.service.sendYourName(getIntent().getExtras().getString("username"));
-			
-				
-				MainActivity.service.sendYourName(getIntent().getExtras().getString("username"));
+							
+				MainActivity.service.sendYourName(user);
 				//String response = MainActivity.service.getResponse();
 				//String response2 = MainActivity.service.putString(response);
-				Intent intent = new Intent(Activity3.this, Activity5.class);
+				Intent intent = new Intent(Activity3.this, Activity6.class);
 				startActivity(intent);
+				Activity3.this.finish();
 				break;
-				//}
-				//else break;
+	
 			case R.id.game_wait:
+				//MainActivity.service.sendYourName(user);
 				Intent intent2 = new Intent(Activity3.this, Activity4.class);
 				startActivity(intent2);
+				Activity3.this.finish();
 				break;
 			}
 

@@ -12,7 +12,7 @@ import android.widget.Button;
 public class Activity4 extends Activity implements OnClickListener{
 
 	protected Button Connect;
-	//protected TextView standBy;
+	//protected String user;
 
 	protected CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
 	//TextViev 
@@ -21,7 +21,9 @@ public class Activity4 extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity4);
-
+		//yourNameView = (TextView)findViewById(R.id.game_setyouname);
+	//	String user = "";
+	//	user = getIntent().getExtras().getString("username");
 		Connect = (Button)findViewById(R.id.game_connect);
 		Connect.setOnClickListener(this);
 	}
@@ -32,9 +34,10 @@ public class Activity4 extends Activity implements OnClickListener{
 			switch (v.getId()) 
 			{
 			case R.id.game_connect:
-
-				Intent intent = new Intent(Activity4.this, Activity5.class);
+				//MainActivity.service.sendYourName(user);
+				Intent intent = new Intent(Activity4.this, Activity6.class);
 				startActivity(intent);
+				Activity4.this.finish();
 				break;
 			}
 			

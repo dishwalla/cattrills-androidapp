@@ -12,14 +12,15 @@ import android.widget.Button;
 public class Activity6 extends Activity implements OnClickListener{
 
 	protected Button StopWait;
-
+protected String user;
+	
 	protected CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity6);
-
+		user = getIntent().getExtras().getString("username");
 		StopWait = (Button)findViewById(R.id.game_stop_wait);
 
 		StopWait.setOnClickListener(this);	
@@ -32,6 +33,7 @@ public class Activity6 extends Activity implements OnClickListener{
 			case R.id.game_stop_wait:
 				Intent intent = new Intent(Activity6.this, Activity3.class);
 				startActivity(intent);
+				Activity6.this.finish();
 				break;
 			}
 		} 

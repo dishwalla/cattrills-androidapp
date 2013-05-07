@@ -46,6 +46,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				    	String response = service.getResponse();
 				        Intent intent = new Intent(MainActivity.this, Activity2.class);
 				        startActivity(intent);
+				        MainActivity.this.finish();
 				        break;
 			    }
 				

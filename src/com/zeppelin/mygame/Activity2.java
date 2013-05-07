@@ -48,12 +48,14 @@ public class Activity2 extends Activity implements OnClickListener{
 			case R.id.game_cancel:
 				Intent intent = new Intent(Activity2.this, MainActivity.class);
 				startActivity(intent);
+				Activity2.this.finish();
 				break;
 
 			case R.id.game_done:
 				Intent intent2 = new Intent(Activity2.this, Activity3.class);
 				intent2.putExtra("username", yourName.getText().toString()); // в ключ username пихаем текст из текстового поля
 				startActivity(intent2);
+				Activity2.this.finish();
 				break;
 
 			}
