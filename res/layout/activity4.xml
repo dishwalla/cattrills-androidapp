@@ -11,15 +11,15 @@
     tools:context=".Activity4" >
 
     <TextView
-        android:layout_width="273dp"
+         android:id="@+id/game_stand_by"
+         android:layout_width="273dp"
         android:layout_height="115dp"
         android:layout_marginTop="57dp"
         android:ems="10"
         android:scrollbars="vertical"
         android:textColor="#000000"
         android:textIsSelectable="true"
-        android:textSize="20sp"
-        android:text="@string/stand_by_mode" />
+        android:textSize="20sp"           />
 
     <Button
         android:id="@+id/game_connect"

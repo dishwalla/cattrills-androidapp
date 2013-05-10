@@ -17,8 +17,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected Button Start;
 	protected Button Settings;
 	
+
+	public static Source source = new Source();
 	public static CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
-	// protected CatTrillsClientService service2 = new CatTrillsClientServiceImpl(); 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,33 +35,34 @@ public class MainActivity extends Activity implements OnClickListener {
 		Settings.setOnClickListener(this);
 	}
 
+	public static Source getSource() {
+		return source;
+	}
+
+	public static void setSource(Source source) {
+		MainActivity.source = source;
+	}
+
 	@Override
 	public void onClick(View v) {
 	//	if (v == Start){
 			try {
-			//	service.connect();
 				switch (v.getId()) 
 				{
 				    case R.id.game_start:
 				    	service.connect();
-				    	String response = service.getResponse();
 				        Intent intent = new Intent(MainActivity.this, Activity2.class);
 				        startActivity(intent);
 				        MainActivity.this.finish();
-				        break;
-			    }
-				
-				
+				       // service.getResponse();
+				       break;
+				}		
 			} 
 	catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-	//	else if (v == Settings){
-
-		//}
-	//}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -9,7 +9,7 @@ import android.os.AsyncTask;
 public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 
 	private CatTrillsClientService service = new CatTrillsClientServiceImpl(); 
-
+	//protected boolean res;
 	@Override
 	public void connect() throws Exception {
 		AsyncTask task = new AsyncTask(){
@@ -19,7 +19,6 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 					service.connect();
 				} catch (Exception e) {
 					e.printStackTrace();
-					//return false;
 				}
 				return null;
 			}
@@ -28,27 +27,30 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 	}
 
 	@Override
-	public void sendYourName(final String name) throws Exception {
+	public boolean sendYourName(final String name) throws Exception {
 		AsyncTask task = new AsyncTask(){
-			//boolean res;
+			boolean res;
 			@Override
 			protected Object doInBackground(Object... arg0){
 				try {
-					//if (service.sendYourName(name) == true)
-					service.sendYourName(name);
-					//res = res2;
+					res = service.sendYourName(name);
+					//return res;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				return null;
+				return res;
 			}
 		};
-		task.execute().get();
+		//if (res == true) {
+			//return true;
+		//}
+		//else return true;
+		return (Boolean) task.execute().get();
 	}
 
 	@Override
 	public List<String> list() throws Exception {
-		
+
 		AsyncTask task = new AsyncTask(){
 			protected List<String> doInBackground(Object... params) {
 				try {
@@ -66,21 +68,24 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 	@Override
 	public String getResponse() throws Exception {
 
-		AsyncTask task = new AsyncTask(){
-		//	String res;
-			protected String doInBackground(Object... params) {
-
+		AsyncTask task = new AsyncTask() {
+			String res;
+			protected String doInBackground(Object...params) {
+				
 				try {
-					//res = service.getResponse();
-					service.getResponse();
+					res = service.getResponse();
+					return res;
+				//	service.getResponse();
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				return null;
+				return res;
 			}
 		};
-		return (String) task.execute().get();
+	
+	String h = (String) task.execute().get();
+	return h;
 	}
 
 
@@ -89,7 +94,7 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 
 		return false;
 	}
-	
+
 	@Override
 	public void putString(final String str) throws Exception {
 		AsyncTask task = new AsyncTask(){

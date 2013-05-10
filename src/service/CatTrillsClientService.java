@@ -7,7 +7,7 @@ public interface CatTrillsClientService {
 	
 	void connect() throws Exception;
 
-	void sendYourName(String name) throws Exception;
+	boolean sendYourName(String name) throws Exception;
 	
 	List<String> list() throws Exception;
 	

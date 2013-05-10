@@ -1,8 +1,5 @@
 package com.zeppelin.mygame;
 
-import impl.CatTrillsAsyncClientServiceImpl;
-import impl.CatTrillsClientServiceImpl;
-import service.CatTrillsClientService;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,13 +12,7 @@ public class Activity2 extends Activity implements OnClickListener{
 
 	protected Button Cancel;
 	protected Button Done;
-	public static String Name;
 	protected EditText yourName;
-	
-
-	protected CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
-    protected CatTrillsClientService service2 = new CatTrillsClientServiceImpl(); 
-	//TextViev 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +29,9 @@ public class Activity2 extends Activity implements OnClickListener{
 		Done.setOnClickListener(this);
 	}
 
-
 	public void onClick(View v) {
 
 		try {	
-	
 			switch (v.getId()) 
 			{
 			case R.id.game_cancel:
@@ -52,22 +41,36 @@ public class Activity2 extends Activity implements OnClickListener{
 				break;
 
 			case R.id.game_done:
+				String response = MainActivity.service.getResponse();
+				if (response.contains("Write")){
+
+					MainActivity.service.putString(yourName.getText().toString());
+					MainActivity.service.putString("\n");
+					/*response = MainActivity.service.getResponse();
+					if (response.contains("chosen")){
+							return;
+						} 
+						else if (response.contains("already")){
+							Intent intent2 = new Intent(Activity2.this, Activity6.class);
+							startActivity(intent2);
+							break;
+						} 
+						//} 
+					//break;
+				//}*/
 				Intent intent2 = new Intent(Activity2.this, Activity3.class);
-				intent2.putExtra("username", yourName.getText().toString()); // в ключ username пихаем текст из текстового поля
+				//intent2.putExtra("username", yourName.getText().toString()); // в ключ username пихаем текст из текстового поля
+				Source source = MainActivity.getSource();
+				source.setUser(yourName.getText().toString());
 				startActivity(intent2);
 				Activity2.this.finish();
 				break;
-
-			}
-
-
-		} 
+			}}
+		}
 		catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
 }
-
 

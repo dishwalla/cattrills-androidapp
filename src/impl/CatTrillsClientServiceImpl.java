@@ -35,13 +35,13 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 	}
 
 	@Override
-	public void sendYourName(String name) throws Exception{
+	public boolean sendYourName(String name) throws Exception{
 		putString(name);
-	//	String response = getResponse();
-	//	if (response.contains("already exists")){
-		//	return false;
-		//}
-		//return true;
+		String response = getResponse();
+		if (response.contains("already exists")){
+			return false;
+		}
+		return true;
 	}
 
 	@Override
