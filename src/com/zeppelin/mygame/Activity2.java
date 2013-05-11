@@ -46,26 +46,27 @@ public class Activity2 extends Activity implements OnClickListener{
 
 					MainActivity.service.putString(yourName.getText().toString());
 					MainActivity.service.putString("\n");
-					/*response = MainActivity.service.getResponse();
-					if (response.contains("chosen")){
-							return;
-						} 
-						else if (response.contains("already")){
-							Intent intent2 = new Intent(Activity2.this, Activity6.class);
-							startActivity(intent2);
-							break;
-						} 
+					//response = MainActivity.service.getResponse();
+				//	if (response.contains("already")){
+					//	Intent intent2 = new Intent(Activity2.this, Activity6.class);
+						//startActivity(intent2);
+					//	break;
+
+					//} 
+					//else {
 						//} 
-					//break;
-				//}*/
-				Intent intent2 = new Intent(Activity2.this, Activity3.class);
-				//intent2.putExtra("username", yourName.getText().toString()); // в ключ username пихаем текст из текстового поля
-				Source source = MainActivity.getSource();
-				source.setUser(yourName.getText().toString());
-				startActivity(intent2);
-				Activity2.this.finish();
-				break;
-			}}
+						//break;
+						//}*/
+						Intent intent2 = new Intent(Activity2.this, Activity3.class);
+						//intent2.putExtra("username", yourName.getText().toString()); // в ключ username пихаем текст из текстового поля
+						Source source = MainActivity.getSource();
+						source.setUser(yourName.getText().toString());
+						startActivity(intent2);
+						Activity2.this.finish();
+						break;
+					}
+				}
+		//	}
 		}
 		catch (Exception e) {
 			// TODO Auto-generated catch block

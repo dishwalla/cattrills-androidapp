@@ -1,5 +1,7 @@
 package com.zeppelin.mygame;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,7 +44,9 @@ public class Activity3 extends Activity implements OnClickListener {
 			{
 			case R.id.game_connect:
 				try {
-					Intent intent = new Intent(Activity3.this, Activity6.class);
+					//String partys = MainActivity.service.getResponse();
+					//List<String> partys = MainActivity.service.list();
+					Intent intent = new Intent(Activity3.this, Activity5.class);
 					startActivity(intent);
 					Activity3.this.finish();
 					break;}
