@@ -11,6 +11,8 @@ import java.net.Socket;
 import java.util.Arrays;
 import java.util.List;
 
+import com.zeppelin.mygame.MainActivity;
+
 import service.CatTrillsClientService;
 
 public class CatTrillsClientServiceImpl implements CatTrillsClientService{
@@ -47,6 +49,7 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 	@Override
 	public List<String> list() throws Exception{
 		putString("list");
+		putString("\n");
 		String response = getResponse();
 		String [] arr= response.split("\\s+");
 		return Arrays.asList(arr);

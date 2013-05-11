@@ -27,7 +27,6 @@ public class Activity3 extends Activity implements OnClickListener {
 		Connect = (Button)findViewById(R.id.game_connect);
 		Wait = (Button)findViewById(R.id.game_wait);
 		yourNameView = (TextView)findViewById(R.id.game_name);
-		//user = getIntent().getExtras().getString("username");
 		Source source = MainActivity.getSource();
 		user = source.getUser();
 		yourNameView.setText("Hi, "+ user + "!");
@@ -44,8 +43,6 @@ public class Activity3 extends Activity implements OnClickListener {
 			{
 			case R.id.game_connect:
 				try {
-					//String partys = MainActivity.service.getResponse();
-					//List<String> partys = MainActivity.service.list();
 					Intent intent = new Intent(Activity3.this, Activity5.class);
 					startActivity(intent);
 					Activity3.this.finish();

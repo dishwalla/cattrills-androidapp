@@ -46,17 +46,13 @@ public class Activity2 extends Activity implements OnClickListener{
 
 					MainActivity.service.putString(yourName.getText().toString());
 					MainActivity.service.putString("\n");
-					//response = MainActivity.service.getResponse();
-				//	if (response.contains("already")){
-					//	Intent intent2 = new Intent(Activity2.this, Activity6.class);
-						//startActivity(intent2);
-					//	break;
-
-					//} 
-					//else {
-						//} 
-						//break;
-						//}*/
+					response = MainActivity.service.getResponse();
+					if (response.contains("already")){
+						Intent intent2 = new Intent(Activity2.this, Activity2.class); //do not work proper!!!
+						startActivity(intent2);
+						break;
+					} 
+					else {
 						Intent intent2 = new Intent(Activity2.this, Activity3.class);
 						//intent2.putExtra("username", yourName.getText().toString()); // в ключ username пихаем текст из текстового поля
 						Source source = MainActivity.getSource();
@@ -66,7 +62,7 @@ public class Activity2 extends Activity implements OnClickListener{
 						break;
 					}
 				}
-		//	}
+			}
 		}
 		catch (Exception e) {
 			// TODO Auto-generated catch block

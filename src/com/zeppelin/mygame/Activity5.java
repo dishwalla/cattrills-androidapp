@@ -1,10 +1,7 @@
 package com.zeppelin.mygame;
 
-import impl.CatTrillsAsyncClientServiceImpl;
 
 import java.util.List;
-
-import service.CatTrillsClientService;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,30 +29,29 @@ public class Activity5 extends Activity implements OnClickListener {
 		Source source = MainActivity.getSource();
 		user = source.getUser();
 		choosePartner.setText("Hi, "+ user + ", choose your partner!");
-		//	lv = (ListView)findViewById(R.id.game_list);
+		lv = (ListView)findViewById(R.id.game_list);
 		//((View) partys).setOnClickListener(this);
 		
 		//lv.setOnClickListener(this);
-		//	List<String> partys;
-		//try {
-		//String  response = MainActivity.service.getResponse();
-		//if (response.contains("been")){
-		try {
-			//List<String> partysK = MainActivity.service.list();
-		//	String X = MainActivity.service.getResponse();
-			//MainActivity.service.putString(" ");
 
+		try {	
+			/*MainActivity.service.putString("list");
+			String response = MainActivity.service.getResponse();
+			String [] arr= response.split("\\s+");
+			//String [] arr= response.split(" ");
+			List<String> partys = Arrays.asList(arr);*/
+			
 			List<String> partys = MainActivity.service.list();
 			ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, partys);
-			ListView lv = (ListView)findViewById(R.id.game_list);
 			lv.setAdapter(adapter);
-
-			//} 
-			//}
-			//catch (Exception e) {
-			//e.printStackTrace();
-			//}
-			//}
+		
+		/*	String response = MainActivity.service.getResponse();
+			if (response.contains("Write")){
+				Intent intent2 = new Intent(Activity5.this, Activity2.class); //do not work proper!!!
+				startActivity(intent2);
+			}
+			else {Intent intent3 = new Intent(Activity5.this, Activity2.class); //do not work proper!!!
+			startActivity(intent3);}*/
 
 		} catch (Exception e1) {
 			e1.printStackTrace();
@@ -70,19 +66,6 @@ public class Activity5 extends Activity implements OnClickListener {
 		selection.setText(text);	
 			}
 		 */
-		/*   List<String> adapter = new List<String>(this,
-	                R.layout.rowlayout, R.id.label, values);
-
-		   setListAdapter(adapter);
-
-		partys = (ListView)findViewById(R.id.game_list);
-		partys.setAdapter(adapter);
-		//partys.setAdapter(adapter);
-
-    }
-		// Setup ClickListeners
-		//Invite.setOnClickListener(this);
-		partys.setOnClickListener(this);*/
 	}
 	@Override
 	public void onClick(View v){

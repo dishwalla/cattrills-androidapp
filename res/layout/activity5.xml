@@ -12,9 +12,11 @@
 
     <TextView
         android:id="@+id/game_choose"
-        android:layout_width="152dp"
+        android:layout_width="288dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="start"
         android:layout_marginTop="57dp"
+        android:layout_weight="0.41"
         android:ems="10"
         android:scrollbars="vertical"
         android:textColor="#000000"
@@ -23,8 +25,8 @@
 
     <ListView
         android:id="@+id/game_list"
-        android:layout_width="242dp"
-        android:layout_height="214dp" >
+        android:layout_width="match_parent"
+        android:layout_height="288dp" >
     </ListView>
 
 </LinearLayout>
