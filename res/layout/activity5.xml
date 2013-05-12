@@ -13,8 +13,8 @@
     <TextView
         android:id="@+id/game_choose"
         android:layout_width="288dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="57dp"
         android:layout_weight="0.41"
         android:ems="10"
@@ -26,7 +26,11 @@
     <ListView
         android:id="@+id/game_list"
         android:layout_width="match_parent"
-        android:layout_height="288dp" >
-    </ListView>
+        android:layout_height="159dp" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="176dp"
+       android:layout_height="152dp" />
 
 </LinearLayout>

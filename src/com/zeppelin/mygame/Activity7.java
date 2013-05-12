@@ -1,10 +1,7 @@
 package com.zeppelin.mygame;
 
-import impl.CatTrillsAsyncClientServiceImpl;
-
 import java.util.List;
 
-import service.CatTrillsClientService;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

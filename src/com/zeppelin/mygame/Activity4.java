@@ -33,7 +33,7 @@ public class Activity4 extends Activity implements OnClickListener{
 			{
 			case R.id.game_connect:
 				try{
-					Intent intent = new Intent(Activity4.this, Activity6.class);
+					Intent intent = new Intent(Activity4.this, Activity5.class);
 					startActivity(intent);
 					Activity4.this.finish();
 					break;
