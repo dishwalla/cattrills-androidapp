@@ -4,6 +4,7 @@ package com.zeppelin.mygame;
 import java.util.List;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,6 +22,7 @@ public class Activity5 extends ListActivity {
 	protected ListView lv;
 	protected ListView l;
 	protected List<String> partys;
+	protected String name;
 
 
 	@Override
@@ -36,14 +38,15 @@ public class Activity5 extends ListActivity {
 		//((View) partys).setOnClickListener(this);
 		l = (ListView)findViewById(android.R.id.list);
 		//lv.setOnClickListener((OnClickListener) this);
-		//getListView().setOnItemClickListener(itemListener);
+		getListView().setOnItemClickListener(itemListener);
 		
 		try {	
 			List<String> partys = MainActivity.service.list();
 			ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, partys);
 			// getListView().setTextFilterEnabled(true);
 			lv.setAdapter(adapter);
-		//	getListView().setOnItemClickListener(itemListener);
+			l.setAdapter(adapter);
+			//getListView().setOnItemClickListener(itemListener);
 
 		/*	ListView.setOnItemClickListener(new onItemClickListener(){
 				@Override
@@ -74,19 +77,36 @@ public class Activity5 extends ListActivity {
 		
 	}
 
-	/* OnItemClickListener itemListener = new OnItemClickListener() {
+	 OnItemClickListener itemListener = new OnItemClickListener() {
 			@Override
-			public void onItemClick(AdapterView<adapted> parent, View v,
+			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long id) {
 				// TODO Auto-generated method stub
-				Toast.makeText(
-						getApplicationContext(),
-						"‚ы выбрали "
-								+ parent.getItemAtPosition(position).toString(),
-						Toast.LENGTH_SHORT).show();
+				name = parent.getItemAtPosition(position).toString();
+				try {
+					//MainActivity.service.select(name);
+					Source source = MainActivity.getSource();
+					source.setSelectedUser(name);
+					Toast.makeText(getApplicationContext(),	"Вы выбрали " + parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
+					
+					boolean res;
+					do {
+						res = MainActivity.service.select(name);
+					} while (res != true);
+					
+					String response = MainActivity.service.getResponse();
+					if (response.contains("choosen")){
+					Intent intent = new Intent(Activity5.this, Activity6.class); //do not work proper!!!
+					startActivity(intent);
+					Activity5.this.finish(); }
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 				
 			}
-		};*/
-		
+		};
+	//getListView().setOnItemClickListener(itemListener);
 
 }

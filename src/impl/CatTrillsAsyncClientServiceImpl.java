@@ -85,9 +85,21 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 
 
 	@Override
-	public boolean select(String name) throws Exception {
-
-		return false;
+	public boolean select(final String name) throws Exception {
+		AsyncTask task = new AsyncTask(){
+			boolean res;
+			protected Object doInBackground(Object... arg0){
+				try {
+					res = service.select(name);
+					return res;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				return res;
+			}
+		};
+		boolean R = (Boolean) task.execute().get();
+		return R;
 	}
 
 	@Override

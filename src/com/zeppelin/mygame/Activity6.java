@@ -12,12 +12,17 @@ public class Activity6 extends Activity implements OnClickListener{
 
 	protected Button StopWait;
 	protected String user;
-	protected TextView Invite_sent;
+	protected TextView game_invite_sent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity6);
+		
+		game_invite_sent = (TextView)findViewById(R.id.game_invite_sent);
+		Source source = MainActivity.getSource();
+		user = source.getSelectedUser();
+		game_invite_sent.setText("Your invite was sent to " + user + "!");
 		StopWait = (Button)findViewById(R.id.game_stop_wait);
 		StopWait.setOnClickListener(this);	
 	}

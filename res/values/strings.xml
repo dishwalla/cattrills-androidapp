@@ -7,7 +7,7 @@
     <string name="settings_button">Settings</string>
     <string name="username_text_hint">Enter your name</string>
     <string name="connect_button">"Connect"</string>
-    <string name="wait_button">"Wait for ivitation"</string>
+    <string name="wait_button">"Wait for invitation"</string>
     <string name="cancel_button">"Cancel"</string>
     <string name="done_button">"Done"</string>
     <string name="stand_by_mode">"You're in STAND BY MODE.."</string>

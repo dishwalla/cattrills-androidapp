@@ -24,13 +24,14 @@
         android:textSize="20sp" />
 
     <ListView
-        android:id="@+id/game_list"
-        android:layout_width="match_parent"
-        android:layout_height="159dp" />
-
-    <ListView
         android:id="@android:id/list"
         android:layout_width="176dp"
        android:layout_height="152dp" />
+
+    <ListView
+        android:id="@+id/game_list"
+        android:layout_width="match_parent"
+        android:layout_height="159dp" >
+    </ListView>
 
 </LinearLayout>
