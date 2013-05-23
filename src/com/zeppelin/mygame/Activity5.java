@@ -87,19 +87,20 @@ public class Activity5 extends ListActivity {
 					//MainActivity.service.select(name);
 					Source source = MainActivity.getSource();
 					source.setSelectedUser(name);
-					Toast.makeText(getApplicationContext(),	"Вы выбрали " + parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(),	"‚ы выбрали " + parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
 					
 					boolean res;
-					do {
+					//do {
 						res = MainActivity.service.select(name);
-					} while (res != true);
+					//} while (res != true);
 					
-					String response = MainActivity.service.getResponse();
-					if (response.contains("choosen")){
+				//	String response = MainActivity.service.getResponse();
+					//if (response.contains("choosen")){
 					Intent intent = new Intent(Activity5.this, Activity6.class); //do not work proper!!!
 					startActivity(intent);
 					Activity5.this.finish(); }
-				} catch (Exception e) {
+				//} 
+			catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}

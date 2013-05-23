@@ -27,7 +27,7 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 
 	public void connect() throws Exception{
 		//InetAddress addr = InetAddress.getLocalHost();
-		InetAddress addr = InetAddress.getByName("10.34.10.34");
+		InetAddress addr = InetAddress.getByName("192.168.1.101");
 		int port = 1234;
 		this.serverSocket =	new Socket(addr, port);
 		this.is = serverSocket.getInputStream();
@@ -58,7 +58,7 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 	@Override
 	public boolean select(String name) throws Exception {
 		putString("select");
-		//putString("\n");
+		putString("\n");
 		putString(name);
 		String response = getResponse();
 		if (response.contains("It's yours name") || response.contains("is busy") || response.contains("no such") || response.contains("Client rejected")){

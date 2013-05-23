@@ -25,6 +25,16 @@ public class Activity6 extends Activity implements OnClickListener{
 		game_invite_sent.setText("Your invite was sent to " + user + "!");
 		StopWait = (Button)findViewById(R.id.game_stop_wait);
 		StopWait.setOnClickListener(this);	
+		
+		try {
+			String response = MainActivity.service.getResponse();
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	@Override
 	public void onClick(View v) {
