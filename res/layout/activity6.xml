@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,18 +15,39 @@
         android:id="@+id/game_invite_sent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="57dp"
         android:ems="10"
         android:scrollbars="vertical"
         android:textColor="#000000"
         android:textIsSelectable="true"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/game_stop_wait"
-        android:layout_width="108dp"
+    <EditText
+        android:id="@+id/game_questquont"
+        android:layout_width="193dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="@string/stop_wait_button" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:hint="@string/question_text_hint"
+        android:scrollbars="vertical"
+        android:textColor="#000000"
+        android:textSize="20sp" >
+    </EditText>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/game_cancel"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/game_questquont"
+        android:layout_below="@+id/game_questquont"
+        android:text="@string/cancel_button" />
+
+    <Button
+        android:id="@+id/game_done"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/game_invite_sent"
+        android:layout_alignTop="@+id/game_cancel"
+        android:text="@string/done_button" />
+
+</RelativeLayout>
