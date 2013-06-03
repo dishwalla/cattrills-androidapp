@@ -7,22 +7,24 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
-public class Activity7 extends Activity implements OnClickListener {
+public class Activity8 extends Activity implements OnClickListener {
 
+	protected TextView questionIs;
 	protected EditText writeQ;
 	protected Button commit;
-	protected String question;
 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity7);
+		setContentView(R.layout.activity8);
+		
+		questionIs = (TextView)findViewById(R.id.game_thequestionis);
 		commit = (Button)findViewById(R.id.game_commit);
 		writeQ = (EditText)findViewById(R.id.game_writequestion);
-	
-		
+
 	}
 	@Override
 	public void onClick(View v){
@@ -30,17 +32,15 @@ public class Activity7 extends Activity implements OnClickListener {
 		try {	
 			switch (v.getId()) 
 			{
-			case R.id.game_commit:
+			case R.id.game_writequestion:
 
 				MainActivity.service.putString(writeQ.getText().toString());
 				MainActivity.service.putString("\n");
 				String response = MainActivity.service.getResponse();
 				if (response.contains("is")){
-				//	Source source = MainActivity.getSource();
-					//question = source.setQuestion(writeQ.getText().toString());
-					Intent intent = new Intent(Activity7.this, Activity8.class);
+					Intent intent = new Intent(Activity8.this, Activity6.class);
 					startActivity(intent);
-					Activity7.this.finish();
+					Activity8.this.finish();
 					break;
 				}
 			}

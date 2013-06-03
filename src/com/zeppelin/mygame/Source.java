@@ -4,6 +4,8 @@ public class Source {
 
 	protected String user;
 	protected String selectedUser;
+	protected String question;
+	protected String answer;
 
 	public String getUser() {
 		return user;
@@ -19,6 +21,22 @@ public class Source {
 
 	public void setSelectedUser(String selectedUser) {
 		this.selectedUser = selectedUser;
+	}
+
+	public String getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
+	public String getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
 	}
 	
 }

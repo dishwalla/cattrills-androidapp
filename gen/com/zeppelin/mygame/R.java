@@ -24,20 +24,24 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000d;
+        public static final int action_settings=0x7f080011;
         public static final int game_cancel=0x7f080001;
         public static final int game_choose=0x7f080007;
+        public static final int game_commit=0x7f08000c;
         public static final int game_connect=0x7f080004;
         public static final int game_done=0x7f080002;
         public static final int game_invite_sent=0x7f080009;
         public static final int game_list=0x7f080008;
         public static final int game_name=0x7f080003;
         public static final int game_questquont=0x7f08000a;
-        public static final int game_settings=0x7f08000c;
+        public static final int game_settings=0x7f080010;
         public static final int game_setyouname=0x7f080000;
         public static final int game_stand_by=0x7f080006;
-        public static final int game_start=0x7f08000b;
+        public static final int game_start=0x7f08000f;
+        public static final int game_thequestionis=0x7f08000d;
         public static final int game_wait=0x7f080005;
+        public static final int game_writeanswer=0x7f08000e;
+        public static final int game_writequestion=0x7f08000b;
     }
     public static final class layout {
         public static final int activity2=0x7f030000;
@@ -46,7 +50,8 @@ public final class R {
         public static final int activity5=0x7f030003;
         public static final int activity6=0x7f030004;
         public static final int activity7=0x7f030005;
-        public static final int activity_main=0x7f030006;
+        public static final int activity8=0x7f030006;
+        public static final int activity_main=0x7f030007;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -55,17 +60,20 @@ public final class R {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int cancel_button=0x7f050007;
+        public static final int commit_button=0x7f05000e;
         public static final int connect_button=0x7f050005;
         public static final int done_button=0x7f050008;
         public static final int invite_button=0x7f05000a;
         public static final int invite_sent=0x7f05000c;
-        public static final int question_text_hint=0x7f05000d;
+        public static final int qq_text_hint=0x7f05000d;
         public static final int settings_button=0x7f050003;
         public static final int stand_by_mode=0x7f050009;
         public static final int start_button=0x7f050002;
         public static final int stop_wait_button=0x7f05000b;
         public static final int username_text_hint=0x7f050004;
         public static final int wait_button=0x7f050006;
+        public static final int writea_text_hint=0x7f050010;
+        public static final int writeq_text_hint=0x7f05000f;
     }
     public static final class style {
         /** 

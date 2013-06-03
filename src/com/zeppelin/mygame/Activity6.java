@@ -24,10 +24,10 @@ public class Activity6 extends Activity implements OnClickListener{
 		setContentView(R.layout.activity6);
 		Cancel = (Button)findViewById(R.id.game_cancel);
 		Done = (Button)findViewById(R.id.game_done);
-		game_invite_sent = (TextView)findViewById(R.id.game_invite_sent);
-		game_invite_sent.setText("User " + user + " accepted the game!");
 		Source source = MainActivity.getSource();
 		user = source.getSelectedUser();
+		game_invite_sent = (TextView)findViewById(R.id.game_invite_sent);
+		game_invite_sent.setText("User " + user + " accepted the game!");
 		questQuont = (EditText)findViewById(R.id.game_questquont);
 
 		Cancel.setOnClickListener(this);
@@ -49,14 +49,14 @@ public class Activity6 extends Activity implements OnClickListener{
 			case R.id.game_done:
 				MainActivity.service.putString(questQuont.getText().toString());
 				MainActivity.service.putString("\n");
-				String response = MainActivity.service.getResponse();
-				if (response.contains("question")){
+				//String response = MainActivity.service.getResponse();
+				//if (response.contains("question")){
 					//response = MainActivity.service.getResponse();
-					Intent intent2 = new Intent(Activity6.this, Activity4.class); //do not work proper!!!
+					Intent intent2 = new Intent(Activity6.this, Activity7.class); //do not work proper!!!
 					startActivity(intent2);
 					break;
 				}
-			}
+			//}
 		} 
 		catch (Exception e) {
 			// TODO Auto-generated catch block

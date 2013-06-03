@@ -28,7 +28,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="52dp"
         android:ems="10"
-        android:hint="@string/question_text_hint"
+        android:hint="@string/qq_text_hint"
         android:scrollbars="vertical"
         android:textColor="#000000"
         android:textSize="20sp" >

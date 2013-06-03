@@ -14,6 +14,9 @@
     <string name="invite_button">"Invite"</string>
     <string name="stop_wait_button">"Don't wait anymore"</string>
     <string name="invite_sent">"Your invite was sent"</string>
-    <string name="question_text_hint">"Enter the number of questions:"</string>
+    <string name="qq_text_hint">"Enter the number of questions:"</string>
+    <string name="commit_button">"Commit"</string>
+    <string name="writeq_text_hint">"Write your question:"</string>
+    <string name="writea_text_hint">"Write your answer:"</string>
 
 </resources>

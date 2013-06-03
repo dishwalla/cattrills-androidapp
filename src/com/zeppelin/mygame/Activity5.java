@@ -52,7 +52,6 @@ public class Activity5 extends ListActivity {
 				// TODO Auto-generated method stub
 				name = parent.getItemAtPosition(position).toString();
 				try {
-					//MainActivity.service.select(name);
 					Source source = MainActivity.getSource();
 					source.setSelectedUser(name);
 					Toast.makeText(getApplicationContext(),	"Вы выбрали " + parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();

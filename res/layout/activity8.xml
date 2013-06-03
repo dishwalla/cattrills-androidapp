@@ -8,29 +8,41 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Activity7" >
+    tools:context=".Activity8" >
 
+    <TextView
+        android:id="@+id/game_thequestionis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/game_writeanswer"
+        android:ems="10"
+        android:scrollbars="vertical"
+        android:textColor="#000000"
+        android:textIsSelectable="true"
+        android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/game_writequestion"
+        android:id="@+id/game_writeanswer"
         android:layout_width="193dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="52dp"
+        android:layout_below="@+id/game_thequestionis"
+        android:layout_marginTop="56dp"
         android:ems="10"
-        android:hint="@string/writeq_text_hint"
+        android:hint="@string/writea_text_hint"
         android:scrollbars="vertical"
         android:textColor="#000000"
         android:textSize="20sp" >
+
+        <requestFocus />
     </EditText>
 
     <Button
         android:id="@+id/game_commit"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/game_writequestion"
-        android:layout_below="@+id/game_writequestion"
-        android:layout_marginTop="18dp"
+        android:layout_alignLeft="@+id/game_writeanswer"
+        android:layout_below="@+id/game_writeanswer"
+        android:layout_marginTop="15dp"
         android:text="@string/commit_button" />
 
 </RelativeLayout>
