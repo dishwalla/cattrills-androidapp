@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Activity9" >
+
+    <TextView
+        android:id="@+id/game_resultsMes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:scrollbars="vertical"
+        android:textColor="#000000"
+        android:textIsSelectable="true"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/game_quit"
+        android:layout_width="284dp"
+        android:layout_height="36dp"
+        android:layout_above="@+id/game_quitn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:layout_weight="0.00" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="176dp"
+        android:layout_height="152dp"
+        android:layout_alignLeft="@+id/game_quit"
+        android:layout_below="@+id/game_resultsMes"
+        android:layout_marginTop="24dp" >
+    </ListView>
+
+    <Button
+        android:id="@+id/game_quity"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/game_quitn"
+        android:layout_alignBottom="@+id/game_quitn"
+        android:layout_alignLeft="@+id/game_quit"
+        android:text="@string/quity_button" />
+
+    <Button
+        android:id="@+id/game_quitn"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/game_resultsMes"
+        android:layout_marginBottom="34dp"
+        android:text="@string/quitn_button" />
+
+</RelativeLayout>

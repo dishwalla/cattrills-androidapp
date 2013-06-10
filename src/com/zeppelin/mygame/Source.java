@@ -4,8 +4,7 @@ public class Source {
 
 	protected String user;
 	protected String selectedUser;
-	protected String question;
-	protected String answer;
+	protected Integer activityChangeCount;
 
 	public String getUser() {
 		return user;
@@ -23,20 +22,13 @@ public class Source {
 		this.selectedUser = selectedUser;
 	}
 
-	public String getQuestion() {
-		return question;
+	public Integer getActivityChangeCount() {
+		return activityChangeCount;
 	}
 
-	public void setQuestion(String question) {
-		this.question = question;
+	public void setActivityChangeCount(Integer activityChangeCount) {
+		this.activityChangeCount = activityChangeCount;
 	}
 
-	public String getAnswer() {
-		return answer;
-	}
-
-	public void setAnswer(String answer) {
-		this.answer = answer;
-	}
 	
 }

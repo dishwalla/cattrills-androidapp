@@ -2,6 +2,7 @@ package service;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public interface CatTrillsClientService {
 	
@@ -17,7 +18,7 @@ public interface CatTrillsClientService {
 	
 	void putString(String str) throws Exception;
 	
-	String getEntireResult() throws IOException;
+	String getEntireResult() throws IOException, InterruptedException, ExecutionException;
 	
 	void goOn(String yn) throws Exception;
 	

@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Activity8 extends Activity implements OnClickListener {
+public class Activity12 extends Activity implements OnClickListener {
 
 	protected TextView questionIs;
 	protected EditText writeA;
@@ -21,11 +21,11 @@ public class Activity8 extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity8);
+		setContentView(R.layout.activity12);
 
 		Source source = MainActivity.getSource();
 		user = source.getSelectedUser();
-
+		
 		questionIs = (TextView)findViewById(R.id.game_thequestionis);
 		try {
 			answer =  MainActivity.service.getResponse();
@@ -53,22 +53,19 @@ public class Activity8 extends Activity implements OnClickListener {
 
 				MainActivity.service.putString(writeA.getText().toString()); //we're writing our answer
 				MainActivity.service.putString("\n");
-				String response = MainActivity.service.getResponse(); // write your que: (if inverse)
-				Source source = MainActivity.getSource(); 
-				Integer acc = source.getActivityChangeCount();
 				
-				if (acc == 1){
-					Intent intent4 = new Intent(Activity8.this, Activity9.class);
+				String response = MainActivity.service.getResponse(); 
+				if (response.contains(user)){
+					Intent intent4 = new Intent(Activity12.this, Activity9.class);
 					startActivity(intent4);
-					Activity8.this.finish();
+					Activity12.this.finish();
+					break;
 				}
 				else {
-					source.setActivityChangeCount(--acc);
-					Intent intent = new Intent(Activity8.this, Activity7.class);
-					startActivity(intent);
-					Activity8.this.finish();
-				}
-				break;
+				Intent intent = new Intent(Activity12.this, Activity7.class);
+				startActivity(intent);
+				Activity12.this.finish();
+				break;}
 			}
 			//}
 		}

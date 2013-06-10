@@ -13,43 +13,53 @@ public class Activity7 extends Activity implements OnClickListener {
 	protected EditText writeQ;
 	protected Button commit;
 	protected String question;
-
+	protected String user;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState){
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity7);
-		commit = (Button)findViewById(R.id.game_commit);
-		writeQ = (EditText)findViewById(R.id.game_writequestion);
-	
-		
+		commit = (Button) findViewById(R.id.game_commit);
+		writeQ = (EditText) findViewById(R.id.game_writequestion);
+
+		commit.setOnClickListener(this);
+
+		Source source = MainActivity.getSource();
+		user = source.getUser();
 	}
+
 	@Override
-	public void onClick(View v){
+	public void onClick(View v) {
 
-		try {	
-			switch (v.getId()) 
-			{
+		try {
+			switch (v.getId()) {
 			case R.id.game_commit:
-
-				MainActivity.service.putString(writeQ.getText().toString());
+				
+				MainActivity.service.putString(writeQ.getText().toString()); // We're
+																				// writing
+																				// our
+																				// question
 				MainActivity.service.putString("\n");
-				String response = MainActivity.service.getResponse();
-				if (response.contains("is")){
-				//	Source source = MainActivity.getSource();
-					//question = source.setQuestion(writeQ.getText().toString());
-					Intent intent = new Intent(Activity7.this, Activity8.class);
+
+				Source source = MainActivity.getSource();
+				Integer acc = source.getActivityChangeCount();
+
+				if (acc == 1) {
+					Intent intent = new Intent(Activity7.this, Activity9.class);
 					startActivity(intent);
 					Activity7.this.finish();
-					break;
+				} else {
+					source.setActivityChangeCount(--acc);
+					Intent intent2 = new Intent(Activity7.this, Activity8.class);
+					startActivity(intent2);
+					Activity7.this.finish();
 				}
+				break;
 			}
 		}
+
 		catch (Exception e) {
 			e.printStackTrace();
-		}	
+		}
 	}
 }
-
-
-

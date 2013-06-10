@@ -9,9 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Activity6 extends Activity implements OnClickListener{
+public class CopyOfActivity6 extends Activity implements OnClickListener{
 
-	protected TextView game_invite_sent;
+	protected TextView invalidNumber;
 	protected EditText questQuont;
 	protected Button Cancel;
 	protected Button Done;
@@ -20,14 +20,13 @@ public class Activity6 extends Activity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity6);
+		setContentView(R.layout.activity6_2);
 		Cancel = (Button)findViewById(R.id.game_cancel);
 		Done = (Button)findViewById(R.id.game_done);
 		Source source = MainActivity.getSource();
 		user = source.getSelectedUser();
-		game_invite_sent = (TextView)findViewById(R.id.game_invite_sent);
-		game_invite_sent.setText("User " + user + " accepted the game!");
 		questQuont = (EditText)findViewById(R.id.game_questquont);
+		invalidNumber = (TextView)findViewById(R.id.game_invalidnumber);
 
 		Cancel.setOnClickListener(this);
 		Done.setOnClickListener(this);
@@ -39,9 +38,9 @@ public class Activity6 extends Activity implements OnClickListener{
 			switch (v.getId()) 
 			{
 			case R.id.game_cancel:
-				Intent intent = new Intent(Activity6.this, Activity4.class);
+				Intent intent = new Intent(CopyOfActivity6.this, Activity4.class);
 				startActivity(intent);
-				Activity6.this.finish();
+				CopyOfActivity6.this.finish();
 				break;
 			case R.id.game_done:
 				MainActivity.service.putString(questQuont.getText().toString());
@@ -49,14 +48,13 @@ public class Activity6 extends Activity implements OnClickListener{
 
 				String response = MainActivity.service.getResponse(); //"Write your question:"
 				if (response.contains("question")){
-					Intent intent2 = new Intent(Activity6.this, Activity7.class);
+					Intent intent2 = new Intent(CopyOfActivity6.this, Activity7.class);
 					startActivity(intent2);
-					Activity6.this.finish(); 
+					CopyOfActivity6.this.finish(); 
 					Source source = MainActivity.getSource();
 					source.setActivityChangeCount(Integer.parseInt(questQuont.getText().toString())*2-1);}
-
 				else if (response.contains("valid")){
-					Intent intent3 = new Intent(Activity6.this, CopyOfActivity6.class); 
+					Intent intent3 = new Intent(CopyOfActivity6.this, CopyOfActivity6.class); 
 					startActivity(intent3);}
 			}
 

@@ -2,6 +2,7 @@ package impl;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import service.CatTrillsClientService;
 import android.os.AsyncTask;
@@ -120,15 +121,38 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 	}
 
 	@Override
-	public String getEntireResult() throws IOException {
-		// TODO Auto-generated method stub
-		return null;
+	public String getEntireResult() throws IOException, InterruptedException, ExecutionException {
+		
+		AsyncTask task = new AsyncTask(){
+			String res;
+			protected Object doInBackground(Object... arg0) {
+				try {
+					res = service.getEntireResult();
+					return res;
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				return res;
+			}
+	};
+		String h = (String) task.execute().get();
+		return h;
 	}
 
 	@Override
-	public void goOn(String yn) throws IOException {
-		// TODO Auto-generated method stub
-
+	public void goOn(final String yn) throws IOException, InterruptedException, ExecutionException {
+		AsyncTask task = new AsyncTask(){
+			@Override
+			protected Object doInBackground(Object... arg0) {
+				try {
+					service.goOn(yn);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				return null;
+			}
+		};
+		task.execute().get();
 	}
 
 	@Override

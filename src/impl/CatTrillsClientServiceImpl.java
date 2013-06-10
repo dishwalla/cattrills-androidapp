@@ -8,10 +8,10 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import com.zeppelin.mygame.MainActivity;
+import java.util.concurrent.ExecutionException;
 
 import service.CatTrillsClientService;
 
@@ -53,7 +53,8 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 		String response = getResponse();
 		String [] arr= response.split("\\s+");
 		getResponse();		// to eat Write command
-		return Arrays.asList(arr);
+		List newList = new ArrayList(Arrays.asList(arr));
+		return newList;
 	}
 
 	@Override
@@ -62,7 +63,7 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 		putString("\n");
 		putString(name);
 		putString("\n");
-		String response = getResponse();
+		String response = getResponse(); //reads "Client have been choosen"
 		if (response.contains("It's yours name") || response.contains("is busy") || response.contains("no such") || response.contains("Client rejected")){
 			return false;
 		}
@@ -76,9 +77,17 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 	}
 
 	@Override
-	public String getEntireResult() throws IOException{
+	public String getEntireResult() throws IOException, InterruptedException, ExecutionException {
 		String response = "";
 		String justRead = br.readLine();
+		while(!(justRead.contains("Write") || justRead.contains("Do you want"))){
+			response = response.concat(justRead + "\n");
+			justRead = br.readLine();
+		}
+		return response;
+		
+	}
+	
 	/*	do {
 		/*	byte [] arr = new byte[128];
 			is.read(arr);	
@@ -88,17 +97,10 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 			}
 			response = response.concat(justRead);
 		} while (is.available() != 0);*/
-		while(!(justRead.contains("Write") || justRead.contains("Do you want"))){
-			response = response.concat(justRead + "\n");
-			justRead = br.readLine();
-		}
-		return response;
-		
-	}
+	
 
 	@Override
 	public void putString(String str) throws Exception{
-		//wr.write(str + "\n");
 		wr.write(str);
 		wr.flush();
 	}
@@ -110,6 +112,7 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 
 	@Override//undone
 	public void goOn(String yn) throws Exception{
+		//String response = getResponse();
 		putString(yn);
 	}
 	
