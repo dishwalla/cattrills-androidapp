@@ -17,7 +17,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	protected Button Start;
 	protected Button history;
-	public enum Category { HISTORYSAVE, HISTORYNOTSAVE, LANGUAGEENG, LANGUAGERUS, LANGUAGEUKR, SOUNDSON, SOUNDSOFF; }
+	public enum Category { HISTORYSAVE, HISTORYNOTSAVE, LANGUAGEENG, LANGUAGERUS, LANGUAGEUKR, SOUNDSON, SOUNDSOFF, EXIT; }
 	private Category mCategory = Category.HISTORYSAVE;
 
 
@@ -82,6 +82,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		MenuItem languageUkr = menu.findItem(R.id.language_ukr);
 		MenuItem soundsOn = menu.findItem(R.id.sounds_on);
 		MenuItem soundsOff = menu.findItem(R.id.sounds_off);
+		MenuItem exit = menu.findItem(R.id.action_exit);
 
 		switch (mCategory)
 		{
@@ -92,6 +93,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case LANGUAGEUKR:           languageUkr.setChecked(true);           break;
 		case SOUNDSON:           soundsOn.setChecked(true);           break;
 		case SOUNDSOFF:           soundsOff.setChecked(true);           break;
+		case EXIT:           exit.setChecked(true);           break;
 		}
 
 		return true;
@@ -122,21 +124,30 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.history_save:            mCategory = Category.HISTORYSAVE; 
 		
 		
-		
-		
 		break;
 		case R.id.history_notsave: 
-			mCategory = Category.HISTORYNOTSAVE; break;
+			mCategory = Category.HISTORYNOTSAVE; 
+			break;
 		case R.id.language_eng: 
-			mCategory = Category.LANGUAGEENG; break;
+			mCategory = Category.LANGUAGEENG; 
+			break;
 		case R.id.language_rus:  
-			mCategory = Category.LANGUAGERUS; break;
+			mCategory = Category.LANGUAGERUS; 
+			break;
 		case R.id.language_ukr:  
-			mCategory = Category.LANGUAGEUKR; break;
+			mCategory = Category.LANGUAGEUKR; 
+			break;
 		case R.id.sounds_on:  
-			mCategory = Category.SOUNDSON; break;
+			mCategory = Category.SOUNDSON; 
+			break;
 		case R.id.sounds_off: 
-			mCategory = Category.SOUNDSOFF; break;
+			mCategory = Category.SOUNDSOFF; 
+			break;
+		case R.id.action_exit:
+			mCategory = Category.EXIT; 
+			android.os.Process.killProcess(android.os.Process.myPid());
+			super.onDestroy();
+			break; 
 		}
 
 		return super.onOptionsItemSelected(item);

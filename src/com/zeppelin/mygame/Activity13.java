@@ -8,7 +8,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class Activity7 extends Activity implements OnClickListener {
+public class Activity13 extends Activity implements OnClickListener {
 
 	protected EditText writeQ;
 	protected Button commit;
@@ -18,7 +18,7 @@ public class Activity7 extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity7);
+		setContentView(R.layout.activity13);
 		commit = (Button) findViewById(R.id.game_commit);
 		writeQ = (EditText) findViewById(R.id.game_writequestion);
 
@@ -45,14 +45,14 @@ public class Activity7 extends Activity implements OnClickListener {
 				Integer acc = source.getActivityChangeCount();
 
 				if (acc == 1) {
-					Intent intent = new Intent(Activity7.this, Activity9.class);
+					Intent intent = new Intent(Activity13.this, Activity9.class);
 					startActivity(intent);
-					Activity7.this.finish();
+					Activity13.this.finish();
 				} else {
 					source.setActivityChangeCount(--acc);
-					Intent intent2 = new Intent(Activity7.this, Activity8.class);
+					Intent intent2 = new Intent(Activity13.this, Activity12.class);
 					startActivity(intent2);
-					Activity7.this.finish();
+					Activity13.this.finish();
 				}
 				break;
 			}

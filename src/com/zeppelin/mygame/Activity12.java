@@ -14,7 +14,6 @@ public class Activity12 extends Activity implements OnClickListener {
 	protected TextView questionIs;
 	protected EditText writeA;
 	protected Button commit;
-	//protected String question;
 	protected String answer;
 	String user;
 
@@ -28,7 +27,7 @@ public class Activity12 extends Activity implements OnClickListener {
 		
 		questionIs = (TextView)findViewById(R.id.game_thequestionis);
 		try {
-			answer =  MainActivity.service.getResponse();
+			answer =  MainActivity.service.getResponse(); //The question is: re, write your answer
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -37,8 +36,6 @@ public class Activity12 extends Activity implements OnClickListener {
 		commit = (Button)findViewById(R.id.game_commit);
 		writeA = (EditText)findViewById(R.id.game_writeanswer);
 
-		//Source source = MainActivity.getSource();
-		//question = source.getQuestion();
 		commit.setOnClickListener(this);
 	}
 	@Override
@@ -48,26 +45,28 @@ public class Activity12 extends Activity implements OnClickListener {
 			switch (v.getId()) 
 			{
 			case R.id.game_commit:
-				//	String response = MainActivity.service.getResponse(); //The question is: , write your answer
-				//if (response.contains("answer")){
-
+			
 				MainActivity.service.putString(writeA.getText().toString()); //we're writing our answer
 				MainActivity.service.putString("\n");
+				String response = MainActivity.service.getResponse(); //Write your question: 
 				
-				String response = MainActivity.service.getResponse(); 
-				if (response.contains(user)){
+				Source source = MainActivity.getSource(); 
+				Integer acc = source.getActivityChangeCount();
+				
+				if (acc == 1){
 					Intent intent4 = new Intent(Activity12.this, Activity9.class);
 					startActivity(intent4);
 					Activity12.this.finish();
-					break;
 				}
 				else {
-				Intent intent = new Intent(Activity12.this, Activity7.class);
-				startActivity(intent);
-				Activity12.this.finish();
-				break;}
+					source.setActivityChangeCount(--acc);
+					Intent intent = new Intent(Activity12.this, Activity13.class);
+					startActivity(intent);
+					Activity12.this.finish();
+				}
+				break;
 			}
-			//}
+			
 		}
 		catch (Exception e) {
 			e.printStackTrace();

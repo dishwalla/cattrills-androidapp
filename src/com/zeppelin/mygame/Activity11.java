@@ -21,7 +21,6 @@ public class Activity11 extends Activity implements OnClickListener {
 
 		setContentView(R.layout.activity11);
 
-		// Connect interface elements to properties
 		accept = (Button)findViewById(R.id.game_accept);
 		reject = (Button)findViewById(R.id.game_reject);
 		invite = (TextView)findViewById(R.id.game_youreinvited);
@@ -29,7 +28,6 @@ public class Activity11 extends Activity implements OnClickListener {
 		user = source.getSelectedUser();
 		//	invite.setText("User "+ user + " invited you to play the game");
 		invite.setText("Some user invited you to play the game");
-		// Setup ClickListeners
 		accept.setOnClickListener(this);
 		reject.setOnClickListener(this);
 	}
@@ -57,7 +55,7 @@ Write command:*/
 					MainActivity.service.putString("y");
 					MainActivity.service.putString("\n");
 					String response = MainActivity.service.getResponse(); //You've accept the game, there will be 2 questions
-					Intent intent = new Intent(Activity11.this, Activity8.class);
+					Intent intent = new Intent(Activity11.this, Activity12.class);
 					startActivity(intent);
 					Activity11.this.finish();
 					break;}

@@ -36,9 +36,6 @@ public class Activity8 extends Activity implements OnClickListener {
 		questionIs.setText(answer);
 		commit = (Button)findViewById(R.id.game_commit);
 		writeA = (EditText)findViewById(R.id.game_writeanswer);
-
-		//Source source = MainActivity.getSource();
-		//question = source.getQuestion();
 		commit.setOnClickListener(this);
 	}
 	@Override
