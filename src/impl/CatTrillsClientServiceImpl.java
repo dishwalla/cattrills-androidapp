@@ -27,7 +27,7 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 
 	public void connect() throws Exception{
 		//InetAddress addr = InetAddress.getLocalHost();
-		InetAddress addr = InetAddress.getByName("192.168.1.100");
+		InetAddress addr = InetAddress.getByName("10.34.10.34");
 		int port = 1234;
 		this.serverSocket =	new Socket(addr, port);
 		this.is = serverSocket.getInputStream();
@@ -40,7 +40,7 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 	public boolean sendYourName(String name) throws Exception{
 		putString(name);
 		String response = getResponse();
-		if (response.contains("already exists")){
+		if (response.contains("already exists") || response.contains("space")){
 			return false;
 		}
 		return true;

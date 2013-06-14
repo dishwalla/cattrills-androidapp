@@ -7,9 +7,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
-public class Activity2 extends Activity implements OnClickListener{
+public class CopyOfActivity2_3 extends Activity implements OnClickListener{
 
+	protected TextView invalidName;
 	protected Button Cancel;
 	protected Button Done;
 	protected EditText yourName;
@@ -17,13 +19,15 @@ public class Activity2 extends Activity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity2);
+		setContentView(R.layout.activity2_3);
 
 		// Connect interface elements to properties
 		Cancel = (Button)findViewById(R.id.game_cancel);
 		Done = (Button)findViewById(R.id.game_done);
 		yourName = (EditText)findViewById(R.id.game_setyouname);
-
+		invalidName = (TextView)findViewById(R.id.game_invalidname);
+		invalidName.setText("You shouldn't put the space to your name, try again!");
+		
 		// Setup ClickListeners
 		Cancel.setOnClickListener(this);
 		Done.setOnClickListener(this);
@@ -35,39 +39,39 @@ public class Activity2 extends Activity implements OnClickListener{
 			switch (v.getId()) 
 			{
 			case R.id.game_cancel:
-				Intent intent = new Intent(Activity2.this, MainActivity.class);
+				Intent intent = new Intent(CopyOfActivity2_3.this, MainActivity.class);
 				startActivity(intent);
-				Activity2.this.finish();
+				CopyOfActivity2_3.this.finish();
 				break;
 
 			case R.id.game_done:
-				String response = MainActivity.service.getResponse();
-				if (response.contains("Write")){
+			//	String response = MainActivity.service.getResponse();
+			//	if (response.contains("Write")){
 
 					MainActivity.service.putString(yourName.getText().toString());
 					MainActivity.service.putString("\n");
-					response = MainActivity.service.getResponse();
+					String response = MainActivity.service.getResponse();
 					if (response.contains("already")){
-						Intent intent2 = new Intent(Activity2.this, CopyOfActivity2.class); 
+						Intent intent2 = new Intent(CopyOfActivity2_3.this, CopyOfActivity2_3.class); //do not work proper!!!
 						startActivity(intent2);
-						break;
+						CopyOfActivity2_3.this.finish();
 					} 
 					else if (response.contains("space")){
-						Intent intent2 = new Intent(Activity2.this, CopyOfActivity2_3.class); 
+						Intent intent2 = new Intent(CopyOfActivity2_3.this, CopyOfActivity2_3.class); 
 						startActivity(intent2);
 						break;
 					}
 					else {
-						Intent intent2 = new Intent(Activity2.this, Activity3.class);
-						//intent2.putExtra("username", yourName.getText().toString()); // в ключ username пихаем текст из текстового поля
+						Intent intent2 = new Intent(CopyOfActivity2_3.this, Activity3.class);
 						Source source = MainActivity.getSource();
 						source.setUser(yourName.getText().toString());
 						startActivity(intent2);
-						Activity2.this.finish();
-						break;
+						CopyOfActivity2_3.this.finish();
+						
 					}
+					break;
 				}
-			}
+			//}
 		}
 		catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -1,10 +1,16 @@
 package com.zeppelin.mygame;
 
 import impl.CatTrillsAsyncClientServiceImpl;
+
+import java.util.Locale;
+
 import service.CatTrillsClientService;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,7 +20,10 @@ import android.widget.Button;
 
 
 public class MainActivity extends Activity implements OnClickListener {
-
+	private SharedPreferences preferences;
+	private Locale locale;
+	private String lang;
+	
 	protected Button Start;
 	protected Button history;
 	public enum Category { HISTORYSAVE, HISTORYNOTSAVE, LANGUAGEENG, LANGUAGERUS, LANGUAGEUKR, SOUNDSON, SOUNDSOFF, EXIT; }
@@ -36,6 +45,15 @@ public class MainActivity extends Activity implements OnClickListener {
 		// Setup ClickListeners
 		Start.setOnClickListener(this);
 		history.setOnClickListener(this);
+
+		preferences = PreferenceManager.getDefaultSharedPreferences(this);
+		lang = preferences.getString("lang", "default");	
+		if (lang.equals("default")) {lang=getResources().getConfiguration().locale.getCountry();}
+		locale = new Locale(lang);
+		Locale.setDefault(locale);
+		Configuration config = new Configuration();
+		config.locale = locale;
+		getBaseContext().getResources().updateConfiguration(config, null);
 	}
 
 	public static Source getSource() {
@@ -98,12 +116,12 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		return true;
 	}
-	
-/*	public static BufferedWriter out;
+
+	/*	public static BufferedWriter out;
     private void createFileOnDevice(Boolean append) throws IOException {
             /*
-             * Function to initially create the log file and it also writes the time of creation to file.
-             
+	 * Function to initially create the log file and it also writes the time of creation to file.
+
             File Root = Environment.getExternalStorageDirectory();
             if(Root.canWrite()){
                  File  LogFile = new File(Root, "Log.txt");
@@ -113,7 +131,17 @@ public class MainActivity extends Activity implements OnClickListener {
                  out.write("Logged at" + String.valueOf(date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "\n"));
             }
         } 
-*/
+	 */
+	 @Override
+	    public void onConfigurationChanged(Configuration newConfig)
+	    {
+	        super.onConfigurationChanged(newConfig);
+	        locale = new Locale(lang);
+	        Locale.setDefault(locale);
+	        Configuration config = new Configuration();
+	        config.locale = locale;
+	        getBaseContext().getResources().updateConfiguration(config, null);     
+	    }	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
@@ -122,17 +150,25 @@ public class MainActivity extends Activity implements OnClickListener {
 		switch (item.getItemId())
 		{
 		case R.id.history_save:            mCategory = Category.HISTORYSAVE; 
-		
-		
+
+
 		break;
 		case R.id.history_notsave: 
 			mCategory = Category.HISTORYNOTSAVE; 
 			break;
 		case R.id.language_eng: 
 			mCategory = Category.LANGUAGEENG; 
+
 			break;
 		case R.id.language_rus:  
 			mCategory = Category.LANGUAGERUS; 
+			
+		//	   super.onConfigurationChanged(newConfig);
+		        locale = new Locale(lang);
+		        Locale.setDefault(locale);
+		        Configuration config = new Configuration();
+		        config.locale = locale;
+		        getBaseContext().getResources().updateConfiguration(config, null); 
 			break;
 		case R.id.language_ukr:  
 			mCategory = Category.LANGUAGEUKR; 

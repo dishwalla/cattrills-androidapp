@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cat Trills</string>
+    <string name="action_exit">Вихід</string>
+    <string name="start_button">Пуск</string>
+    <string name="settings_button">Налаштування</string>
+    <string name="history_button">Показати історію</string>
+    <string name="username_text_hint">Уведіть своє імя</string>
+    <string name="connect_button">"Підєднатись"</string>
+    <string name="wait_button">"Чекати запрошення до гри"</string>
+    <string name="cancel_button">"Відмінити"</string>
+    <string name="done_button">"Готово"</string>
+    <string name="stand_by_mode">"Ви в режимі очікування"</string>
+    <string name="invite_button">"Запрошення"</string>
+    <string name="stop_wait_button">"Не чекати більше"</string>
+    <string name="invite_sent">"Ваше запрошення було надіслано"</string>
+    <string name="qq_text_hint">"Уведіть кількість запитань:"</string>
+    <string name="commit_button">"Надіслати"</string>
+    <string name="writeq_text_hint">"Уведіть ваше запитання:"</string>
+    <string name="writea_text_hint">"Уведіть вашу відповіть:"</string>
+    <string name="quit_button">"Залишити гру"</string>
+    <string name="quity_button">"Так"</string>
+    <string name="quitn_button">"Ні</string>
+    <string name="accept_button">"Прийняти"</string>
+    <string name="reject_button">"Відхилити"</string>
+    <string name="check_button">"Перевірити"</string>
+    <string name="action_language">"Мова"</string>
+    <string name="action_sounds">"Звуки"</string>
+    <string name="action_history">"Історія"</string>
+    <string name="language_eng">"Англійська"</string>
+    <string name="language_ukr">"Українська"</string>
+    <string name="language_rus">"Російська"</string>
+    <string name="sounds_on">"Вмк"</string>
+    <string name="sounds_off">"Вимкн"</string>
+    <string name="history_save">"Зберігати"</string>
+    <string name="history_notsave">"Не зберігати"</string>
+    <string name="invalid_number">"Ви увели некорректну кількість, повторіть!"</string>
+</resources>

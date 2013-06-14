@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cat Trills</string>
+    <string name="action_exit">Выход</string>
+    <string name="start_button">Пуск</string>
+    <string name="settings_button">Настройки</string>
+    <string name="history_button">Посмотреть историю</string>
+    <string name="username_text_hint">Введите ваше имя</string>
+    <string name="connect_button">"Подключиться"</string>
+    <string name="wait_button">"Ждать приглашения"</string>
+    <string name="cancel_button">"Отмена"</string>
+    <string name="done_button">"Готово"</string>
+    <string name="stand_by_mode">"Вы в режиме ожидания"</string>
+    <string name="invite_button">"Invite"</string>
+    <string name="stop_wait_button">"Не ждать больше"</string>
+    <string name="invite_sent">"Ваше приглашение было отослано"</string>
+    <string name="qq_text_hint">"введите количество вопросов:"</string>
+    <string name="commit_button">"Отправить"</string>
+    <string name="writeq_text_hint">"Задайте ваш вопрос:"</string>
+    <string name="writea_text_hint">"Напишите ваш ответ:"</string>
+    <string name="quit_button">"Покинуть игру"</string>
+    <string name="quity_button">"Да"</string>
+    <string name="quitn_button">"Нет</string>
+    <string name="accept_button">"Принять"</string>
+    <string name="reject_button">"Отклонить"</string>
+    <string name="check_button">"Проверить"</string>
+    <string name="action_language">"Язык"</string>
+    <string name="action_sounds">"Звуки"</string>
+    <string name="action_history">"История"</string>
+    <string name="language_eng">"Английский"</string>
+    <string name="language_ukr">"Украинский"</string>
+    <string name="language_rus">"Русский"</string>
+    <string name="sounds_on">"Вкл"</string>
+    <string name="sounds_off">"Выкл"</string>
+    <string name="history_save">"Хранить"</string>
+    <string name="history_notsave">"Не хранить"</string>
+    <string name="invalid_number">"Вы ввели некорректное число, повторите попытку!"</string>
+</resources>

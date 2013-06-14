@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Activity4 extends Activity implements OnClickListener{
 
@@ -55,6 +56,9 @@ public class Activity4 extends Activity implements OnClickListener{
 							Intent intent = new Intent(Activity4.this, Activity11.class);
 							startActivity(intent);
 							Activity4.this.finish();
+						}
+						else {
+							Toast.makeText(getApplicationContext(),	"Still nothing", Toast.LENGTH_SHORT).show();
 						}
 
 				}catch (Exception e) {
