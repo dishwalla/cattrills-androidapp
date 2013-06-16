@@ -163,7 +163,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.language_rus:  
 			mCategory = Category.LANGUAGERUS; 
 			
-		//	   super.onConfigurationChanged(newConfig);
+	//		   super.onConfigurationChanged(newConfig);
 		        locale = new Locale(lang);
 		        Locale.setDefault(locale);
 		        Configuration config = new Configuration();

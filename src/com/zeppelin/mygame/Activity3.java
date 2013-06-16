@@ -14,6 +14,7 @@ public class Activity3 extends Activity implements OnClickListener {
 	protected Button Wait;
 	protected TextView yourNameView;
 	protected String user;
+	protected String one;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,8 @@ public class Activity3 extends Activity implements OnClickListener {
 		yourNameView = (TextView)findViewById(R.id.game_name);
 		Source source = MainActivity.getSource();
 		user = source.getUser();
-		yourNameView.setText("Hi, "+ user + "!");
+		one = getString(R.string.string_hello);
+		yourNameView.setText(one + user + "!");
 
 		// Setup ClickListeners
 		Connect.setOnClickListener(this);

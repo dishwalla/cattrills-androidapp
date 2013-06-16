@@ -12,20 +12,25 @@
     tools:context=".Activity6" >
 
     <TextView
-        android:id="@+id/game_invite_sent"
+        android:id="@+id/game_invite_sentmain"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:scrollbars="vertical"
-        android:textColor="#000000"
-        android:textIsSelectable="true"
-        android:textSize="20sp" />
+        android:layout_height="wrap_content" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/game_invite_sent2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignBaseline="@+id/game_invite_sentmain"
+        android:layout_alignBottom="@+id/game_invite_sentmain"
+        android:layout_centerHorizontal="true"
+        android:text="@string/string_accept"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/game_questquont"
         android:layout_width="193dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="52dp"
         android:ems="10"
         android:hint="@string/qq_text_hint"
@@ -35,19 +40,30 @@
     </EditText>
 
     <Button
-        android:id="@+id/game_cancel"
-        android:layout_width="141dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/game_questquont"
-        android:layout_below="@+id/game_questquont"
-        android:text="@string/cancel_button" />
-
-    <Button
         android:id="@+id/game_done"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/game_invite_sent"
-        android:layout_alignTop="@+id/game_cancel"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/game_questquont"
+        android:layout_marginTop="32dp"
         android:text="@string/done_button" />
+
+    <Button
+        android:id="@+id/game_cancel"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/game_done"
+        android:layout_alignBottom="@+id/game_done"
+        android:layout_alignLeft="@+id/game_questquont"
+        android:text="@string/cancel_button" />
+
+    <TextView
+        android:id="@+id/game_invite_sent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/game_invite_sentmain"
+        android:text="@string/string_user"
+        android:visibility="invisible" />
 
 </RelativeLayout>

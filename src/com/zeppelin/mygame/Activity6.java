@@ -12,6 +12,10 @@ import android.widget.TextView;
 public class Activity6 extends Activity implements OnClickListener{
 
 	protected TextView game_invite_sent;
+	protected String one;
+	protected String two;
+	protected TextView first;
+	protected TextView second;
 	protected EditText questQuont;
 	protected Button Cancel;
 	protected Button Done;
@@ -25,8 +29,12 @@ public class Activity6 extends Activity implements OnClickListener{
 		Done = (Button)findViewById(R.id.game_done);
 		Source source = MainActivity.getSource();
 		user = source.getSelectedUser();
-		game_invite_sent = (TextView)findViewById(R.id.game_invite_sent);
-		game_invite_sent.setText("User " + user + " accepted the game!");
+		first = (TextView)findViewById(R.id.game_invite_sent);
+		second = (TextView)findViewById(R.id.game_invite_sent2);
+		one = getString(R.string.string_user);
+		two = getString(R.string.string_accept);
+		game_invite_sent = (TextView)findViewById(R.id.game_invite_sentmain);
+		game_invite_sent.setText(one + user + two);
 		questQuont = (EditText)findViewById(R.id.game_questquont);
 
 		Cancel.setOnClickListener(this);

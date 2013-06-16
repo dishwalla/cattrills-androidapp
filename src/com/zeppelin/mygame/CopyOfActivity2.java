@@ -26,7 +26,7 @@ public class CopyOfActivity2 extends Activity implements OnClickListener{
 		Done = (Button)findViewById(R.id.game_done);
 		yourName = (EditText)findViewById(R.id.game_setyouname);
 		invalidName = (TextView)findViewById(R.id.game_invalidname);
-		invalidName.setText("This name already exists, choose another!");
+		invalidName.setText(getString(R.string.string_namebusy));
 		
 		// Setup ClickListeners
 		Cancel.setOnClickListener(this);

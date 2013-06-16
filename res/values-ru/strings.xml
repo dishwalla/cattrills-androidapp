@@ -6,7 +6,7 @@
     <string name="start_button">Пуск</string>
     <string name="settings_button">Настройки</string>
     <string name="history_button">Посмотреть историю</string>
-    <string name="username_text_hint">Введите ваше имя</string>
+    <string name="username_text_hint">Введите ваше имя:</string>
     <string name="connect_button">"Подключиться"</string>
     <string name="wait_button">"Ждать приглашения"</string>
     <string name="cancel_button">"Отмена"</string>
@@ -15,7 +15,8 @@
     <string name="invite_button">"Invite"</string>
     <string name="stop_wait_button">"Не ждать больше"</string>
     <string name="invite_sent">"Ваше приглашение было отослано"</string>
-    <string name="qq_text_hint">"введите количество вопросов:"</string>
+    <string name="invite_foryou">"Кто-то приглашает Вас в игру"</string>
+    <string name="qq_text_hint">"Введите количество вопросов:"</string>
     <string name="commit_button">"Отправить"</string>
     <string name="writeq_text_hint">"Задайте ваш вопрос:"</string>
     <string name="writea_text_hint">"Напишите ваш ответ:"</string>
@@ -36,4 +37,15 @@
     <string name="history_save">"Хранить"</string>
     <string name="history_notsave">"Не хранить"</string>
     <string name="invalid_number">"Вы ввели некорректное число, повторите попытку!"</string>
+    <string name="string_user">"Пользователь "</string>
+    <string name="string_accept">" принял игру!"</string>
+    <string name="string_reject">" отклонил игру!"</string>
+    <string name="string_hello">"Привет, "</string>
+    <string name="string_stillnot">"Пока ничего"</string>
+    <string name="string_choosepart">", выбери партнера!"</string>
+    <string name="string_dialog">"Весь диалог:"</string>
+    <string name="string_quit">"Хотите выйти?"</string>
+     <string name="string_space">"При выборе имени символ "пробел" не разрешен!"</string>
+       <string name="string_namebusy">"Это имя уже занято!"</string>
+
 </resources>

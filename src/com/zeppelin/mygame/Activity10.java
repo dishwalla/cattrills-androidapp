@@ -14,6 +14,8 @@ public class Activity10 extends Activity implements OnClickListener {
 	protected Button Wait;
 	protected TextView rejected;
 	protected String user;
+	protected String one;
+	protected String two;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,9 @@ public class Activity10 extends Activity implements OnClickListener {
 		rejected = (TextView)findViewById(R.id.game_rejected);
 		Source source = MainActivity.getSource();
 		user = source.getSelectedUser();
-		rejected.setText("User "+ user + " rejected the game");
+		one = getString(R.string.string_user);
+		two = getString(R.string.string_reject);
+		rejected.setText(one + user + two);
 
 		// Setup ClickListeners
 		Connect.setOnClickListener(this);

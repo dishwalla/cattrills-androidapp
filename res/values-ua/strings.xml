@@ -7,7 +7,7 @@
     <string name="settings_button">Налаштування</string>
     <string name="history_button">Показати історію</string>
     <string name="username_text_hint">Уведіть своє імя</string>
-    <string name="connect_button">"Підєднатись"</string>
+    <string name="connect_button">"Під'єднатись"</string>
     <string name="wait_button">"Чекати запрошення до гри"</string>
     <string name="cancel_button">"Відмінити"</string>
     <string name="done_button">"Готово"</string>
@@ -15,6 +15,7 @@
     <string name="invite_button">"Запрошення"</string>
     <string name="stop_wait_button">"Не чекати більше"</string>
     <string name="invite_sent">"Ваше запрошення було надіслано"</string>
+    <string name="invite_foryou">"Дехто запрошує Вас до гри"</string>
     <string name="qq_text_hint">"Уведіть кількість запитань:"</string>
     <string name="commit_button">"Надіслати"</string>
     <string name="writeq_text_hint">"Уведіть ваше запитання:"</string>
@@ -36,4 +37,15 @@
     <string name="history_save">"Зберігати"</string>
     <string name="history_notsave">"Не зберігати"</string>
     <string name="invalid_number">"Ви увели некорректну кількість, повторіть!"</string>
+    <string name="string_user">"Користувач "</string>
+    <string name="string_accept">" прийняв гру!"</string>
+    <string name="string_reject">" вiдхилив гру!"</string>
+    <string name="string_hello">"Привiт, "</string>
+    <string name="string_stillnot">"Поки що нiчого"</string>
+    <string name="string_choosepart">", обери пару для гри!"</string>
+    <string name="string_dialog">"Увесь дiалог:"</string>
+    <string name="string_quit">"Бажаєте вийти?"</string>
+        <string name="string_space">"При виборі імені, символ "пробіл" не використовуєть!"</string>
+          <string name="string_namebusy">"Це ім'я вже знаходиться у використанні!"</string>
+
 </resources>

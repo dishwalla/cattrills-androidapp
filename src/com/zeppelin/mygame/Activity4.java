@@ -22,7 +22,6 @@ public class Activity4 extends Activity implements OnClickListener{
 		setContentView(R.layout.activity4);
 
 		StandBy = (TextView)findViewById(R.id.game_stand_by);
-		StandBy.setText("You are in Stand By mode..");
 		Connect = (Button)findViewById(R.id.game_connect);
 		checkIt = (Button)findViewById(R.id.game_checkit);
 		Connect.setOnClickListener(this);
@@ -58,7 +57,7 @@ public class Activity4 extends Activity implements OnClickListener{
 							Activity4.this.finish();
 						}
 						else {
-							Toast.makeText(getApplicationContext(),	"Still nothing", Toast.LENGTH_SHORT).show();
+							Toast.makeText(getApplicationContext(),	getString(R.string.string_stillnot), Toast.LENGTH_SHORT).show();
 						}
 
 				}catch (Exception e) {

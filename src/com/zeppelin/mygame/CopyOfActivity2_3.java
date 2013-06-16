@@ -26,7 +26,7 @@ public class CopyOfActivity2_3 extends Activity implements OnClickListener{
 		Done = (Button)findViewById(R.id.game_done);
 		yourName = (EditText)findViewById(R.id.game_setyouname);
 		invalidName = (TextView)findViewById(R.id.game_invalidname);
-		invalidName.setText("You shouldn't put the space to your name, try again!");
+		invalidName.setText(getString(R.string.string_space));
 		
 		// Setup ClickListeners
 		Cancel.setOnClickListener(this);

@@ -27,7 +27,7 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 
 	public void connect() throws Exception{
 		//InetAddress addr = InetAddress.getLocalHost();
-		InetAddress addr = InetAddress.getByName("10.34.10.34");
+		InetAddress addr = InetAddress.getByName("192.168.1.100");
 		int port = 1234;
 		this.serverSocket =	new Socket(addr, port);
 		this.is = serverSocket.getInputStream();
@@ -53,8 +53,10 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 		String response = getResponse();
 		String [] arr= response.split("\\s+");
 		getResponse();		// to eat Write command
-		List newList = new ArrayList(Arrays.asList(arr));
+		List<String> newList = new ArrayList<String>(Arrays.asList(arr));
+		java.util.Collections.sort(newList);
 		return newList;
+		 
 	}
 
 	@Override

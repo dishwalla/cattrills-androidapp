@@ -1,6 +1,4 @@
 package com.zeppelin.mygame;
-
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -42,8 +40,8 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 		resultsMes = (TextView)findViewById(R.id.game_resultsMes);
 		quitPrompt = (TextView)findViewById(R.id.game_quit);
 
-		resultsMes.setText("Read Entire dialog!");
-		quitPrompt.setText("Do you wanna quit?");
+		resultsMes.setText(getString(R.string.string_dialog));
+		quitPrompt.setText(getString(R.string.string_quit));
 
 		quitY = (Button)findViewById(R.id.game_quity);
 		quitN = (Button)findViewById(R.id.game_quitn);
@@ -93,10 +91,12 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 				try {
 					MainActivity.service.putString("y");
 					MainActivity.service.putString("\n");
-					String response = MainActivity.service.getResponse();
-					Intent intent = new Intent(Activity9.this, MainActivity.class);
-					startActivity(intent);
-					Activity9.this.finish();
+				//	String response = MainActivity.service.getResponse();
+				//	Intent intent = new Intent(Activity9.this, MainActivity.class);
+				//	startActivity(intent);
+				//	Activity9.this.finish();
+					android.os.Process.killProcess(android.os.Process.myPid());
+					super.onDestroy();
 					break;}
 				catch (Exception e) {
 					e.printStackTrace();

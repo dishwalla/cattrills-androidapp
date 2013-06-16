@@ -27,7 +27,7 @@ public class Activity11 extends Activity implements OnClickListener {
 		Source source = MainActivity.getSource();
 		user = source.getSelectedUser();
 		//	invite.setText("User "+ user + " invited you to play the game");
-		invite.setText("Some user invited you to play the game");
+		//	invite.setText("Some user invited you to play the game");
 		accept.setOnClickListener(this);
 		reject.setOnClickListener(this);
 	}
@@ -46,6 +46,17 @@ You've been selected for game, would you participate? Y/N
 n
 Write command:*/
 
+	public int getAcc(String str){
+		int posOfBe = str.indexOf("be");
+		StringBuilder sb = new StringBuilder();
+		for (int i=(posOfBe+3); i<str.length(); i++){
+			if (str.charAt(i) != ' '){
+				sb.append(str.charAt(i));}
+			else break;
+		}
+		return Integer.parseInt(sb.toString());
+	}
+
 	public void onClick(View v) {
 		try {	
 			switch (v.getId()) 
@@ -55,7 +66,10 @@ Write command:*/
 					MainActivity.service.putString("y");
 					MainActivity.service.putString("\n");
 					String response = MainActivity.service.getResponse(); //You've accept the game, there will be 2 questions
-					Intent intent = new Intent(Activity11.this, Activity12.class);
+					Source source = MainActivity.getSource();
+					int acc = getAcc(response);
+					source.setActivityChangeCount(acc*2-1);
+					Intent intent = new Intent(Activity11.this, Activity8.class);
 					startActivity(intent);
 					Activity11.this.finish();
 					break;}

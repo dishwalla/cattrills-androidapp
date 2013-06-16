@@ -14,7 +14,6 @@ public class Activity8 extends Activity implements OnClickListener {
 	protected TextView questionIs;
 	protected EditText writeA;
 	protected Button commit;
-	//protected String question;
 	protected String answer;
 	String user;
 
