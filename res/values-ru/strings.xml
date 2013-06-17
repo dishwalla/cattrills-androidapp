@@ -45,7 +45,6 @@
     <string name="string_choosepart">", выбери партнера!"</string>
     <string name="string_dialog">"Весь диалог:"</string>
     <string name="string_quit">"Хотите выйти?"</string>
-     <string name="string_space">"При выборе имени символ "пробел" не разрешен!"</string>
-       <string name="string_namebusy">"Это имя уже занято!"</string>
+       <string name="string_namebusy">"Это имя уже используется, или содержит пробел, введите другое имя:"</string>
 
 </resources>

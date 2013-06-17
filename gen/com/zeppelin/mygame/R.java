@@ -31,13 +31,13 @@ public final class R {
         public static final int action_language=0x7f08001e;
         public static final int action_sounds=0x7f080022;
         public static final int game_accept=0x7f080004;
-        public static final int game_cancel=0x7f08000b;
+        public static final int game_cancel=0x7f08000c;
         public static final int game_checkit=0x7f080010;
         public static final int game_choose=0x7f080011;
         public static final int game_commit=0x7f080008;
         public static final int game_connect=0x7f080001;
-        public static final int game_done=0x7f08000c;
-        public static final int game_invalidname=0x7f08000d;
+        public static final int game_done=0x7f08000d;
+        public static final int game_invalidname=0x7f08000a;
         public static final int game_invalidnumber=0x7f080016;
         public static final int game_invite_sent=0x7f080015;
         public static final int game_invite_sent2=0x7f080013;
@@ -50,7 +50,7 @@ public final class R {
         public static final int game_reject=0x7f080005;
         public static final int game_rejected=0x7f080000;
         public static final int game_resultsMes=0x7f080017;
-        public static final int game_setyouname=0x7f08000a;
+        public static final int game_setyouname=0x7f08000b;
         public static final int game_showhistory=0x7f08001c;
         public static final int game_stand_by=0x7f08000f;
         public static final int game_start=0x7f08001b;
@@ -74,16 +74,15 @@ public final class R {
         public static final int activity13=0x7f030003;
         public static final int activity2=0x7f030004;
         public static final int activity2_2=0x7f030005;
-        public static final int activity2_3=0x7f030006;
-        public static final int activity3=0x7f030007;
-        public static final int activity4=0x7f030008;
-        public static final int activity5=0x7f030009;
-        public static final int activity6=0x7f03000a;
-        public static final int activity6_2=0x7f03000b;
-        public static final int activity7=0x7f03000c;
-        public static final int activity8=0x7f03000d;
-        public static final int activity9=0x7f03000e;
-        public static final int activity_main=0x7f03000f;
+        public static final int activity3=0x7f030006;
+        public static final int activity4=0x7f030007;
+        public static final int activity5=0x7f030008;
+        public static final int activity6=0x7f030009;
+        public static final int activity6_2=0x7f03000a;
+        public static final int activity7=0x7f03000b;
+        public static final int activity8=0x7f03000c;
+        public static final int activity9=0x7f03000d;
+        public static final int activity_main=0x7f03000e;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -126,10 +125,9 @@ public final class R {
         public static final int string_choosepart=0x7f05002a;
         public static final int string_dialog=0x7f05002b;
         public static final int string_hello=0x7f050028;
-        public static final int string_namebusy=0x7f05002e;
+        public static final int string_namebusy=0x7f05002d;
         public static final int string_quit=0x7f05002c;
         public static final int string_reject=0x7f050027;
-        public static final int string_space=0x7f05002d;
         public static final int string_stillnot=0x7f050029;
         public static final int string_user=0x7f050025;
         public static final int username_text_hint=0x7f050006;

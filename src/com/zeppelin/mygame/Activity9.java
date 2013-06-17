@@ -58,6 +58,7 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 			adapter = new ArrayAdapter<String>(this,
 					android.R.layout.simple_list_item_1, list);
 			entireResult.setAdapter(adapter);
+			saveResults(result, true);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -91,10 +92,6 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 				try {
 					MainActivity.service.putString("y");
 					MainActivity.service.putString("\n");
-				//	String response = MainActivity.service.getResponse();
-				//	Intent intent = new Intent(Activity9.this, MainActivity.class);
-				//	startActivity(intent);
-				//	Activity9.this.finish();
 					android.os.Process.killProcess(android.os.Process.myPid());
 					super.onDestroy();
 					break;}
@@ -122,43 +119,29 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 	}
 
 
-	public static void saveResults(Boolean append) throws IOException{
+	public static void saveResults(String s, Boolean append) throws IOException{
+
 		boolean flag = true;
 		while (flag){
 			String des = "y";
 			if (des == "y"){
 				try
 				{
-					String s = result;
-			
-					File Root = Environment.getExternalStorageDirectory();
-					if(Root.canWrite()){
-					File  LogFile = new File(Root, "Log.txt");
-				//	 File  LogFile = new File("/"+ "data/app", "Log.txt");
+					File Root = Environment.getExternalStorageDirectory(); 
+					File LogFile = new File(Root, "CatTrills_history.txt");
 						FileWriter LogWriter = new FileWriter(LogFile, append);
 						out = new BufferedWriter(LogWriter);
 						Date date = new Date();
-						out.write("Logged at" + String.valueOf(date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "\n"));
-						//    writer = new FileWriter(path,true); 
-						byte buf[]= result.getBytes();
+						out.write("Logged at: " + String.valueOf(date) + "\n");
+						byte buf[]= s.getBytes();
 
 						for (int i = 0; i < buf.length; i++){
 							out.write(buf[i]);
-
 						}
 						out.write("\n\n"); 
 						flag = false; 
 					}
-					/*    writer = new FileWriter(path,true); 
-					byte buf[]= s.getBytes();
-
-					for (int i = 0; i < buf.length; i++){
-						writer.write(buf[i]);
-
-					}
-					writer.write("\n\n"); 
-					flag = false; */
-				}
+			
 				catch(Exception e){
 					System.out.print(e.getMessage()); }
 				finally

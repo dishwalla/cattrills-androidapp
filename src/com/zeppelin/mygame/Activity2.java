@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Activity2 extends Activity implements OnClickListener{
 
@@ -23,7 +24,7 @@ public class Activity2 extends Activity implements OnClickListener{
 		Cancel = (Button)findViewById(R.id.game_cancel);
 		Done = (Button)findViewById(R.id.game_done);
 		yourName = (EditText)findViewById(R.id.game_setyouname);
-
+	
 		// Setup ClickListeners
 		Cancel.setOnClickListener(this);
 		Done.setOnClickListener(this);
@@ -50,13 +51,8 @@ public class Activity2 extends Activity implements OnClickListener{
 					if (response.contains("already")){
 						Intent intent2 = new Intent(Activity2.this, CopyOfActivity2.class); 
 						startActivity(intent2);
-						break;
+						Activity2.this.finish();
 					} 
-					else if (response.contains("space")){
-						Intent intent2 = new Intent(Activity2.this, CopyOfActivity2_3.class); 
-						startActivity(intent2);
-						break;
-					}
 					else {
 						Intent intent2 = new Intent(Activity2.this, Activity3.class);
 						//intent2.putExtra("username", yourName.getText().toString()); // в ключ username пихаем текст из текстового поля

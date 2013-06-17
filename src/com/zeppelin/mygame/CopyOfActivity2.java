@@ -45,9 +45,7 @@ public class CopyOfActivity2 extends Activity implements OnClickListener{
 				break;
 
 			case R.id.game_done:
-			//	String response = MainActivity.service.getResponse();
-			//	if (response.contains("Write")){
-
+		
 					MainActivity.service.putString(yourName.getText().toString());
 					MainActivity.service.putString("\n");
 					String response = MainActivity.service.getResponse();
@@ -66,7 +64,6 @@ public class CopyOfActivity2 extends Activity implements OnClickListener{
 					}
 					break;
 				}
-			//}
 		}
 		catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -11,7 +11,7 @@
     tools:context=".CopyOfActivity2.xml" >
 
     <TextView
-         android:id="@+id/game_invalidname"
+        android:id="@+id/game_invalidname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -20,33 +20,37 @@
         android:textIsSelectable="true"
         android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/game_setyouname"
-        android:layout_width="193dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="52dp"
-        android:ems="10"
-        android:hint="@string/username_text_hint"
-        android:scrollbars="vertical"
-        android:textColor="#000000"
-        android:textSize="20sp" >
-    </EditText>
-
     <Button
         android:id="@+id/game_cancel"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/game_setyouname"
-        android:layout_alignTop="@+id/game_done"
+        android:layout_below="@+id/game_setyouname"
         android:text="@string/cancel_button" />
 
     <Button
         android:id="@+id/game_done"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/game_setyouname"
+        android:layout_alignBaseline="@+id/game_cancel"
+        android:layout_alignBottom="@+id/game_cancel"
+        android:layout_alignRight="@+id/game_invalidname"
         android:text="@string/done_button" />
+
+    <EditText
+        android:id="@+id/game_setyouname"
+        android:layout_width="193dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/game_invalidname"
+        android:layout_below="@+id/game_invalidname"
+        android:layout_marginTop="38dp"
+        android:ems="10"
+        android:hint="@string/username_text_hint"
+        android:scrollbars="vertical"
+        android:textColor="#000000"
+        android:textSize="20sp" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

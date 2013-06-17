@@ -45,7 +45,6 @@
     <string name="string_choosepart">", обери пару для гри!"</string>
     <string name="string_dialog">"Увесь дiалог:"</string>
     <string name="string_quit">"Бажаєте вийти?"</string>
-        <string name="string_space">"При виборі імені, символ "пробіл" не використовуєть!"</string>
-          <string name="string_namebusy">"Це ім'я вже знаходиться у використанні!"</string>
+    <string name="string_namebusy">"Це ім'я вже знаходиться у використанні, або мiстить недозволений символ, спробуйте iнше ім'я:"</string>
 
 </resources>

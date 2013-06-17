@@ -26,25 +26,11 @@ public class Activity11 extends Activity implements OnClickListener {
 		invite = (TextView)findViewById(R.id.game_youreinvited);
 		Source source = MainActivity.getSource();
 		user = source.getSelectedUser();
-		//	invite.setText("User "+ user + " invited you to play the game");
+		invite.setText("User "+ user + " invited you to play the game");
 		//	invite.setText("Some user invited you to play the game");
 		accept.setOnClickListener(this);
 		reject.setOnClickListener(this);
 	}
-
-	/* You've been selected for game, would you participate? Y/N
-y
-You've accept the game, there will be 2 questions
-The question is: xffò, write your answer
-gyhjg ghj
-Write your question: 
-fghf gfgh
-The question is: ñðîêè, write your answer
-
-
-You've been selected for game, would you participate? Y/N
-n
-Write command:*/
 
 	public int getAcc(String str){
 		int posOfBe = str.indexOf("be");

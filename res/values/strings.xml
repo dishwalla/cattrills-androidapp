@@ -46,7 +46,6 @@
     <string name="string_choosepart">", choose your partner!"</string>
     <string name="string_dialog">"Read Entire dialog:"</string>
     <string name="string_quit">"Do you want to quit?"</string>
-    <string name="string_space">"You shouldn't put the space to your name, try again!"</string>
-    <string name="string_namebusy">"This name already exists, choose another!"</string>
+    <string name="string_namebusy">"This name already exists, or contains "space", choose another:"</string>
 
 </resources>
