@@ -59,7 +59,7 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 					android.R.layout.simple_list_item_1, list);
 			entireResult.setAdapter(adapter);
 			saveResults(result, true);
-			
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -85,7 +85,6 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		try {	
-			//	String response = MainActivity.service.getResponse();
 			switch (v.getId()) 
 			{
 			case R.id.game_quity:
@@ -120,43 +119,45 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 
 
 	public static void saveResults(String s, Boolean append) throws IOException{
+		Source source = MainActivity.getSource();
+		if (source.isSaveHistory()){
+			//	boolean flag = true;
+			//	while (flag){
+			//	String des = "y";
+			//	if (des == "y"){
+			try
+			{
+				File Root = Environment.getExternalStorageDirectory(); 
+				File LogFile = new File(Root, "CatTrills_history.txt");
+				FileWriter LogWriter = new FileWriter(LogFile, append);
+				out = new BufferedWriter(LogWriter);
+				Date date = new Date();
+				out.write("Logged at: " + String.valueOf(date) + "\n");
+				byte buf[]= s.getBytes();
 
-		boolean flag = true;
-		while (flag){
-			String des = "y";
-			if (des == "y"){
-				try
-				{
-					File Root = Environment.getExternalStorageDirectory(); 
-					File LogFile = new File(Root, "CatTrills_history.txt");
-						FileWriter LogWriter = new FileWriter(LogFile, append);
-						out = new BufferedWriter(LogWriter);
-						Date date = new Date();
-						out.write("Logged at: " + String.valueOf(date) + "\n");
-						byte buf[]= s.getBytes();
-
-						for (int i = 0; i < buf.length; i++){
-							out.write(buf[i]);
-						}
-						out.write("\n\n"); 
-						flag = false; 
-					}
-			
-				catch(Exception e){
-					System.out.print(e.getMessage()); }
-				finally
-				{
-					try{
-						out.close();
-						flag = false;
-					}catch(IOException e)
-					{System.out.print(e.getMessage()); }
+				for (int i = 0; i < buf.length; i++){
+					out.write(buf[i]);
 				}
+				out.write("\n\n"); 
+				//		flag = false; 
 			}
-			else if(des == "n"){
-				flag = false;	
+
+			catch(Exception e){
+				System.out.print(e.getMessage()); }
+			finally
+			{
+				try{
+					out.close();
+					//	flag = false;
+				}catch(IOException e)
+				{System.out.print(e.getMessage()); }
 			}
 		}
+		//	else if(des == "n"){
+		//		flag = false;	
+		//}
+		//	}
+		//	}
 	}
 
 }

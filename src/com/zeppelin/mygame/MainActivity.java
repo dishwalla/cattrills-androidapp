@@ -2,14 +2,21 @@ package com.zeppelin.mygame;
 
 import impl.CatTrillsAsyncClientServiceImpl;
 
+import java.io.File;
 import java.util.Locale;
 
 import service.CatTrillsClientService;
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,14 +27,22 @@ import android.widget.Button;
 
 
 public class MainActivity extends Activity implements OnClickListener {
+	PendingIntent intent;
 	private SharedPreferences preferences;
 	private Locale locale;
+	//	private Locale locale2 = new Locale("ru");
+	//	private Locale locale3 = new Locale("ua"); 
 	private String lang;
-	
+	private String hist;
+	private String sound;
+	//	private Locale locale = null;
+
 	protected Button Start;
 	protected Button history;
 	public enum Category { HISTORYSAVE, HISTORYNOTSAVE, LANGUAGEENG, LANGUAGERUS, LANGUAGEUKR, SOUNDSON, SOUNDSOFF, EXIT; }
-	private Category mCategory = Category.HISTORYSAVE;
+	private Category hCategory = Category.HISTORYSAVE;
+	private Category lCategory = Category.LANGUAGEENG;
+	private Category sCategory = Category.SOUNDSON;
 
 
 	public static Source source = new Source();
@@ -41,13 +56,15 @@ public class MainActivity extends Activity implements OnClickListener {
 		// Connect interface elements to properties
 		Start = (Button)findViewById(R.id.game_start);
 		history = (Button)findViewById(R.id.game_showhistory);
-
 		// Setup ClickListeners
 		Start.setOnClickListener(this);
 		history.setOnClickListener(this);
 
 		preferences = PreferenceManager.getDefaultSharedPreferences(this);
 		lang = preferences.getString("lang", "default");	
+		hist = preferences.getString("hist", "default");
+		sound = preferences.getString("sound", "default");
+
 		if (lang.equals("default")) {lang=getResources().getConfiguration().locale.getCountry();}
 		locale = new Locale(lang);
 		Locale.setDefault(locale);
@@ -66,7 +83,6 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		//	if (v == Start){
 		try {
 			switch (v.getId()) 
 			{
@@ -78,7 +94,15 @@ public class MainActivity extends Activity implements OnClickListener {
 
 				break;
 			case R.id.game_showhistory:
+				File Root = Environment.getExternalStorageDirectory(); 
+				File f = new File(Root, "CatTrills_history.txt");
+				Intent i = new Intent();
+				i.setAction(android.content.Intent.ACTION_VIEW);
+				i.setDataAndType(Uri.fromFile(f), "text/plain");
+				startActivity(i);
+				break;
 			}		
+
 		} 
 		catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -86,10 +110,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 	}
 
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
-		// If you are using ActionBarSherlock, call getSupportMenuInflater() instead
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
 
@@ -100,48 +124,35 @@ public class MainActivity extends Activity implements OnClickListener {
 		MenuItem languageUkr = menu.findItem(R.id.language_ukr);
 		MenuItem soundsOn = menu.findItem(R.id.sounds_on);
 		MenuItem soundsOff = menu.findItem(R.id.sounds_off);
-		MenuItem exit = menu.findItem(R.id.action_exit);
+		//	MenuItem exit = menu.findItem(R.id.action_exit);
 
-		switch (mCategory)
+		switch (hCategory)
 		{
 		case HISTORYSAVE: historySave.setChecked(true);	break;
 		case HISTORYNOTSAVE: historyNotsave.setChecked(true);           break;
+		}
+		switch (lCategory) {
 		case LANGUAGEENG:           languageEng.setChecked(true);           break;
 		case LANGUAGERUS:           languageRus.setChecked(true);           break;
 		case LANGUAGEUKR:           languageUkr.setChecked(true);           break;
+		}
+		switch (sCategory) {
 		case SOUNDSON:           soundsOn.setChecked(true);           break;
 		case SOUNDSOFF:           soundsOff.setChecked(true);           break;
-		case EXIT:           exit.setChecked(true);           break;
 		}
-
 		return true;
 	}
 
-	/*	public static BufferedWriter out;
-    private void createFileOnDevice(Boolean append) throws IOException {
-            /*
-	 * Function to initially create the log file and it also writes the time of creation to file.
-
-            File Root = Environment.getExternalStorageDirectory();
-            if(Root.canWrite()){
-                 File  LogFile = new File(Root, "Log.txt");
-                 FileWriter LogWriter = new FileWriter(LogFile, append);
-                 out = new BufferedWriter(LogWriter);
-                 Date date = new Date();
-                 out.write("Logged at" + String.valueOf(date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "\n"));
-            }
-        } 
-	 */
-	 @Override
-	    public void onConfigurationChanged(Configuration newConfig)
-	    {
-	        super.onConfigurationChanged(newConfig);
-	        locale = new Locale(lang);
-	        Locale.setDefault(locale);
-	        Configuration config = new Configuration();
-	        config.locale = locale;
-	        getBaseContext().getResources().updateConfiguration(config, null);     
-	    }	
+	/*	@Override
+	public void onConfigurationChanged(Configuration newConfig)
+	{
+		super.onConfigurationChanged(newConfig);
+		locale = new Locale(lang);
+		Locale.setDefault(locale);
+		Configuration config = new Configuration();
+		config.locale = locale;
+		getBaseContext().getResources().updateConfiguration(config, null);     
+	}	*/
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
@@ -149,38 +160,58 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		switch (item.getItemId())
 		{
-		case R.id.history_save:            mCategory = Category.HISTORYSAVE; 
-
-
-		break;
+		case R.id.history_save:          
+			hCategory = Category.HISTORYSAVE; 
+			Source source = MainActivity.getSource();
+			source.setSaveHistory(true);
+			return true;
+			//break;
 		case R.id.history_notsave: 
-			mCategory = Category.HISTORYNOTSAVE; 
-			break;
+			hCategory = Category.HISTORYNOTSAVE;
+			source = MainActivity.getSource();
+			source.setSaveHistory(false);
+			return true;
+			//break;
 		case R.id.language_eng: 
-			mCategory = Category.LANGUAGEENG; 
-
-			break;
+			lCategory = Category.LANGUAGEENG; 
+			Locale locale = new Locale("en");
+			Locale.setDefault(locale);
+			Configuration config = new Configuration();
+			config.locale = locale;
+			getBaseContext().getResources().updateConfiguration(config, null); 
+			return true;
 		case R.id.language_rus:  
-			mCategory = Category.LANGUAGERUS; 
-			
-	//		   super.onConfigurationChanged(newConfig);
-		        locale = new Locale(lang);
-		        Locale.setDefault(locale);
-		        Configuration config = new Configuration();
-		        config.locale = locale;
-		        getBaseContext().getResources().updateConfiguration(config, null); 
-			break;
+			lCategory = Category.LANGUAGERUS; 
+			Locale locale2 = new Locale("ru");
+			Locale.setDefault(locale2);
+			Configuration config2 = new Configuration();
+			config2.locale = locale2;
+			getBaseContext().getResources().updateConfiguration(config2, null); 
+			return true;
 		case R.id.language_ukr:  
-			mCategory = Category.LANGUAGEUKR; 
-			break;
+			lCategory = Category.LANGUAGEUKR; 
+			Locale locale3 = new Locale("ua");
+			Locale.setDefault(locale3);
+			Configuration config3 = new Configuration();
+			config3.locale = locale3;
+			getBaseContext().getResources().updateConfiguration(config3, null); 
+			//	Toast.makeText(getApplicationContext(),	"Restart!" Toast.LENGTH_SHORT).show();
+			intent = PendingIntent.getActivity(getApplicationContext(), 0,
+					new Intent(getIntent()), 0);
+			AlarmManager mgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+			mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 1000, intent);
+			System.exit(1);
+			return true;
+
 		case R.id.sounds_on:  
-			mCategory = Category.SOUNDSON; 
-			break;
+			sCategory = Category.SOUNDSON; 
+			//break;
+			return true;
 		case R.id.sounds_off: 
-			mCategory = Category.SOUNDSOFF; 
-			break;
+			sCategory = Category.SOUNDSOFF; 
+			//break;
+			return true;
 		case R.id.action_exit:
-			mCategory = Category.EXIT; 
 			android.os.Process.killProcess(android.os.Process.myPid());
 			super.onDestroy();
 			break; 
@@ -188,5 +219,17 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		return super.onOptionsItemSelected(item);
 	}
+	/*	@Override
+	public void onConfigurationChanged(Configuration newConfig)
+	{
+		super.onConfigurationChanged(newConfig);
+		if (locale != null)
+		{
+			newConfig.locale = locale;
+			Locale.setDefault(locale);
+			getBaseContext().getResources().updateConfiguration(newConfig, getBaseContext().getResources().getDisplayMetrics());
+		}
+	}*/
+
 
 }

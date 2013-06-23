@@ -45,6 +45,11 @@
     <string name="string_choosepart">", выбери партнера!"</string>
     <string name="string_dialog">"Весь диалог:"</string>
     <string name="string_quit">"Хотите выйти?"</string>
-       <string name="string_namebusy">"Это имя уже используется, или содержит пробел, введите другое имя:"</string>
+    <string name="string_namebusy">"Это имя уже используется, или содержит пробел, введите другое имя:"</string>
+    <string name="Restart">Перезапуск</string>
+    <string name="LangTitle">Язык</string>
+    <string name="LangDialogTitle">Выберите язык:</string>
+    <string name="LangSummary">Язык приложения.\nНеобходимо перезапустить приложение для принятия изменений.</string>
+    <string name="pref_locale">"?"</string>
 
 </resources>

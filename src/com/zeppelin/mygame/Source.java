@@ -1,10 +1,21 @@
 package com.zeppelin.mygame;
 
+
 public class Source {
 
 	protected String user;
 	protected String selectedUser;
 	protected Integer activityChangeCount;
+	protected boolean saveHistory;
+	
+
+	public boolean isSaveHistory() {
+		return saveHistory;
+	}
+
+	public void setSaveHistory(boolean saveHistory) {
+		this.saveHistory = saveHistory;
+	}
 
 	public String getUser() {
 		return user;

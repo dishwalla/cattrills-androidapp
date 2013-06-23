@@ -46,5 +46,10 @@
     <string name="string_dialog">"Увесь дiалог:"</string>
     <string name="string_quit">"Бажаєте вийти?"</string>
     <string name="string_namebusy">"Це ім'я вже знаходиться у використанні, або мiстить недозволений символ, спробуйте iнше ім'я:"</string>
+    <string name="Restart">Перезапуск</string>
+    <string name="LangTitle">Мова</string>
+    <string name="LangDialogTitle">Оберыть мову:</string>
+    <string name="LangSummary">Язык приложения.\nНеобходимо перезапустить приложение для принятия изменений.</string>
+    <string name="pref_locale">"?"</string>
 
 </resources>

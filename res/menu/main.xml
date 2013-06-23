@@ -1,15 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
+    
     <item
         android:id="@+id/action_exit"
         android:orderInCategory="100"
-        android:showAsAction="never"
+        android:showAsAction="ifRoom"
         android:title="@string/action_exit"/>
     <item
+        android:key="lang"
         android:id="@+id/action_language"
-        android:showAsAction="never"
+        android:showAsAction="ifRoom"
         android:title="@string/action_language">
         <menu>
+            
             <group android:checkableBehavior="single" >
                 <item
                     android:id="@+id/language_eng"
@@ -25,7 +27,7 @@
     </item>
     <item
         android:id="@+id/action_sounds"
-        android:showAsAction="never"
+        android:showAsAction="ifRoom"
         android:title="@string/action_sounds">
         <menu>
             <group android:checkableBehavior="single" >
@@ -40,16 +42,18 @@
     </item>
     <item
         android:id="@+id/action_history"
-        android:showAsAction="never"
+        android:showAsAction="ifRoom"
         android:title="@string/action_history">
         <menu>
-            <group android:checkableBehavior="single">
-                <item android:id="@+id/history_save"
-                     android:title="@string/history_save"/>
-                <item android:id="@+id/history_notsave"
+            <group android:checkableBehavior="single" >
+                <item
+                    android:id="@+id/history_save"
+                    android:title="@string/history_save"/>
+                <item
+                    android:id="@+id/history_notsave"
                     android:title="@string/history_notsave"/>
             </group>
         </menu>
     </item>
-
+  <PreferenceScreen android:title="@string/Restart" android:key="restart"></PreferenceScreen>
 </menu>

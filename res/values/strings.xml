@@ -47,5 +47,10 @@
     <string name="string_dialog">"Read Entire dialog:"</string>
     <string name="string_quit">"Do you want to quit?"</string>
     <string name="string_namebusy">"This name already exists, or contains "space", choose another:"</string>
+    <string name="Restart">Restart</string>
+    <string name="LangTitle">Language</string>
+    <string name="LangDialogTitle">Choose language:</string>
+    <string name="LangSummary">Application language.\nNeed restart application to apply changes.</string>
+    <string name="pref_locale">"?"</string>
 
 </resources>
