@@ -30,6 +30,7 @@
     <string name="action_language">"Language"</string>
     <string name="action_sounds">"Sounds"</string>
     <string name="action_history">"History"</string>
+    <string name="language_def">"Default"</string>
     <string name="language_eng">"English"</string>
     <string name="language_ukr">"Ukrainian"</string>
     <string name="language_rus">"Russian"</string>

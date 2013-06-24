@@ -27,9 +27,9 @@ public final class R {
     }
     public static final class id {
         public static final int action_exit=0x7f09001e;
-        public static final int action_history=0x7f090026;
+        public static final int action_history=0x7f090027;
         public static final int action_language=0x7f09001f;
-        public static final int action_sounds=0x7f090023;
+        public static final int action_sounds=0x7f090024;
         public static final int game_accept=0x7f090004;
         public static final int game_cancel=0x7f09000c;
         public static final int game_checkit=0x7f090010;
@@ -60,13 +60,14 @@ public final class R {
         public static final int game_writeanswer=0x7f090007;
         public static final int game_writequestion=0x7f090009;
         public static final int game_youreinvited=0x7f090003;
-        public static final int history_notsave=0x7f090028;
-        public static final int history_save=0x7f090027;
-        public static final int language_eng=0x7f090020;
-        public static final int language_rus=0x7f090022;
-        public static final int language_ukr=0x7f090021;
-        public static final int sounds_off=0x7f090025;
-        public static final int sounds_on=0x7f090024;
+        public static final int history_notsave=0x7f090029;
+        public static final int history_save=0x7f090028;
+        public static final int language_def=0x7f090020;
+        public static final int language_eng=0x7f090021;
+        public static final int language_rus=0x7f090023;
+        public static final int language_ukr=0x7f090022;
+        public static final int sounds_off=0x7f090026;
+        public static final int sounds_on=0x7f090025;
     }
     public static final class layout {
         public static final int activity10=0x7f030000;
@@ -89,10 +90,10 @@ public final class R {
         public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int LangDialogTitle=0x7f060030;
-        public static final int LangSummary=0x7f060031;
-        public static final int LangTitle=0x7f06002f;
-        public static final int Restart=0x7f06002e;
+        public static final int LangDialogTitle=0x7f060031;
+        public static final int LangSummary=0x7f060032;
+        public static final int LangTitle=0x7f060030;
+        public static final int Restart=0x7f06002f;
         public static final int accept_button=0x7f060017;
         public static final int action_exit=0x7f060001;
         public static final int action_history=0x7f06001c;
@@ -106,36 +107,37 @@ public final class R {
         public static final int connect_button=0x7f060007;
         public static final int done_button=0x7f06000a;
         public static final int history_button=0x7f060005;
-        public static final int history_notsave=0x7f060023;
-        public static final int history_save=0x7f060022;
-        public static final int invalid_number=0x7f060024;
+        public static final int history_notsave=0x7f060024;
+        public static final int history_save=0x7f060023;
+        public static final int invalid_number=0x7f060025;
         public static final int invite_button=0x7f06000c;
         public static final int invite_foryou=0x7f06000f;
         public static final int invite_sent=0x7f06000e;
-        public static final int language_eng=0x7f06001d;
-        public static final int language_rus=0x7f06001f;
-        public static final int language_ukr=0x7f06001e;
-        public static final int pref_locale=0x7f060032;
+        public static final int language_def=0x7f06001d;
+        public static final int language_eng=0x7f06001e;
+        public static final int language_rus=0x7f060020;
+        public static final int language_ukr=0x7f06001f;
+        public static final int pref_locale=0x7f060033;
         public static final int qq_text_hint=0x7f060010;
         public static final int quit_button=0x7f060014;
         public static final int quitn_button=0x7f060016;
         public static final int quity_button=0x7f060015;
         public static final int reject_button=0x7f060018;
         public static final int settings_button=0x7f060004;
-        public static final int sounds_off=0x7f060021;
-        public static final int sounds_on=0x7f060020;
+        public static final int sounds_off=0x7f060022;
+        public static final int sounds_on=0x7f060021;
         public static final int stand_by_mode=0x7f06000b;
         public static final int start_button=0x7f060003;
         public static final int stop_wait_button=0x7f06000d;
-        public static final int string_accept=0x7f060026;
-        public static final int string_choosepart=0x7f06002a;
-        public static final int string_dialog=0x7f06002b;
-        public static final int string_hello=0x7f060028;
-        public static final int string_namebusy=0x7f06002d;
-        public static final int string_quit=0x7f06002c;
-        public static final int string_reject=0x7f060027;
-        public static final int string_stillnot=0x7f060029;
-        public static final int string_user=0x7f060025;
+        public static final int string_accept=0x7f060027;
+        public static final int string_choosepart=0x7f06002b;
+        public static final int string_dialog=0x7f06002c;
+        public static final int string_hello=0x7f060029;
+        public static final int string_namebusy=0x7f06002e;
+        public static final int string_quit=0x7f06002d;
+        public static final int string_reject=0x7f060028;
+        public static final int string_stillnot=0x7f06002a;
+        public static final int string_user=0x7f060026;
         public static final int username_text_hint=0x7f060006;
         public static final int wait_button=0x7f060008;
         public static final int writea_text_hint=0x7f060013;

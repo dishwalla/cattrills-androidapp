@@ -29,6 +29,7 @@
     <string name="action_language">"Язык"</string>
     <string name="action_sounds">"Звуки"</string>
     <string name="action_history">"История"</string>
+     <string name="language_def">"Язык аппарата"</string>
     <string name="language_eng">"Английский"</string>
     <string name="language_ukr">"Украинский"</string>
     <string name="language_rus">"Русский"</string>

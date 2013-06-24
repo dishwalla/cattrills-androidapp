@@ -29,6 +29,7 @@
     <string name="action_language">"Мова"</string>
     <string name="action_sounds">"Звуки"</string>
     <string name="action_history">"Історія"</string>
+     <string name="language_def">"За змовчуванням"</string>
     <string name="language_eng">"Англійська"</string>
     <string name="language_ukr">"Українська"</string>
     <string name="language_rus">"Російська"</string>

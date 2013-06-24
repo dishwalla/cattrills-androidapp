@@ -1,18 +1,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    
+
     <item
         android:id="@+id/action_exit"
         android:orderInCategory="100"
         android:showAsAction="ifRoom"
         android:title="@string/action_exit"/>
     <item
-        android:key="lang"
         android:id="@+id/action_language"
+        android:key="lang"
         android:showAsAction="ifRoom"
         android:title="@string/action_language">
         <menu>
-            
             <group android:checkableBehavior="single" >
+                <item
+                    android:id="@+id/language_def"
+                    android:title="@string/language_def"/>
                 <item
                     android:id="@+id/language_eng"
                     android:title="@string/language_eng"/>
@@ -55,5 +57,10 @@
             </group>
         </menu>
     </item>
-  <PreferenceScreen android:title="@string/Restart" android:key="restart"></PreferenceScreen>
+
+    <PreferenceScreen
+        android:key="restart"
+        android:title="@string/Restart" >
+    </PreferenceScreen>
+
 </menu>
