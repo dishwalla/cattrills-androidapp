@@ -5,7 +5,9 @@ public class Source {
 
 	protected String user;
 	protected String selectedUser;
+	protected String inviter;
 	protected Integer activityChangeCount;
+	protected Integer iterations;
 	protected boolean saveHistory;
 	
 
@@ -39,6 +41,22 @@ public class Source {
 
 	public void setActivityChangeCount(Integer activityChangeCount) {
 		this.activityChangeCount = activityChangeCount;
+	}
+
+	public String getInviter() {
+		return inviter;
+	}
+
+	public void setInviter(String inviter) {
+		this.inviter = inviter;
+	}
+
+	public Integer getIterations() {
+		return iterations;
+	}
+
+	public void setIterations(Integer iterations) {
+		this.iterations = iterations;
 	}
 
 	

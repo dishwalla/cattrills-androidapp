@@ -38,7 +38,7 @@ public class CopyOfActivity6 extends Activity implements OnClickListener{
 			switch (v.getId()) 
 			{
 			case R.id.game_cancel:
-				Intent intent = new Intent(CopyOfActivity6.this, Activity4.class);
+				Intent intent = new Intent(CopyOfActivity6.this, CopyOfActivity6.class);
 				startActivity(intent);
 				CopyOfActivity6.this.finish();
 				break;

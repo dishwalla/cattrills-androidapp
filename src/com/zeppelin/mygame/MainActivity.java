@@ -245,7 +245,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			Configuration config4 = new Configuration();
 			config4.locale = locale;
 			getBaseContext().getResources().updateConfiguration(config4, null); 
-			System.exit(1);
+		//	System.exit(1);
 			return true;
 		case R.id.language_eng: 
 			lCategory = Category.LANGUAGEENG; 
@@ -254,7 +254,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			Configuration config = new Configuration();
 			config.locale = locale;
 			getBaseContext().getResources().updateConfiguration(config, null); 
-			System.exit(1);
+		//	System.exit(1);
 			return true;
 		case R.id.language_rus:  
 			lCategory = Category.LANGUAGERUS; 
@@ -263,7 +263,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			Configuration config2 = new Configuration();
 			config2.locale = locale2;
 			getBaseContext().getResources().updateConfiguration(config2, null); 
-			System.exit(1);
+		//	System.exit(1);
 			return true;
 		case R.id.language_ukr:  
 			lCategory = Category.LANGUAGEUKR; 
@@ -280,7 +280,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			//		new Intent(getIntent()), 0);
 		//	AlarmManager mgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 		//	mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 1000, intent);
-			System.exit(1);
+		//	System.exit(1);
 			return true;
 		case R.id.sounds_on:  
 			sCategory = Category.SOUNDSON; 

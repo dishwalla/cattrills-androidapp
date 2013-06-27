@@ -4,7 +4,6 @@
     <string name="app_name">Cat Trills</string>
     <string name="action_exit">Вихід</string>
     <string name="start_button">Пуск</string>
-    <string name="settings_button">Налаштування</string>
     <string name="history_button">Показати історію</string>
     <string name="username_text_hint">Уведіть своє імя</string>
     <string name="connect_button">"Під'єднатись"</string>
@@ -15,7 +14,7 @@
     <string name="invite_button">"Запрошення"</string>
     <string name="stop_wait_button">"Не чекати більше"</string>
     <string name="invite_sent">"Ваше запрошення було надіслано"</string>
-    <string name="invite_foryou">"Дехто запрошує Вас до гри"</string>
+    <string name="invite_foryou">" запрошує Вас до гри"</string>
     <string name="qq_text_hint">"Уведіть кількість запитань:"</string>
     <string name="commit_button">"Надіслати"</string>
     <string name="writeq_text_hint">"Уведіть ваше запитання:"</string>
@@ -40,12 +39,14 @@
     <string name="invalid_number">"Ви увели некорректну кількість, повторіть!"</string>
     <string name="string_user">"Користувач "</string>
     <string name="string_accept">" прийняв гру!"</string>
-    <string name="string_reject">" вiдхилив гру!"</string>
+    <string name="string_reject">" вiдхилив гру, або вже грає!"</string>
     <string name="string_hello">"Привiт, "</string>
     <string name="string_stillnot">"Поки що нiчого"</string>
     <string name="string_choosepart">", обери пару для гри!"</string>
     <string name="string_dialog">"Увесь дiалог:"</string>
     <string name="string_quit">"Бажаєте вийти?"</string>
+        <string name="string_willbe">"Буде "</string>
+    <string name="string_quest">" запитань"</string>
     <string name="string_namebusy">"Це ім'я вже знаходиться у використанні, або мiстить недозволений символ, спробуйте iнше ім'я:"</string>
     <string name="Restart">Перезапуск</string>
     <string name="LangTitle">Мова</string>

@@ -36,7 +36,7 @@ public class Activity2 extends Activity implements OnClickListener{
 			switch (v.getId()) 
 			{
 			case R.id.game_cancel:
-				Intent intent = new Intent(Activity2.this, MainActivity.class);
+				Intent intent = new Intent(Activity2.this, Activity2.class);
 				startActivity(intent);
 				Activity2.this.finish();
 				break;

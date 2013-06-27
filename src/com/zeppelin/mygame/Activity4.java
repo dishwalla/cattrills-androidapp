@@ -50,8 +50,10 @@ public class Activity4 extends Activity implements OnClickListener{
 					MainActivity.service.putString(" ");
 					MainActivity.service.putString("\n");
 					String response = MainActivity.service.getResponse(); // Unrecognized command
-					response = MainActivity.service.getResponse();// You've been selected for game, would you participate? Y/N
+					response = MainActivity.service.getResponse();// You've been selected for game, would you participate? NAME
 						if (response.contains("participate")){
+							Source source = MainActivity.getSource();
+							source.setInviter(getInviter(response));
 							Intent intent = new Intent(Activity4.this, Activity11.class);
 							startActivity(intent);
 							Activity4.this.finish();
@@ -69,6 +71,16 @@ public class Activity4 extends Activity implements OnClickListener{
 		catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	public String getInviter(String str){
+		int posOfBe = str.indexOf("parti");
+		StringBuilder sb = new StringBuilder();
+		for (int i=(posOfBe+13); i<str.length(); i++){
+			if (str.charAt(i) != ' '){
+				sb.append(str.charAt(i));}
+			else break;
+		}
+		return sb.toString();
 	}
 
 }

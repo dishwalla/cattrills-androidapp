@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Activity11 extends Activity implements OnClickListener {
 
@@ -14,6 +15,9 @@ public class Activity11 extends Activity implements OnClickListener {
 	protected Button reject;
 	protected TextView invite;
 	protected String user;
+	protected String inv;
+	protected String one;
+	protected String two;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +29,11 @@ public class Activity11 extends Activity implements OnClickListener {
 		reject = (Button)findViewById(R.id.game_reject);
 		invite = (TextView)findViewById(R.id.game_youreinvited);
 		Source source = MainActivity.getSource();
-		user = source.getSelectedUser();
-		invite.setText("User "+ user + " invited you to play the game");
+		user = source.getInviter();
+		inv = getString(R.string.invite_foryou);
+		one = getString(R.string.string_willbe);
+		two = getString(R.string.string_quest);
+		invite.setText("User "+ user + inv);
 		//	invite.setText("Some user invited you to play the game");
 		accept.setOnClickListener(this);
 		reject.setOnClickListener(this);
@@ -40,7 +47,10 @@ public class Activity11 extends Activity implements OnClickListener {
 				sb.append(str.charAt(i));}
 			else break;
 		}
-		return Integer.parseInt(sb.toString());
+		int k = Integer.parseInt(sb.toString());
+		Source source = MainActivity.getSource();
+		source.setIterations(k);
+		return k;
 	}
 
 	public void onClick(View v) {
@@ -56,6 +66,8 @@ public class Activity11 extends Activity implements OnClickListener {
 					int acc = getAcc(response);
 					source.setActivityChangeCount(acc*2-1);
 					Intent intent = new Intent(Activity11.this, Activity8.class);
+					 int iter = source.getIterations();
+				     Toast.makeText(getApplicationContext(), one + iter + two,  Toast.LENGTH_SHORT).show();
 					startActivity(intent);
 					Activity11.this.finish();
 					break;}

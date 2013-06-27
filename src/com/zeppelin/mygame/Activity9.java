@@ -121,10 +121,6 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 	public static void saveResults(String s, Boolean append) throws IOException{
 		Source source = MainActivity.getSource();
 		if (source.isSaveHistory()){
-			//	boolean flag = true;
-			//	while (flag){
-			//	String des = "y";
-			//	if (des == "y"){
 			try
 			{
 				File Root = Environment.getExternalStorageDirectory(); 
@@ -153,11 +149,6 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 				{System.out.print(e.getMessage()); }
 			}
 		}
-		//	else if(des == "n"){
-		//		flag = false;	
-		//}
-		//	}
-		//	}
 	}
 
 }

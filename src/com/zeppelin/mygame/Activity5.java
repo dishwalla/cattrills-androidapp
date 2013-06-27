@@ -77,7 +77,7 @@ public class Activity5 extends ListActivity {
 			try {
 				Source source = MainActivity.getSource();
 				source.setSelectedUser(name);
-				Toast.makeText(getApplicationContext(),	"‚ы выбрали " + parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(),	"Вы выбрали " + parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
 
 				boolean res;
 				res = MainActivity.service.select(name);
