@@ -56,17 +56,6 @@ public class Activity5 extends ListActivity {
 			e1.printStackTrace();
 		}
 
-		/*for(String g : partys){
-			if (g.contains(user)){
-				partys.remove(g);
-			}
-		}
-		for (int i=0; i<=partys.size()-1; i++) {
-			if (partys.get(i).equalsIgnoreCase(user)){
-				partys.remove(i);
-			}
-		}*/
-
 	}
 
 	OnItemClickListener itemListener = new OnItemClickListener() {
@@ -77,7 +66,7 @@ public class Activity5 extends ListActivity {
 			try {
 				Source source = MainActivity.getSource();
 				source.setSelectedUser(name);
-				Toast.makeText(getApplicationContext(),	"Вы выбрали " + parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(),	"‚ы выбрали " + parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
 
 				boolean res;
 				res = MainActivity.service.select(name);

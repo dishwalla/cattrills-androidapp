@@ -19,15 +19,5 @@ public interface CatTrillsClientService {
 	void putString(String str) throws Exception;
 	
 	String getEntireResult() throws IOException, InterruptedException, ExecutionException;
-	
-	void goOn(String yn) throws Exception;
-	
-	boolean saveResult(String str);//undone	
-	
-	void standBy();//undone
-	
-	void acceptGameOffer();//undone
-	
-	void rejectGameOffer();//undone
-	
+
 }

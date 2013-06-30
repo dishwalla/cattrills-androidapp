@@ -1,13 +1,12 @@
 package impl;
 
 import java.io.BufferedReader;
-import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -29,13 +28,13 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 
 	public void connect() throws Exception{
 		//InetAddress addr = InetAddress.getLocalHost();
-		InetAddress addr = InetAddress.getByName("10.34.10.34");
+		InetAddress addr = InetAddress.getByName("192.168.1.100");
 		int port = 1234;
 		this.serverSocket =	new Socket(addr, port);
 		this.is = serverSocket.getInputStream();
 		this.os = serverSocket.getOutputStream();
-		wr = new PrintWriter(os, true);	
-		br = new BufferedReader(new InputStreamReader(is));
+		wr = new PrintWriter(new OutputStreamWriter(os, "UTF-8"), true);	
+		br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
 	}
 
 	@Override
@@ -98,28 +97,5 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 		wr.write(str);
 		wr.flush();
 	}
-
-	@Override //undone
-	public boolean saveResult(String str){
-		return true;
-	}
-
-	@Override//undone
-	public void goOn(String yn) throws Exception{
-		//String response = getResponse();
-		putString(yn);
-	}
-	
-	@Override//undone
-	public void standBy(){
-	}
-
-	@Override//undone
-	public void acceptGameOffer(){}
-
-	@Override//undone
-	public void rejectGameOffer(){}
-
-
 
 }

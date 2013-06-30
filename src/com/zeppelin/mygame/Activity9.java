@@ -1,8 +1,9 @@
 package com.zeppelin.mygame;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -125,17 +126,20 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 			{
 				File Root = Environment.getExternalStorageDirectory(); 
 				File LogFile = new File(Root, "CatTrills_history.txt");
-				FileWriter LogWriter = new FileWriter(LogFile, append);
-				out = new BufferedWriter(LogWriter);
+				//		FileWriter LogWriter = new FileWriter(LogFile, append);
+				//		out = new BufferedWriter(LogWriter);
+				out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(LogFile, append),"UTF-8"));
 				Date date = new Date();
 				out.write("Logged at: " + String.valueOf(date) + "\n");
-				byte buf[]= s.getBytes();
-
+				byte[] cp = s.getBytes();
+				String sn = new String(cp, "UTF-8");
+				out.write(sn);
+				out.write("\n\n"); 
+				/*byte buf[]= s.getBytes();
 				for (int i = 0; i < buf.length; i++){
 					out.write(buf[i]);
 				}
-				out.write("\n\n"); 
-				//		flag = false; 
+				out.write("\n\n"); */
 			}
 
 			catch(Exception e){

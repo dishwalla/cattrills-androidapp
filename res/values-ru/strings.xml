@@ -52,6 +52,6 @@
     <string name="LangTitle">Язык</string>
     <string name="LangDialogTitle">Выберите язык:</string>
     <string name="LangSummary">Язык приложения.\nНеобходимо перезапустить приложение для принятия изменений.</string>
-    <string name="pref_locale">"?"</string>
+    <string name="pref_user">"User's preferences"</string>
 
 </resources>

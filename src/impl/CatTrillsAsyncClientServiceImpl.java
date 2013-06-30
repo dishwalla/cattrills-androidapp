@@ -139,46 +139,5 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 		return h;
 	}
 
-	@Override
-	public void goOn(final String yn) throws IOException, InterruptedException, ExecutionException {
-		AsyncTask task = new AsyncTask(){
-			@Override
-			protected Object doInBackground(Object... arg0) {
-				try {
-					service.goOn(yn);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				return null;
-			}
-		};
-		task.execute().get();
-	}
-
-	@Override
-	public boolean saveResult(String str) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void standBy() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void acceptGameOffer() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void rejectGameOffer() {
-		// TODO Auto-generated method stub
-
-	}
-
-
 
 }

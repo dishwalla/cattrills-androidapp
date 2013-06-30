@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class Activity2 extends Activity implements OnClickListener{
 
@@ -66,7 +65,6 @@ public class Activity2 extends Activity implements OnClickListener{
 			}
 		}
 		catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

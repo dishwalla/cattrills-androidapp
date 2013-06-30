@@ -25,32 +25,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity2" >
+        <activity android:name="com.zeppelin.mygame.Activity2" >
         </activity>
-        <activity android:name=".Activity3" >
+        <activity android:name="com.zeppelin.mygame.Activity3" >
         </activity>
-        <activity android:name=".Activity4" >
+        <activity android:name="com.zeppelin.mygame.Activity4" >
         </activity>
-        <activity android:name=".Activity5" >
+        <activity android:name="com.zeppelin.mygame.Activity5" >
         </activity>
-        <activity android:name=".Activity6" >
+        <activity android:name="com.zeppelin.mygame.Activity6" >
         </activity>
-        <activity android:name=".Activity7" >
+        <activity android:name="com.zeppelin.mygame.Activity7" >
         </activity>
-        <activity android:name=".Activity8" >
+        <activity android:name="com.zeppelin.mygame.Activity8" >
         </activity>
-        <activity android:name=".Activity9" >
+        <activity android:name="com.zeppelin.mygame.Activity9" >
         </activity>
-        <activity android:name=".Activity10" >
+        <activity android:name="com.zeppelin.mygame.Activity10" >
         </activity>
-        <activity android:name=".Activity11" >
+        <activity android:name="com.zeppelin.mygame.Activity11" >
         </activity>
-        <activity android:name=".CopyOfActivity6" >
+        <activity android:name="com.zeppelin.mygame.CopyOfActivity6" >
         </activity>
-        <activity android:name=".CopyOfActivity2" >
+        <activity android:name="com.zeppelin.mygame.CopyOfActivity2" >
         </activity>
-    </application>
-    <application android:name="com.zeppelin.mygame.MyApp" >
+        <activity
+            android:name="com.zeppelin.mygame.SettingsActivity"
+          >
+        </activity>
     </application>
 
 </manifest>

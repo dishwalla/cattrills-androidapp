@@ -53,6 +53,6 @@
     <string name="LangTitle">Language</string>
     <string name="LangDialogTitle">Choose language:</string>
     <string name="LangSummary">Application language.\nNeed restart application to apply changes.</string>
-    <string name="pref_locale">"?"</string>
+    <string name="pref_user">"User's preferences"</string>
 
 </resources>
