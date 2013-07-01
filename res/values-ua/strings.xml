@@ -28,7 +28,7 @@
     <string name="action_language">"Мова"</string>
     <string name="action_sounds">"Звуки"</string>
     <string name="action_history">"Історія"</string>
-     <string name="language_def">"За змовчуванням"</string>
+    <string name="language_def">"За змовчуванням"</string>
     <string name="language_eng">"Англійська"</string>
     <string name="language_ukr">"Українська"</string>
     <string name="language_rus">"Російська"</string>
@@ -45,7 +45,7 @@
     <string name="string_choosepart">", обери пару для гри!"</string>
     <string name="string_dialog">"Увесь дiалог:"</string>
     <string name="string_quit">"Бажаєте вийти?"</string>
-        <string name="string_willbe">"Буде "</string>
+    <string name="string_willbe">"Буде "</string>
     <string name="string_quest">" запитань"</string>
     <string name="string_namebusy">"Це ім'я вже знаходиться у використанні, або мiстить недозволений символ, спробуйте iнше ім'я:"</string>
     <string name="Restart">Перезапуск</string>
@@ -53,5 +53,8 @@
     <string name="LangDialogTitle">Оберыть мову:</string>
     <string name="LangSummary">Язык приложения.\nНеобходимо перезапустить приложение для принятия изменений.</string>
     <string name="pref_user">"User's preferences"</string>
-
+    <string name="hist_summary">"Зберiгати iсторiю"</string>
+    <string name="snd_summary">"Увiмкнути звуки"</string>
+    <string name="lng_summary">"Оберiть мову (Потребує перезапуску програми)"</string>
+       <string name="action_prefs">"Налаштування"</string>
 </resources>

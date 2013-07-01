@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/pref_user" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dialogMessage="@string/action_history"
+            android:key="hist"
+            android:summary="@string/hist_summary"
+            android:title="@string/action_history" >
+        </CheckBoxPreference>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dialogMessage="@string/action_sounds"
+            android:key="snd"
+            android:summary="@string/snd_summary"
+            android:title="@string/action_sounds" >
+        </CheckBoxPreference>
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/lng_list"
+            android:entryValues="@array/entryvalues_lng"
+            android:key="lang"
+            android:summary="@string/lng_summary"
+            android:title="@string/action_language" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

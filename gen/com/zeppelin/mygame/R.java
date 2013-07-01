@@ -33,8 +33,9 @@ public final class R {
     }
     public static final class id {
         public static final int action_exit=0x7f0a001d;
-        public static final int action_history=0x7f0a0026;
+        public static final int action_history=0x7f0a0025;
         public static final int action_language=0x7f0a001e;
+        public static final int action_prefs=0x7f0a0027;
         public static final int action_sounds=0x7f0a0023;
         public static final int game_accept=0x7f0a0004;
         public static final int game_cancel=0x7f0a0008;
@@ -65,13 +66,11 @@ public final class R {
         public static final int game_writeanswer=0x7f0a0016;
         public static final int game_writequestion=0x7f0a0013;
         public static final int game_youreinvited=0x7f0a0003;
-        public static final int history_notsave=0x7f0a0028;
-        public static final int history_save=0x7f0a0027;
+        public static final int history_save=0x7f0a0026;
         public static final int language_def=0x7f0a001f;
         public static final int language_eng=0x7f0a0020;
         public static final int language_rus=0x7f0a0022;
         public static final int language_ukr=0x7f0a0021;
-        public static final int sounds_off=0x7f0a0025;
         public static final int sounds_on=0x7f0a0024;
     }
     public static final class layout {
@@ -91,6 +90,7 @@ public final class R {
     }
     public static final class menu {
         public static final int main=0x7f090000;
+        public static final int settings=0x7f090001;
     }
     public static final class string {
         public static final int LangDialogTitle=0x7f070032;
@@ -101,6 +101,7 @@ public final class R {
         public static final int action_exit=0x7f070001;
         public static final int action_history=0x7f07001b;
         public static final int action_language=0x7f070019;
+        public static final int action_prefs=0x7f070038;
         public static final int action_settings=0x7f070002;
         public static final int action_sounds=0x7f07001a;
         public static final int app_name=0x7f070000;
@@ -109,6 +110,7 @@ public final class R {
         public static final int commit_button=0x7f070010;
         public static final int connect_button=0x7f070006;
         public static final int done_button=0x7f070009;
+        public static final int hist_summary=0x7f070035;
         public static final int history_button=0x7f070004;
         public static final int history_notsave=0x7f070023;
         public static final int history_save=0x7f070022;
@@ -120,12 +122,14 @@ public final class R {
         public static final int language_eng=0x7f07001d;
         public static final int language_rus=0x7f07001f;
         public static final int language_ukr=0x7f07001e;
+        public static final int lng_summary=0x7f070037;
         public static final int pref_user=0x7f070034;
         public static final int qq_text_hint=0x7f07000f;
         public static final int quit_button=0x7f070013;
         public static final int quitn_button=0x7f070015;
         public static final int quity_button=0x7f070014;
         public static final int reject_button=0x7f070017;
+        public static final int snd_summary=0x7f070036;
         public static final int sounds_off=0x7f070021;
         public static final int sounds_on=0x7f070020;
         public static final int stand_by_mode=0x7f07000a;

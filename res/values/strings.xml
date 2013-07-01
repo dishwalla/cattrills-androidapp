@@ -54,5 +54,9 @@
     <string name="LangDialogTitle">Choose language:</string>
     <string name="LangSummary">Application language.\nNeed restart application to apply changes.</string>
     <string name="pref_user">"User's preferences"</string>
+    <string name="hist_summary">"Save the history"</string>
+    <string name="snd_summary">"Sounds on"</string>
+    <string name="lng_summary">"Choose the language (Restart required)"</string>
+     <string name="action_prefs">"Preferences"</string>
 
 </resources>

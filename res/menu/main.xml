@@ -34,11 +34,9 @@
         <menu>
             <group android:checkableBehavior="single" >
                 <item
+                    android:defaultValue="false"
                     android:id="@+id/sounds_on"
                     android:title="@string/sounds_on"/>
-                <item
-                    android:id="@+id/sounds_off"
-                    android:title="@string/sounds_off"/>
             </group>
         </menu>
     </item>
@@ -49,11 +47,9 @@
         <menu>
             <group android:checkableBehavior="single" >
                 <item
+                    android:defaultValue="false"
                     android:id="@+id/history_save"
                     android:title="@string/history_save"/>
-                <item
-                    android:id="@+id/history_notsave"
-                    android:title="@string/history_notsave"/>
             </group>
         </menu>
     </item>

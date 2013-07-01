@@ -93,7 +93,6 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 	
 	@Override
 	public void putString(String str) throws Exception{
-	//	try {String newStr = new String(str.getBytes("Cp866"), "Cp1251");
 		wr.write(str);
 		wr.flush();
 	}
