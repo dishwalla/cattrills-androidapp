@@ -31,6 +31,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private String lang;
 	protected Button Start;
 	protected Button history;
+	
 
 
 	public static Source source = new Source();
@@ -156,15 +157,6 @@ public class MainActivity extends Activity implements OnClickListener {
 			Configuration config = new Configuration();
 			config.locale = locale;
 			getBaseContext().getResources().updateConfiguration(config, null); 
-			//	System.exit(1);
-			return true;
-		case R.id.language_rus:  
-			lCategory = Category.LANGUAGERUS; 
-			Locale locale2 = new Locale("ru");
-			Locale.setDefault(locale2);
-			Configuration config2 = new Configuration();
-			config2.locale = locale2;
-			getBaseContext().getResources().updateConfiguration(config2, null); 
 			//	System.exit(1);
 			return true;
 		case R.id.language_ukr:  

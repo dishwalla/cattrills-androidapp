@@ -35,20 +35,14 @@
         android:textSize="20sp" >
     </EditText>
 
-    <Button
-        android:id="@+id/game_cancel"
+     <Button
+        android:id="@+id/game_commit"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/game_questquont"
         android:layout_below="@+id/game_questquont"
-        android:text="@string/cancel_button" />
-
-    <Button
-        android:id="@+id/game_done"
-        android:layout_width="141dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/game_questquont"
-        android:text="@string/done_button" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/commit_button" />
 
 </RelativeLayout>

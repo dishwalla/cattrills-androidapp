@@ -3,6 +3,8 @@ package com.zeppelin.mygame;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -15,7 +17,7 @@ public class Activity8 extends Activity implements OnClickListener {
 	protected EditText writeA;
 	protected Button commit;
 	protected String answer;
-	String user;
+	private String one;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -23,16 +25,16 @@ public class Activity8 extends Activity implements OnClickListener {
 		setContentView(R.layout.activity8);
 
 		Source source = MainActivity.getSource();
-		user = source.getSelectedUser();
-
 		questionIs = (TextView)findViewById(R.id.game_thequestionis);
+		one = getString(R.string.string_thequestis);
 		try {
 			answer =  MainActivity.service.getResponse();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		questionIs.setText(answer);
+		String quest = getQuest(answer);
+		questionIs.setText(one + quest + "?");
 		commit = (Button)findViewById(R.id.game_commit);
 		writeA = (EditText)findViewById(R.id.game_writeanswer);
 		commit.setOnClickListener(this);
@@ -71,6 +73,48 @@ public class Activity8 extends Activity implements OnClickListener {
 		catch (Exception e) {
 			e.printStackTrace();
 		}	
+	}
+	
+	
+	public String getQuest(String str){
+		int posOfBe = str.indexOf("is");
+		StringBuilder sb = new StringBuilder();
+		for (int i=(posOfBe+4); i<str.length(); i++){
+			if (str.charAt(i) != '?'){
+				sb.append(str.charAt(i));}
+			else break;
+		}
+		return sb.toString();
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		super.onCreateOptionsMenu(menu);
+		//	MenuInflater inflater = getMenuInflater();
+		//	inflater.inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.settings, menu);
+		MenuItem pref = menu.findItem(R.id.action_prefs);
+		MenuItem exit = menu.findItem(R.id.action_exit);
+
+		return true;
+	}
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		item.setChecked(true);
+		switch (item.getItemId())
+		{
+		case R.id.action_exit:
+			android.os.Process.killProcess(android.os.Process.myPid());
+			super.onDestroy();
+			break; 
+			//System.exit(1);   
+		case R.id.action_prefs:
+			Intent intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
+		} 
+
+		return super.onOptionsItemSelected(item);
 	}
 }
 

@@ -6,6 +6,8 @@ import java.util.List;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -66,7 +68,7 @@ public class Activity5 extends ListActivity {
 			try {
 				Source source = MainActivity.getSource();
 				source.setSelectedUser(name);
-				Toast.makeText(getApplicationContext(),	"‚ы выбрали " + parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(),	"Вы выбрали " + parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
 
 				boolean res;
 				res = MainActivity.service.select(name);
@@ -93,5 +95,33 @@ public class Activity5 extends ListActivity {
 
 		}
 	};
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
 
+		super.onCreateOptionsMenu(menu);
+		//	MenuInflater inflater = getMenuInflater();
+		//	inflater.inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.settings, menu);
+		MenuItem pref = menu.findItem(R.id.action_prefs);
+		MenuItem exit = menu.findItem(R.id.action_exit);
+
+		return true;
+	}
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		item.setChecked(true);
+		switch (item.getItemId())
+		{
+		case R.id.action_exit:
+			android.os.Process.killProcess(android.os.Process.myPid());
+			super.onDestroy();
+			break; 
+			//System.exit(1);   
+		case R.id.action_prefs:
+			Intent intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
+		} 
+
+		return super.onOptionsItemSelected(item);
+	}
 }

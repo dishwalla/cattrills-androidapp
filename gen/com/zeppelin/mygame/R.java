@@ -41,11 +41,11 @@ public final class R {
         public static final int game_cancel=0x7f0a0008;
         public static final int game_checkit=0x7f0a000c;
         public static final int game_choose=0x7f0a000d;
-        public static final int game_commit=0x7f0a0014;
+        public static final int game_commit=0x7f0a0012;
         public static final int game_connect=0x7f0a0001;
         public static final int game_done=0x7f0a0009;
         public static final int game_invalidname=0x7f0a0006;
-        public static final int game_invalidnumber=0x7f0a0012;
+        public static final int game_invalidnumber=0x7f0a0013;
         public static final int game_invite_sent=0x7f0a0011;
         public static final int game_invite_sent2=0x7f0a000f;
         public static final int game_invite_sentmain=0x7f0a000e;
@@ -64,7 +64,7 @@ public final class R {
         public static final int game_thequestionis=0x7f0a0015;
         public static final int game_wait=0x7f0a0002;
         public static final int game_writeanswer=0x7f0a0016;
-        public static final int game_writequestion=0x7f0a0013;
+        public static final int game_writequestion=0x7f0a0014;
         public static final int game_youreinvited=0x7f0a0003;
         public static final int history_save=0x7f0a0026;
         public static final int language_def=0x7f0a001f;
@@ -144,6 +144,7 @@ public final class R {
         public static final int string_quit=0x7f07002c;
         public static final int string_reject=0x7f070027;
         public static final int string_stillnot=0x7f070029;
+        public static final int string_thequestis=0x7f070039;
         public static final int string_user=0x7f070025;
         public static final int string_willbe=0x7f07002f;
         public static final int username_text_hint=0x7f070005;

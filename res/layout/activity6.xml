@@ -39,24 +39,6 @@
         android:textSize="20sp" >
     </EditText>
 
-    <Button
-        android:id="@+id/game_done"
-        android:layout_width="141dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/game_questquont"
-        android:layout_marginTop="32dp"
-        android:text="@string/done_button" />
-
-    <Button
-        android:id="@+id/game_cancel"
-        android:layout_width="141dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/game_done"
-        android:layout_alignBottom="@+id/game_done"
-        android:layout_alignLeft="@+id/game_questquont"
-        android:text="@string/cancel_button" />
-
     <TextView
         android:id="@+id/game_invite_sent"
         android:layout_width="match_parent"
@@ -65,5 +47,15 @@
         android:layout_alignTop="@+id/game_invite_sentmain"
         android:text="@string/string_user"
         android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/game_commit"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/game_questquont"
+        android:layout_below="@+id/game_questquont"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/commit_button" />
 
 </RelativeLayout>

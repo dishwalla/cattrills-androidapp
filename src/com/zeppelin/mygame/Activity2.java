@@ -2,7 +2,11 @@ package com.zeppelin.mygame;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -19,12 +23,10 @@ public class Activity2 extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity2);
 
-		// Connect interface elements to properties
 		Cancel = (Button)findViewById(R.id.game_cancel);
 		Done = (Button)findViewById(R.id.game_done);
 		yourName = (EditText)findViewById(R.id.game_setyouname);
-	
-		// Setup ClickListeners
+
 		Cancel.setOnClickListener(this);
 		Done.setOnClickListener(this);
 	}
@@ -67,6 +69,53 @@ public class Activity2 extends Activity implements OnClickListener{
 		catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)  {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			Intent intent2 = new Intent(Activity2.this, Activity2.class); 
+			startActivity(intent2);
+			Activity2.this.finish();
+			//	 onBackPressed();
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+
+	/*	@Override
+	public void onBackPressed() {
+		System.exit(1); or
+		android.os.Process.killProcess(android.os.Process.myPid()); kills server
+		super.onDestroy();
+		return;
+		}*/
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		super.onCreateOptionsMenu(menu);
+		getMenuInflater().inflate(R.menu.settings, menu);
+		MenuItem pref = menu.findItem(R.id.action_prefs);
+		MenuItem exit = menu.findItem(R.id.action_exit);
+
+		return true;
+	}
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		item.setChecked(true);
+		switch (item.getItemId())
+		{
+		case R.id.action_exit:
+			android.os.Process.killProcess(android.os.Process.myPid());
+			super.onDestroy();
+			break; 
+			//System.exit(1);   
+		case R.id.action_prefs:
+			Intent intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
+		} 
+
+		return super.onOptionsItemSelected(item);
 	}
 }
 

@@ -57,6 +57,7 @@
     <string name="hist_summary">"Save the history"</string>
     <string name="snd_summary">"Sounds on"</string>
     <string name="lng_summary">"Choose the language (Restart required)"</string>
-     <string name="action_prefs">"Preferences"</string>
+    <string name="action_prefs">"Preferences"</string>
+    <string name="string_thequestis">"The question is: "</string>
 
 </resources>

@@ -52,9 +52,11 @@
     <string name="LangTitle">Мова</string>
     <string name="LangDialogTitle">Оберыть мову:</string>
     <string name="LangSummary">Язык приложения.\nНеобходимо перезапустить приложение для принятия изменений.</string>
-    <string name="pref_user">"User's preferences"</string>
+    <string name="pref_user">"Налаштування користувача"</string>
     <string name="hist_summary">"Зберiгати iсторiю"</string>
     <string name="snd_summary">"Увiмкнути звуки"</string>
     <string name="lng_summary">"Оберiть мову (Потребує перезапуску програми)"</string>
-       <string name="action_prefs">"Налаштування"</string>
+    <string name="action_prefs">"Налаштування"</string>
+    <string name="string_thequestis">"Запитання: "</string>
+
 </resources>
