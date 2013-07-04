@@ -12,19 +12,18 @@
         android:id="@+id/game_start"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/game_showhistory"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="57dp"
         android:text="@string/start_button"
         android:textSize="40sp" />
-
     <Button
         android:id="@+id/game_showhistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/game_start"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
+        android:layout_alignLeft="@+id/game_start"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/game_start"
+        android:layout_marginBottom="28dp"
         android:text="@string/history_button" />
 
 

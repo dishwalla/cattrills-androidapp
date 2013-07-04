@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,29 +11,33 @@
     tools:context=".Activity4" >
 
     <TextView
-         android:id="@+id/game_stand_by"
-         android:layout_width="273dp"
-        android:layout_height="115dp"
-        android:layout_marginTop="57dp"
+        android:id="@+id/game_stand_by"
+        android:layout_width="273dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:scrollbars="vertical"
+        android:text="@string/stand_by_mode"
         android:textColor="#000000"
         android:textIsSelectable="true"
-        android:textSize="20sp" 
-        android:text="@string/stand_by_mode"       />
-    
+        android:textSize="20sp" />
+
      <Button
-        android:id="@+id/game_checkit"
-        android:layout_width="151dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="@string/check_button" />
+         android:id="@+id/game_checkit"
+         android:layout_width="151dp"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/game_connect"
+         android:layout_alignLeft="@+id/game_connect"
+         android:layout_alignParentRight="true"
+         android:text="@string/check_button" />
 
      <Button
          android:id="@+id/game_connect"
          android:layout_width="151dp"
          android:layout_height="wrap_content"
-         android:layout_marginTop="44dp"
+         android:layout_alignLeft="@+id/game_stand_by"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentRight="true"
+         android:layout_marginBottom="16dp"
          android:text="@string/connect_button" />
 
-</LinearLayout>
+</RelativeLayout>

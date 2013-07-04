@@ -17,45 +17,27 @@
         android:layout_height="wrap_content" >
     </TextView>
 
-    <TextView
-        android:id="@+id/game_invite_sent2"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignBaseline="@+id/game_invite_sentmain"
-        android:layout_alignBottom="@+id/game_invite_sentmain"
-        android:layout_centerHorizontal="true"
-        android:text="@string/string_accept"
-        android:visibility="invisible" />
-
     <EditText
         android:id="@+id/game_questquont"
         android:layout_width="193dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_alignLeft="@+id/game_invite_sentmain"
+        android:layout_alignRight="@+id/game_invite_sentmain"
+        android:layout_below="@+id/game_invite_sentmain"
+        android:layout_marginTop="22dp"
         android:ems="10"
         android:hint="@string/qq_text_hint"
         android:scrollbars="vertical"
         android:textColor="#000000"
-        android:textSize="20sp" >
-    </EditText>
-
-    <TextView
-        android:id="@+id/game_invite_sent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/game_invite_sentmain"
-        android:text="@string/string_user"
-        android:visibility="invisible" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/game_commit"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/game_questquont"
+        android:layout_alignRight="@+id/game_questquont"
         android:layout_below="@+id/game_questquont"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
         android:text="@string/commit_button" />
 
 </RelativeLayout>

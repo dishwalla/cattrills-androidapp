@@ -14,7 +14,6 @@
         android:id="@+id/game_thequestionis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/game_writeanswer"
         android:ems="10"
         android:scrollbars="vertical"
         android:textColor="#000000"
@@ -25,24 +24,23 @@
         android:id="@+id/game_writeanswer"
         android:layout_width="193dp"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/game_thequestionis"
+        android:layout_alignRight="@+id/game_thequestionis"
         android:layout_below="@+id/game_thequestionis"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="@string/writea_text_hint"
         android:scrollbars="vertical"
         android:textColor="#000000"
-        android:textSize="20sp" >
-
-        <requestFocus />
-    </EditText>
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/game_commit"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/game_writeanswer"
+        android:layout_alignRight="@+id/game_writeanswer"
         android:layout_below="@+id/game_writeanswer"
-        android:layout_marginTop="15dp"
         android:text="@string/commit_button" />
 
 </RelativeLayout>

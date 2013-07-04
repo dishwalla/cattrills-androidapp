@@ -24,7 +24,7 @@ public class Activity5 extends ListActivity {
 	protected ListView l;
 	protected List<String> partys;
 	protected String name;
-	protected String one;
+	//protected String one;
 	protected String two;
 
 
@@ -35,9 +35,9 @@ public class Activity5 extends ListActivity {
 		choosePartner = (TextView)findViewById(R.id.game_choose);
 		Source source = MainActivity.getSource();
 		user = source.getUser().toUpperCase();
-		one = getString(R.string.string_hello);
+		//one = getString(R.string.string_hello);
 		two = getString(R.string.string_choosepart);
-		choosePartner.setText(one + user + two);
+		choosePartner.setText(user + two);
 		l = (ListView)findViewById(android.R.id.list);
 		getListView().setOnItemClickListener(itemListener);
 

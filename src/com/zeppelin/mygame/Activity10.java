@@ -38,10 +38,16 @@ public class Activity10 extends Activity implements OnClickListener {
 		// Setup ClickListeners
 		Connect.setOnClickListener(this);
 		Wait.setOnClickListener(this);
+		
 	}
 	
 	public void onClick(View v) {
 		try {	
+	//		String response = MainActivity.service.getResponse();
+	//		MainActivity.service.putString("n");
+	//		MainActivity.service.putString("\n");
+	//		response = MainActivity.service.getResponse();
+			
 			switch (v.getId()) 
 			{
 			case R.id.game_connect:

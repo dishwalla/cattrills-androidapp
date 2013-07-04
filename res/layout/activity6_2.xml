@@ -22,27 +22,30 @@
         android:textIsSelectable="true"
         android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/game_questquont"
-        android:layout_width="193dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="52dp"
-        android:ems="10"
-        android:hint="@string/qq_text_hint"
-        android:scrollbars="vertical"
-        android:textColor="#000000"
-        android:textSize="20sp" >
-    </EditText>
-
      <Button
-        android:id="@+id/game_commit"
-        android:layout_width="141dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/game_questquont"
-        android:layout_below="@+id/game_questquont"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/commit_button" />
+         android:id="@+id/game_commit"
+         android:layout_width="141dp"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/game_questquont"
+         android:layout_alignRight="@+id/game_questquont"
+         android:layout_below="@+id/game_questquont"
+         android:text="@string/commit_button" />
+
+     <EditText
+         android:id="@+id/game_questquont"
+         android:layout_width="193dp"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/game_invalidnumber"
+         android:layout_alignRight="@+id/game_invalidnumber"
+         android:layout_below="@+id/game_invalidnumber"
+         android:layout_marginTop="14dp"
+         android:ems="10"
+         android:hint="@string/qq_text_hint"
+         android:scrollbars="vertical"
+         android:textColor="#000000"
+         android:textSize="20sp" >
+
+         <requestFocus />
+     </EditText>
 
 </RelativeLayout>

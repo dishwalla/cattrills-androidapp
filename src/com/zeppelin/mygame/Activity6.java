@@ -16,8 +16,6 @@ public class Activity6 extends Activity implements OnClickListener{
 	protected TextView game_invite_sent;
 	protected String one;
 	protected String two;
-	protected TextView first;
-	protected TextView second;
 	protected EditText questQuont;
 	protected Button commit;
 	protected String user;
@@ -26,16 +24,14 @@ public class Activity6 extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity6);
-		commit = (Button) findViewById(R.id.game_commit);
 		Source source = MainActivity.getSource();
 		user = source.getSelectedUser();
-		first = (TextView)findViewById(R.id.game_invite_sent);
-		second = (TextView)findViewById(R.id.game_invite_sent2);
 		one = getString(R.string.string_user);
 		two = getString(R.string.string_accept);
 		game_invite_sent = (TextView)findViewById(R.id.game_invite_sentmain);
 		game_invite_sent.setText(one + user + two);
 		questQuont = (EditText)findViewById(R.id.game_questquont);
+		commit = (Button) findViewById(R.id.game_commit);
 
 		commit.setOnClickListener(this);
 

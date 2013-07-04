@@ -30,7 +30,7 @@ public class Activity3 extends Activity implements OnClickListener {
 		Wait = (Button)findViewById(R.id.game_wait);
 		yourNameView = (TextView)findViewById(R.id.game_name);
 		Source source = MainActivity.getSource();
-		user = source.getUser();
+		user = source.getUser().toUpperCase();
 		one = getString(R.string.string_hello);
 		yourNameView.setText(one + user + "!");
 

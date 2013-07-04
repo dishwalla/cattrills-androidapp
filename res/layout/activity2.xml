@@ -10,29 +10,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Activity2" >
 
-    <TextView
-        android:id="@+id/game_invalidname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:scrollbars="vertical"
-        android:textColor="#000000"
-        android:textIsSelectable="true"
-        android:textSize="20sp" />
-
-    <EditText
+ <EditText
         android:id="@+id/game_setyouname"
         android:layout_width="193dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="52dp"
         android:ems="10"
         android:hint="@string/username_text_hint"
         android:scrollbars="vertical"
         android:textColor="#000000"
         android:textSize="20sp" >
-    </EditText>
 
+        <requestFocus />
+    </EditText> 
     <Button
         android:id="@+id/game_cancel"
         android:layout_width="141dp"
@@ -48,5 +37,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/game_setyouname"
         android:text="@string/done_button" />
+
+   
 
 </RelativeLayout>

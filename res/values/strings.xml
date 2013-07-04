@@ -11,7 +11,7 @@
     <string name="wait_button">"Wait for invitation"</string>
     <string name="cancel_button">"Cancel"</string>
     <string name="done_button">"Done"</string>
-    <string name="stand_by_mode">"You're in STAND BY MODE"</string>
+    <string name="stand_by_mode">"You're in STAND BY mode"</string>
     <string name="invite_button">"Invite"</string>
     <string name="stop_wait_button">"Don't wait anymore"</string>
     <string name="invite_sent">"Your invite was sent"</string>

@@ -32,8 +32,6 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected Button Start;
 	protected Button history;
 	
-
-
 	public static Source source = new Source();
 
 	public static CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
