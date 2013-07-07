@@ -3,6 +3,7 @@
 
     <string name="app_name">Cat Trills</string>
     <string name="action_exit">Выход</string>
+    <string name="action_settings">"Настройки"</string>
     <string name="start_button">Пуск</string>
     <string name="history_button">Посмотреть историю</string>
     <string name="username_text_hint">Введите ваше имя:</string>
@@ -42,7 +43,7 @@
     <string name="string_reject">" отклонил игру, или занят!"</string>
     <string name="string_hello">"Привет, "</string>
     <string name="string_stillnot">"Пока ничего"</string>
-    <string name="string_choosepart">", выбери партнера!"</string>
+    <string name="string_choosepart">", выбери партнера для игры!"</string>
     <string name="string_dialog">"Весь диалог:"</string>
     <string name="string_quit">"Хотите выйти?"</string>
     <string name="string_willbe">"Будет "</string>
@@ -58,5 +59,6 @@
     <string name="lng_summary">"Выберите язык приложения (необходим перезапуск)"</string>
     <string name="action_prefs">"Настройки"</string>
     <string name="string_thequestis">"Вопрос: "</string>
+    <string name="no_connection">"Нет связи с сервером, пожалуйста, попробуйте позже :'("</string>
 
 </resources>

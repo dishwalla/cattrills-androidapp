@@ -45,6 +45,8 @@
         </activity>
         <activity android:name="com.zeppelin.mygame.Activity11" >
         </activity>
+        <activity android:name="com.zeppelin.mygame.Activity12" >
+        </activity>
         <activity android:name="com.zeppelin.mygame.CopyOfActivity6" >
         </activity>
         <activity android:name="com.zeppelin.mygame.CopyOfActivity2" >

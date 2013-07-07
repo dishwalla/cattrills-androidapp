@@ -3,6 +3,7 @@ package com.zeppelin.mygame;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class CopyOfActivity6 extends Activity implements OnClickListener{
+public class CopyOfActivity6 extends MenuAccess implements OnClickListener{
 
 	protected TextView invalidNumber;
 	protected EditText questQuont;
@@ -59,32 +60,14 @@ public class CopyOfActivity6 extends Activity implements OnClickListener{
 		}
 	}
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		super.onCreateOptionsMenu(menu);
-		//	MenuInflater inflater = getMenuInflater();
-		//	inflater.inflate(R.menu.main, menu);
-		getMenuInflater().inflate(R.menu.settings, menu);
-		MenuItem pref = menu.findItem(R.id.action_prefs);
-		MenuItem exit = menu.findItem(R.id.action_exit);
-
-		return true;
-	}
-	public boolean onOptionsItemSelected(MenuItem item)
-	{
-		item.setChecked(true);
-		switch (item.getItemId())
-		{
-		case R.id.action_exit:
-			android.os.Process.killProcess(android.os.Process.myPid());
-			super.onDestroy();
-			break; 
-			//System.exit(1);   
-		case R.id.action_prefs:
-			Intent intent = new Intent(this, SettingsActivity.class);
-			startActivity(intent);
-		} 
-
-		return super.onOptionsItemSelected(item);
+	public boolean onKeyDown(int keyCode, KeyEvent event)  {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			Intent intent2 = new Intent(CopyOfActivity6.this, CopyOfActivity6.class); 
+			startActivity(intent2);
+			CopyOfActivity6.this.finish();
+			//	 onBackPressed();
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
 	}
 }

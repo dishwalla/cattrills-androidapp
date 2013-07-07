@@ -6,6 +6,7 @@ import java.util.List;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,14 +44,14 @@ public class Activity5 extends ListActivity {
 
 		try {	
 			List<String> partys = MainActivity.service.list();
-			
+
 			Iterator iter = partys.iterator();
 			while(iter.hasNext()){
 				String next = iter.next().toString();
 				if(next.contains(user))
-				iter.remove();
-				}
-			
+					iter.remove();
+			}
+
 			ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, partys);
 			l.setAdapter(adapter);
 
@@ -123,5 +124,16 @@ public class Activity5 extends ListActivity {
 		} 
 
 		return super.onOptionsItemSelected(item);
+	}
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)  {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			Intent intent2 = new Intent(Activity5.this, Activity5.class); 
+			startActivity(intent2);
+			Activity5.this.finish();
+			//	 onBackPressed();
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
 	}
 }

@@ -10,7 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Activity10 extends Activity implements OnClickListener {
+public class Activity10 extends MenuAccess implements OnClickListener {
 
 	protected Button Connect;
 	protected Button Wait;
@@ -76,35 +76,6 @@ public class Activity10 extends Activity implements OnClickListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		super.onCreateOptionsMenu(menu);
-		//	MenuInflater inflater = getMenuInflater();
-		//	inflater.inflate(R.menu.main, menu);
-		getMenuInflater().inflate(R.menu.settings, menu);
-		MenuItem pref = menu.findItem(R.id.action_prefs);
-		MenuItem exit = menu.findItem(R.id.action_exit);
-
-		return true;
-	}
-	public boolean onOptionsItemSelected(MenuItem item)
-	{
-		item.setChecked(true);
-		switch (item.getItemId())
-		{
-		case R.id.action_exit:
-			android.os.Process.killProcess(android.os.Process.myPid());
-			super.onDestroy();
-			break; 
-			//System.exit(1);   
-		case R.id.action_prefs:
-			Intent intent = new Intent(this, SettingsActivity.class);
-			startActivity(intent);
-		} 
-
-		return super.onOptionsItemSelected(item);
 	}
 }
 

@@ -59,5 +59,6 @@
     <string name="lng_summary">"Choose the language (Restart required)"</string>
     <string name="action_prefs">"Preferences"</string>
     <string name="string_thequestis">"The question is: "</string>
+    <string name="no_connection">"No connection to server, please, try later :'("</string>
 
 </resources>

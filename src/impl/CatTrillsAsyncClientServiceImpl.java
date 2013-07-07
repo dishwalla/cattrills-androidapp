@@ -12,19 +12,23 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 	private CatTrillsClientService service = new CatTrillsClientServiceImpl(); 
 	//protected boolean res;
 	@Override
-	public void connect() throws Exception {
+	public boolean connect() throws Exception {
 		AsyncTask task = new AsyncTask(){
+			boolean res;
 			@Override
 			protected Object doInBackground(Object... arg0) {
 				try {
-					service.connect();
+					res = service.connect();
+					return res;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				return null;
+				return res;
+				//return null;
 			}
 		};
-		task.execute().get();
+		boolean R = (Boolean) task.execute().get();
+		return R;
 	}
 
 	@Override

@@ -4,20 +4,17 @@ import impl.CatTrillsAsyncClientServiceImpl;
 
 import java.io.File;
 import java.util.Locale;
+
 import service.CatTrillsClientService;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -25,13 +22,12 @@ import android.widget.Button;
 
 
 public class MainActivity extends Activity implements OnClickListener {
-	//	PendingIntent intent;
 	private SharedPreferences preferences; //for language
 	private Locale locale; 
 	private String lang;
 	protected Button Start;
 	protected Button history;
-	
+
 	public static Source source = new Source();
 
 	public static CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
@@ -45,7 +41,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		Locale.setDefault(locale);
 		Configuration config = new Configuration();
 		config.locale = locale;
-		getBaseContext().getResources().updateConfiguration(config, null); 
+		getBaseContext().getResources().updateConfiguration(config, null);
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
@@ -56,7 +52,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		boolean save = preferences.getBoolean("hist", false);
 		if (save == true){
 			source.setSaveHistory(true);
-		} 
+		}
 		else if (save == false){source.setSaveHistory(false);}
 
 	}
@@ -69,10 +65,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		Locale.setDefault(locale);
 		Configuration config = new Configuration();
 		config.locale = locale;
-		getBaseContext().getResources().updateConfiguration(config, null);     
+		getBaseContext().getResources().updateConfiguration(config, null);
 
 
-	}	
+	}		
 	public static Source getSource() {
 		return source;
 	}
@@ -86,12 +82,18 @@ public class MainActivity extends Activity implements OnClickListener {
 			switch (v.getId()) 
 			{
 			case R.id.game_start:
-				service.connect();
-				Intent intent = new Intent(MainActivity.this, Activity2.class);
-				startActivity(intent);
-				MainActivity.this.finish();
-
-				break;
+				if (service.connect() == true){
+					Intent intent = new Intent(MainActivity.this, Activity2.class);
+					startActivity(intent);
+					MainActivity.this.finish();
+					break;
+				}
+				else
+				{	//Toast.makeText(getApplicationContext(),	getString(R.string.string_stillnot), Toast.LENGTH_SHORT).show();
+					Intent intent = new Intent(MainActivity.this, Activity12.class);
+					startActivity(intent);
+					MainActivity.this.finish();
+					break;}
 			case R.id.game_showhistory:
 				File Root = Environment.getExternalStorageDirectory(); 
 				File f = new File(Root, "CatTrills_history.txt");
@@ -104,7 +106,6 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		} 
 		catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -174,7 +175,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			//	mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 1000, intent);
 			//	System.exit(1);
 			return true;
-*/
+		 */
 		case R.id.action_exit:
 			android.os.Process.killProcess(android.os.Process.myPid());
 			super.onDestroy();

@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutionException;
 
 public interface CatTrillsClientService {
 	
-	void connect() throws Exception;
+	boolean connect() throws Exception;
 
 	boolean sendYourName(String name) throws Exception;
 	

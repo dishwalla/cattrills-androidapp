@@ -34,9 +34,11 @@
         <menu>
             <group android:checkableBehavior="single" >
                 <item
-                    android:defaultValue="false"
                     android:id="@+id/sounds_on"
-                    android:title="@string/sounds_on"/>
+                    android:title="@string/action_exit"/>
+                <item
+                    android:id="@+id/sounds_off"
+                    android:title="@string/action_exit"/>
             </group>
         </menu>
     </item>
@@ -47,11 +49,18 @@
         <menu>
             <group android:checkableBehavior="single" >
                 <item
-                    android:defaultValue="false"
                     android:id="@+id/history_save"
-                    android:title="@string/history_save"/>
+                    android:title="@string/action_exit"/>
+                <item
+                    android:id="@+id/history_notsave"
+                    android:title="@string/action_exit"/>
             </group>
         </menu>
     </item>
+
+    <PreferenceScreen
+        android:key="restart"
+        android:title="@string/Restart" >
+    </PreferenceScreen>
 
 </menu>

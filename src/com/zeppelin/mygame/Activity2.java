@@ -12,7 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class Activity2 extends Activity implements OnClickListener{
+public class Activity2 extends MenuAccess implements OnClickListener{
 
 	protected Button Cancel;
 	protected Button Done;
@@ -82,40 +82,5 @@ public class Activity2 extends Activity implements OnClickListener{
 		return super.onKeyDown(keyCode, event);
 	}
 
-	/*	@Override
-	public void onBackPressed() {
-		System.exit(1); or
-		android.os.Process.killProcess(android.os.Process.myPid()); kills server
-		super.onDestroy();
-		return;
-		}*/
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		super.onCreateOptionsMenu(menu);
-		getMenuInflater().inflate(R.menu.settings, menu);
-		MenuItem pref = menu.findItem(R.id.action_prefs);
-		MenuItem exit = menu.findItem(R.id.action_exit);
-
-		return true;
-	}
-	public boolean onOptionsItemSelected(MenuItem item)
-	{
-		item.setChecked(true);
-		switch (item.getItemId())
-		{
-		case R.id.action_exit:
-			android.os.Process.killProcess(android.os.Process.myPid());
-			super.onDestroy();
-			break; 
-			//System.exit(1);   
-		case R.id.action_prefs:
-			Intent intent = new Intent(this, SettingsActivity.class);
-			startActivity(intent);
-		} 
-
-		return super.onOptionsItemSelected(item);
-	}
 }
 

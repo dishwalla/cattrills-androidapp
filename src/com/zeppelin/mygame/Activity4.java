@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity4 extends Activity implements OnClickListener{
+public class Activity4 extends MenuAccess implements OnClickListener{
 
 	protected Button Connect;
 	protected Button checkIt;
@@ -32,8 +32,6 @@ public class Activity4 extends Activity implements OnClickListener{
 	}
 
 	public void onClick(View v) {
-
-		
 		try {	
 			switch (v.getId()) 
 			{
@@ -53,16 +51,16 @@ public class Activity4 extends Activity implements OnClickListener{
 					MainActivity.service.putString("\n");
 					String response = MainActivity.service.getResponse(); // Unrecognized command
 					response = MainActivity.service.getResponse();// You've been selected for game, would you participate? NAME
-						if (response.contains("participate")){
-							Source source = MainActivity.getSource();
-							source.setInviter(getInviter(response));
-							Intent intent = new Intent(Activity4.this, Activity11.class);
-							startActivity(intent);
-							Activity4.this.finish();
-						}
-						else {
-							Toast.makeText(getApplicationContext(),	getString(R.string.string_stillnot), Toast.LENGTH_SHORT).show();
-						}
+					if (response.contains("participate")){
+						Source source = MainActivity.getSource();
+						source.setInviter(getInviter(response));
+						Intent intent = new Intent(Activity4.this, Activity11.class);
+						startActivity(intent);
+						Activity4.this.finish();
+					}
+					else {
+						Toast.makeText(getApplicationContext(),	getString(R.string.string_stillnot), Toast.LENGTH_SHORT).show();
+					}
 
 				}catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -85,35 +83,6 @@ public class Activity4 extends Activity implements OnClickListener{
 		return sb.toString();
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		super.onCreateOptionsMenu(menu);
-		//	MenuInflater inflater = getMenuInflater();
-		//	inflater.inflate(R.menu.main, menu);
-		getMenuInflater().inflate(R.menu.settings, menu);
-		MenuItem pref = menu.findItem(R.id.action_prefs);
-		MenuItem exit = menu.findItem(R.id.action_exit);
-
-		return true;
-	}
-	public boolean onOptionsItemSelected(MenuItem item)
-	{
-		item.setChecked(true);
-		switch (item.getItemId())
-		{
-		case R.id.action_exit:
-			android.os.Process.killProcess(android.os.Process.myPid());
-			super.onDestroy();
-			break; 
-			//System.exit(1);   
-		case R.id.action_prefs:
-			Intent intent = new Intent(this, SettingsActivity.class);
-			startActivity(intent);
-		} 
-
-		return super.onOptionsItemSelected(item);
-	}
 }
 
 

@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+     android:background ="@drawable/blue2"
     tools:context=".Activity9" >
 
     <TextView
@@ -27,7 +28,9 @@
         android:layout_alignLeft="@+id/game_quit"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/game_resultsMes"
-        android:layout_marginTop="24dp" >
+        android:layout_marginTop="24dp"
+        android:background="@drawable/blue2" >
+
     </ListView>
 
     <TextView
@@ -41,15 +44,16 @@
         android:id="@+id/game_quity"
         android:layout_width="147dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/game_quit"
+        android:layout_alignLeft="@+id/game_resultsMes"
         android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/game_quitn"
         android:text="@string/quity_button" />
 
     <Button
         android:id="@+id/game_quitn"
-        android:layout_width="141dp"
+        android:layout_width="147dp"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/game_quit"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/game_quit"
         android:text="@string/quitn_button" />
 

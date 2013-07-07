@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+     android:background="@drawable/blue2"
     tools:context=".Activity2" >
 
  <EditText
@@ -21,7 +22,7 @@
         android:textSize="20sp" >
 
         <requestFocus />
-    </EditText> 
+    </EditText>
     <Button
         android:id="@+id/game_cancel"
         android:layout_width="141dp"

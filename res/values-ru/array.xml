@@ -13,5 +13,12 @@
         <item>ua</item>
     </string-array>
 
+   <string-array name="snd_list">
+        <item>Вкл</item>
 
+    </string-array>
+    <string-array name="hist_list">
+        <item>Сохранять</item>
+
+    </string-array>
 </resources>

@@ -26,15 +26,34 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 
 	public CatTrillsClientServiceImpl(){}
 
-	public void connect() throws Exception{
+	public boolean connect() throws Exception{
 		//InetAddress addr = InetAddress.getLocalHost();
-		InetAddress addr = InetAddress.getByName("10.34.10.34");
+		boolean res;
+		InetAddress addr = InetAddress.getByName("192.168.1.100");
 		int port = 1234;
 		this.serverSocket =	new Socket(addr, port);
+		if (serverSocket.isConnected()) {
+			try {
+				//System.out.println("Connected");
+				this.is = serverSocket.getInputStream();
+				this.os = serverSocket.getOutputStream();
+				wr = new PrintWriter(new OutputStreamWriter(os, "UTF-8"), true);	
+				br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+				res = true;
+			}
+			catch (Exception e) {
+				res = true;
+			}
+		}
+		else {
+			res= false;
+		}
+		return res;
+		/*	this.serverSocket =	new Socket(addr, port);
 		this.is = serverSocket.getInputStream();
 		this.os = serverSocket.getOutputStream();
 		wr = new PrintWriter(new OutputStreamWriter(os, "UTF-8"), true);	
-		br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+		br = new BufferedReader(new InputStreamReader(is, "UTF-8"));*/
 	}
 
 	@Override
@@ -57,7 +76,7 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 		List<String> newList = new ArrayList<String>(Arrays.asList(arr));
 		java.util.Collections.sort(newList);
 		return newList;
-		 
+
 	}
 
 	@Override
@@ -88,9 +107,9 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 			justRead = br.readLine();
 		}
 		return response;
-		
+
 	}
-	
+
 	@Override
 	public void putString(String str) throws Exception{
 		wr.write(str);

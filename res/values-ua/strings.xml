@@ -3,6 +3,7 @@
 
     <string name="app_name">Cat Trills</string>
     <string name="action_exit">Вихід</string>
+    <string name="action_settings">"Налаштування"</string>
     <string name="start_button">Пуск</string>
     <string name="history_button">Показати історію</string>
     <string name="username_text_hint">Уведіть своє імя</string>
@@ -32,7 +33,7 @@
     <string name="language_eng">"Англійська"</string>
     <string name="language_ukr">"Українська"</string>
     <string name="language_rus">"Російська"</string>
-    <string name="sounds_on">"Вмк"</string>
+     <string name="sounds_on">"Вмк"</string>
     <string name="sounds_off">"Вимкн"</string>
     <string name="history_save">"Зберігати"</string>
     <string name="history_notsave">"Не зберігати"</string>
@@ -58,5 +59,7 @@
     <string name="lng_summary">"Оберiть мову (Потребує перезапуску програми)"</string>
     <string name="action_prefs">"Налаштування"</string>
     <string name="string_thequestis">"Запитання: "</string>
+     <string name="no_connection">"Немає з'язку з сервером, будь-ласка, спробуйте пізніше :'("</string>
+
 
 </resources>
