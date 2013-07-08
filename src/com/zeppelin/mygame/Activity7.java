@@ -1,10 +1,7 @@
 package com.zeppelin.mygame;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -37,10 +34,7 @@ public class Activity7 extends MenuAccess implements OnClickListener {
 			switch (v.getId()) {
 			case R.id.game_commit:
 
-				MainActivity.service.putString(writeQ.getText().toString()); // We're
-				// writing
-				// our
-				// question
+				MainActivity.service.putString(writeQ.getText().toString()); 
 				MainActivity.service.putString("\n");
 
 				Source source = MainActivity.getSource();

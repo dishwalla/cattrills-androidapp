@@ -21,34 +21,27 @@
         android:textIsSelectable="true"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/game_cancel"
-        android:layout_width="141dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/game_setyouname"
-        android:layout_below="@+id/game_setyouname"
-        android:text="@string/cancel_button" />
-
-    <Button
-        android:id="@+id/game_done"
-        android:layout_width="141dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/game_cancel"
-        android:layout_alignBottom="@+id/game_cancel"
-        android:layout_alignRight="@+id/game_invalidname"
-        android:text="@string/done_button" />
-
     <EditText
         android:id="@+id/game_setyouname"
         android:layout_width="193dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/game_invalidname"
+        android:layout_alignRight="@+id/game_invalidname"
         android:layout_below="@+id/game_invalidname"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="18dp"
         android:ems="10"
         android:hint="@string/username_text_hint"
         android:scrollbars="vertical"
         android:textColor="#000000"
         android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/game_done"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/game_setyouname"
+        android:layout_alignRight="@+id/game_setyouname"
+        android:layout_below="@+id/game_setyouname"
+        android:text="@string/done_button" />
 
 </RelativeLayout>

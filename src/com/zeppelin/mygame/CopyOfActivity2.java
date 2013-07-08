@@ -15,7 +15,7 @@ import android.widget.TextView;
 public class CopyOfActivity2 extends MenuAccess implements OnClickListener{
 
 	protected TextView invalidName;
-	protected Button Cancel;
+//	protected Button Cancel;
 	protected Button Done;
 	protected EditText yourName;
 
@@ -25,14 +25,14 @@ public class CopyOfActivity2 extends MenuAccess implements OnClickListener{
 		setContentView(R.layout.activity2_2);
 
 		// Connect interface elements to properties
-		Cancel = (Button)findViewById(R.id.game_cancel);
+	//	Cancel = (Button)findViewById(R.id.game_cancel);
 		Done = (Button)findViewById(R.id.game_done);
 		yourName = (EditText)findViewById(R.id.game_setyouname);
 		invalidName = (TextView)findViewById(R.id.game_invalidname);
 		invalidName.setText(getString(R.string.string_namebusy));
 		
 		// Setup ClickListeners
-		Cancel.setOnClickListener(this);
+	//	Cancel.setOnClickListener(this);
 		Done.setOnClickListener(this);
 	}
 
@@ -41,11 +41,11 @@ public class CopyOfActivity2 extends MenuAccess implements OnClickListener{
 		try {	
 			switch (v.getId()) 
 			{
-			case R.id.game_cancel:
+		/*	case R.id.game_cancel:
 				Intent intent = new Intent(CopyOfActivity2.this, CopyOfActivity2.class);
 				startActivity(intent);
 				CopyOfActivity2.this.finish();
-				break;
+				break;*/
 
 			case R.id.game_done:
 		

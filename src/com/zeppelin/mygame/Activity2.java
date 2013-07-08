@@ -1,12 +1,9 @@
 package com.zeppelin.mygame;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -14,7 +11,7 @@ import android.widget.EditText;
 
 public class Activity2 extends MenuAccess implements OnClickListener{
 
-	protected Button Cancel;
+//	protected Button Cancel;
 	protected Button Done;
 	protected EditText yourName;
 
@@ -23,11 +20,11 @@ public class Activity2 extends MenuAccess implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity2);
 
-		Cancel = (Button)findViewById(R.id.game_cancel);
+	//	Cancel = (Button)findViewById(R.id.game_cancel);
 		Done = (Button)findViewById(R.id.game_done);
 		yourName = (EditText)findViewById(R.id.game_setyouname);
 
-		Cancel.setOnClickListener(this);
+	//	Cancel.setOnClickListener(this);
 		Done.setOnClickListener(this);
 	}
 
@@ -36,11 +33,11 @@ public class Activity2 extends MenuAccess implements OnClickListener{
 		try {	
 			switch (v.getId()) 
 			{
-			case R.id.game_cancel:
+		/*	case R.id.game_cancel:
 				Intent intent = new Intent(Activity2.this, Activity2.class);
 				startActivity(intent);
 				Activity2.this.finish();
-				break;
+				break;*/
 
 			case R.id.game_done:
 				String response = MainActivity.service.getResponse();
