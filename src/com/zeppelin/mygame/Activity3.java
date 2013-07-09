@@ -46,23 +46,26 @@ public class Activity3 extends MenuAccess implements OnClickListener {
 			switch (v.getId()) 
 			{
 			case R.id.game_connect:
-				MenuAccess.playMeow(Connect.getContext());
+				
 				try {
 					Intent intent = new Intent(Activity3.this, Activity5.class);
 					startActivity(intent);
 					Activity3.this.finish();
+					MenuAccess.playMeow(Connect.getContext());
 					break;}
 				catch (Exception e) {
 					e.printStackTrace();
 				}
 
 			case R.id.game_wait:
-				MenuAccess.playPurr(Wait.getContext());
+				
 				try {
 					Intent intent2 = new Intent(Activity3.this, Activity4.class);
 					startActivity(intent2);
 					Activity3.this.finish();
-					break;}
+					MenuAccess.playPurr(Wait.getContext());
+					break;
+					}
 				catch (Exception e) {
 					e.printStackTrace();
 				}

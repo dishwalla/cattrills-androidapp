@@ -30,7 +30,7 @@ public class Activity2 extends MenuAccess implements OnClickListener{
 			switch (v.getId()) 
 			{
 			case R.id.game_done:
-				MenuAccess.playMeow(Done.getContext());
+				
 				String response = MainActivity.service.getResponse();
 				if (response.contains("Write")){
 
@@ -41,6 +41,7 @@ public class Activity2 extends MenuAccess implements OnClickListener{
 						Intent intent2 = new Intent(Activity2.this, CopyOfActivity2.class); 
 						startActivity(intent2);
 						Activity2.this.finish();
+						MenuAccess.playMeow(Done.getContext());
 					} 
 					else {
 						Intent intent2 = new Intent(Activity2.this, Activity3.class);
@@ -49,7 +50,8 @@ public class Activity2 extends MenuAccess implements OnClickListener{
 						source.setUser(yourName.getText().toString());
 						startActivity(intent2);
 						Activity2.this.finish();
-						break;
+						MenuAccess.playMeow(Done.getContext());
+					//	break;
 					}
 				}
 			}

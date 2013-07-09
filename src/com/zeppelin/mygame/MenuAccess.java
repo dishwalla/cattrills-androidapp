@@ -3,12 +3,13 @@ package com.zeppelin.mygame;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AsyncPlayer;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 public class MenuAccess extends Activity {
 
@@ -54,22 +55,28 @@ public class MenuAccess extends Activity {
 	public static void playMeow(Context context){
 		Source source = MainActivity.getSource();
 		if (source.isSoundsOn()){
-			MediaPlayer mp = MediaPlayer.create(context, R.raw.meow);  
-			mp.start(); 
-			while(mp.isPlaying()){
-				mp.isLooping();
-			}
+		//	MediaPlayer mp = MediaPlayer.create(context, R.raw.meow);  
+			AsyncPlayer ap = new AsyncPlayer("new"); 
+			Uri path = Uri.parse("android.resource://com.zeppelin.mygame/" + R.raw.meow);
+			ap.play(context, path, false, AudioManager.STREAM_MUSIC);
+			//mp.start(); 
+			//while(mp.isPlaying()){
+			//	mp.isLooping();
+			//}
 		}
 	}
 
 	public static void playPurr(Context context){
 		Source source = MainActivity.getSource();
 		if (source.isSoundsOn()){
-			MediaPlayer mp = MediaPlayer.create(context, R.raw.purr);  
-			mp.start(); 
-			while(mp.isPlaying()){
-				mp.isLooping();
-			}
+			AsyncPlayer ap = new AsyncPlayer("new"); 
+			Uri path = Uri.parse("android.resource://com.zeppelin.mygame/" + R.raw.purr);
+			ap.play(context, path, false, AudioManager.STREAM_MUSIC);
+		//	MediaPlayer mp = MediaPlayer.create(context, R.raw.purr);  
+			//mp.start(); 
+			//while(mp.isPlaying()){
+			//	mp.isLooping();
+		//	}
 		}
 	}
 

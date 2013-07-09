@@ -98,11 +98,12 @@ public class MainActivity extends Activity implements OnClickListener {
 			switch (v.getId()) 
 			{
 			case R.id.game_start:
-				MenuAccess.playMeow(Start.getContext());
+			
 				if (service.connect() == true){
 					Intent intent = new Intent(MainActivity.this, Activity2.class);
 					startActivity(intent);
 					MainActivity.this.finish();
+					MenuAccess.playMeow(Start.getContext());
 					break;
 				}
 				else
