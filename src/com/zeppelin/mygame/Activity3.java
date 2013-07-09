@@ -2,6 +2,7 @@ package com.zeppelin.mygame;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -45,6 +46,7 @@ public class Activity3 extends MenuAccess implements OnClickListener {
 			switch (v.getId()) 
 			{
 			case R.id.game_connect:
+				MenuAccess.playMeow(Connect.getContext());
 				try {
 					Intent intent = new Intent(Activity3.this, Activity5.class);
 					startActivity(intent);
@@ -55,6 +57,7 @@ public class Activity3 extends MenuAccess implements OnClickListener {
 				}
 
 			case R.id.game_wait:
+				MenuAccess.playPurr(Wait.getContext());
 				try {
 					Intent intent2 = new Intent(Activity3.this, Activity4.class);
 					startActivity(intent2);

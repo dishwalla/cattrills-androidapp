@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -27,7 +28,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private String lang;
 	protected Button Start;
 	protected Button history;
-
+	
 	public static Source source = new Source();
 
 	public static CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
@@ -45,17 +46,30 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
 		Start = (Button)findViewById(R.id.game_start);
 		history = (Button)findViewById(R.id.game_showhistory);
 		Start.setOnClickListener(this);
 		history.setOnClickListener(this);
+		
+	/*	Start.setOnClickListener(new View.OnClickListener() {
+	        public void onClick(View v) {
+	            mp.start();
+	        }
+	    });*/
 		boolean save = preferences.getBoolean("hist", false);
 		if (save == true){
 			source.setSaveHistory(true);
 		}
 		else if (save == false){source.setSaveHistory(false);}
 
+		boolean on = preferences.getBoolean("snd", false);
+		if (on == true){
+			source.setSoundsOn(true);
+		}
+		else if (on == false){source.setSaveHistory(false);}
 	}
+	
 
 	@Override
 	public void onConfigurationChanged(Configuration newConfig)
@@ -78,10 +92,13 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
+		//final MediaPlayer mp = MediaPlayer.create(this, R.raw.purr);
+		 //mp.start();
 		try {
 			switch (v.getId()) 
 			{
 			case R.id.game_start:
+				MenuAccess.playMeow(Start.getContext());
 				if (service.connect() == true){
 					Intent intent = new Intent(MainActivity.this, Activity2.class);
 					startActivity(intent);
@@ -95,6 +112,7 @@ public class MainActivity extends Activity implements OnClickListener {
 					MainActivity.this.finish();
 					break;}
 			case R.id.game_showhistory:
+				MenuAccess.playMeow(history.getContext());
 				File Root = Environment.getExternalStorageDirectory(); 
 				File f = new File(Root, "CatTrills_history.txt");
 				Intent i = new Intent();

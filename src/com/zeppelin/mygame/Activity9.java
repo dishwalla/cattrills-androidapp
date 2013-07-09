@@ -137,20 +137,13 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 				String sn = new String(cp, "UTF-8");
 				out.write(sn);
 				out.write("\n\n"); 
-				/*byte buf[]= s.getBytes();
-				for (int i = 0; i < buf.length; i++){
-					out.write(buf[i]);
-				}
-				out.write("\n\n"); */
 			}
-
 			catch(Exception e){
 				System.out.print(e.getMessage()); }
 			finally
 			{
 				try{
 					out.close();
-					//	flag = false;
 				}catch(IOException e)
 				{System.out.print(e.getMessage()); }
 			}

@@ -9,6 +9,7 @@ public class Source {
 	protected Integer activityChangeCount;
 	protected Integer iterations;
 	protected boolean saveHistory;
+	protected boolean soundsOn;
 	
 
 	public boolean isSaveHistory() {
@@ -57,6 +58,14 @@ public class Source {
 
 	public void setIterations(Integer iterations) {
 		this.iterations = iterations;
+	}
+
+	public boolean isSoundsOn() {
+		return soundsOn;
+	}
+
+	public void setSoundsOn(boolean soundsOn) {
+		this.soundsOn = soundsOn;
 	}
 
 	
