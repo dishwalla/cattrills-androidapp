@@ -56,6 +56,7 @@ public class CopyOfActivity2 extends MenuAccess implements OnClickListener{
 						Intent intent2 = new Intent(CopyOfActivity2.this, CopyOfActivity2.class); //do not work proper!!!
 						startActivity(intent2);
 						CopyOfActivity2.this.finish();
+						MenuAccess.playMeow(Done.getContext());
 					} 
 					else {
 						Intent intent2 = new Intent(CopyOfActivity2.this, Activity3.class);
@@ -63,7 +64,7 @@ public class CopyOfActivity2 extends MenuAccess implements OnClickListener{
 						source.setUser(yourName.getText().toString());
 						startActivity(intent2);
 						CopyOfActivity2.this.finish();
-						
+						MenuAccess.playMeow(Done.getContext());
 					}
 					break;
 				}

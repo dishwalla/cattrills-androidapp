@@ -1,12 +1,7 @@
 package com.zeppelin.mygame;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -52,7 +47,8 @@ public class Activity3 extends MenuAccess implements OnClickListener {
 					startActivity(intent);
 					Activity3.this.finish();
 					MenuAccess.playMeow(Connect.getContext());
-					break;}
+					break;
+					}
 				catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -64,7 +60,7 @@ public class Activity3 extends MenuAccess implements OnClickListener {
 					startActivity(intent2);
 					Activity3.this.finish();
 					MenuAccess.playPurr(Wait.getContext());
-					break;
+					//break;
 					}
 				catch (Exception e) {
 					e.printStackTrace();

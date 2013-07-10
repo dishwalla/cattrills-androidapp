@@ -55,6 +55,7 @@ public class Activity10 extends MenuAccess implements OnClickListener {
 					Intent intent = new Intent(Activity10.this, Activity5.class);
 					startActivity(intent);
 					Activity10.this.finish();
+					MenuAccess.playMeow(Connect.getContext());
 					break;}
 				catch (Exception e) {
 					e.printStackTrace();
@@ -65,6 +66,7 @@ public class Activity10 extends MenuAccess implements OnClickListener {
 					Intent intent2 = new Intent(Activity10.this, Activity4.class);
 					startActivity(intent2);
 					Activity10.this.finish();
+					MenuAccess.playPurr(Wait.getContext());
 					break;}
 				catch (Exception e) {
 					e.printStackTrace();

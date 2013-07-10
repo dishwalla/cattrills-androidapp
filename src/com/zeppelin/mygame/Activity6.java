@@ -1,5 +1,7 @@
 package com.zeppelin.mygame;
 
+import java.util.Map;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +21,7 @@ public class Activity6 extends MenuAccess implements OnClickListener{
 	protected EditText questQuont;
 	protected Button commit;
 	protected String user;
+	protected String myself;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +29,17 @@ public class Activity6 extends MenuAccess implements OnClickListener{
 		setContentView(R.layout.activity6);
 		Source source = MainActivity.getSource();
 		user = source.getSelectedUser();
+		myself = source.getUser();
 		one = getString(R.string.string_user);
 		two = getString(R.string.string_accept);
 		game_invite_sent = (TextView)findViewById(R.id.game_invite_sentmain);
 		game_invite_sent.setText(one + user + two);
 		questQuont = (EditText)findViewById(R.id.game_questquont);
 		commit = (Button) findViewById(R.id.game_commit);
-
 		commit.setOnClickListener(this);
+		Map<String, String> gamePares = MainActivity.gamePares;
+		gamePares.put(user, myself);
+		gamePares.put(myself, user);
 
 	}
 	@Override
@@ -50,12 +56,14 @@ public class Activity6 extends MenuAccess implements OnClickListener{
 					Intent intent2 = new Intent(Activity6.this, Activity7.class);
 					startActivity(intent2);
 					Activity6.this.finish(); 
+					MenuAccess.playMeow(commit.getContext());
 					Source source = MainActivity.getSource();
 					source.setActivityChangeCount(Integer.parseInt(questQuont.getText().toString())*2-1);}
 
 				else if (response.contains("valid")){
-					Intent intent3 = new Intent(Activity6.this, CopyOfActivity6.class); 
-					startActivity(intent3);}
+					Intent intent3 = new Intent(Activity6.this, Activity6.class); 
+					startActivity(intent3);
+					MenuAccess.playMeow(commit.getContext());}
 			}
 
 		} 

@@ -3,7 +3,9 @@ package com.zeppelin.mygame;
 import impl.CatTrillsAsyncClientServiceImpl;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 import service.CatTrillsClientService;
 import android.app.Activity;
@@ -32,6 +34,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	public static Source source = new Source();
 
 	public static CatTrillsClientService service = new CatTrillsAsyncClientServiceImpl();
+	public static Map<String, String> gamePares = new HashMap<String, String>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {	
@@ -103,7 +106,7 @@ public class MainActivity extends Activity implements OnClickListener {
 					Intent intent = new Intent(MainActivity.this, Activity2.class);
 					startActivity(intent);
 					MainActivity.this.finish();
-					MenuAccess.playMeow(Start.getContext());
+					MenuAccess.playPurr(Start.getContext());
 					break;
 				}
 				else
@@ -111,7 +114,9 @@ public class MainActivity extends Activity implements OnClickListener {
 					Intent intent = new Intent(MainActivity.this, Activity12.class);
 					startActivity(intent);
 					MainActivity.this.finish();
-					break;}
+					MenuAccess.playMeow(Start.getContext());
+					break;
+					}
 			case R.id.game_showhistory:
 				MenuAccess.playMeow(history.getContext());
 				File Root = Environment.getExternalStorageDirectory(); 
@@ -120,6 +125,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				i.setAction(android.content.Intent.ACTION_VIEW);
 				i.setDataAndType(Uri.fromFile(f), "text/plain");
 				startActivity(i);
+				MenuAccess.playMeow(Start.getContext());
 				break;
 			}		
 

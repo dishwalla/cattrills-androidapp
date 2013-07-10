@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.AsyncPlayer;
 import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -54,15 +53,10 @@ public class MenuAccess extends Activity {
 
 	public static void playMeow(Context context){
 		Source source = MainActivity.getSource();
-		if (source.isSoundsOn()){
-		//	MediaPlayer mp = MediaPlayer.create(context, R.raw.meow);  
+		if (source.isSoundsOn()){ 
 			AsyncPlayer ap = new AsyncPlayer("new"); 
 			Uri path = Uri.parse("android.resource://com.zeppelin.mygame/" + R.raw.meow);
 			ap.play(context, path, false, AudioManager.STREAM_MUSIC);
-			//mp.start(); 
-			//while(mp.isPlaying()){
-			//	mp.isLooping();
-			//}
 		}
 	}
 

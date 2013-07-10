@@ -1,7 +1,6 @@
 package com.zeppelin.mygame;
 
 import android.content.Intent;
-import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -48,6 +47,9 @@ public class Activity2 extends MenuAccess implements OnClickListener{
 						//intent2.putExtra("username", yourName.getText().toString()); // в ключ username пихаем текст из текстового поля
 						Source source = MainActivity.getSource();
 						source.setUser(yourName.getText().toString());
+					//	 Map<String, String> gamePares = MainActivity.gamePares;
+					//	gamePares.put(yourName.getText().toString(), value);
+					//	gamePares.put(name, Utils.obtainMyName());
 						startActivity(intent2);
 						Activity2.this.finish();
 						MenuAccess.playMeow(Done.getContext());

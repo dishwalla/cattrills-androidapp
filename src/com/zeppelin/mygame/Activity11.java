@@ -1,10 +1,7 @@
 package com.zeppelin.mygame;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -38,7 +35,6 @@ public class Activity11 extends MenuAccess implements OnClickListener {
 		one = getString(R.string.string_willbe);
 		two = getString(R.string.string_quest);
 		invite.setText(us + user + inv);
-		//	invite.setText("Some user invited you to play the game");
 		accept.setOnClickListener(this);
 		reject.setOnClickListener(this);
 	}
@@ -70,10 +66,11 @@ public class Activity11 extends MenuAccess implements OnClickListener {
 					int acc = getAcc(response);
 					source.setActivityChangeCount(acc*2-1);
 					Intent intent = new Intent(Activity11.this, Activity8.class);
-					 int iter = source.getIterations();
-				     Toast.makeText(getApplicationContext(), one + iter + two,  Toast.LENGTH_SHORT).show();
+					int iter = source.getIterations();
+					Toast.makeText(getApplicationContext(), one + iter + two,  Toast.LENGTH_SHORT).show();
 					startActivity(intent);
 					Activity11.this.finish();
+					MenuAccess.playMeow(accept.getContext());
 					break;}
 				catch (Exception e) {
 					e.printStackTrace();
@@ -86,6 +83,7 @@ public class Activity11 extends MenuAccess implements OnClickListener {
 					Intent intent2 = new Intent(Activity11.this, Activity4.class);
 					startActivity(intent2);
 					Activity11.this.finish();
+					MenuAccess.playMeow(reject.getContext());
 					break;}
 				catch (Exception e) {
 					e.printStackTrace();
@@ -98,7 +96,7 @@ public class Activity11 extends MenuAccess implements OnClickListener {
 			e.printStackTrace();
 		}
 	}
-	
+
 }
 
 

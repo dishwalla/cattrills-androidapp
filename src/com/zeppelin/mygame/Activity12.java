@@ -1,15 +1,10 @@
 package com.zeppelin.mygame;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Activity12 extends MenuAccess implements OnClickListener{
 
@@ -31,9 +26,10 @@ public class Activity12 extends MenuAccess implements OnClickListener{
 			switch (v.getId()) 
 			{
 			case R.id.game_exit:
+				MenuAccess.playPurr(exit.getContext());
 				android.os.Process.killProcess(android.os.Process.myPid());
 				super.onDestroy();
-				break; 
+				//break; 
 			}
 		} 
 		catch (Exception e) {

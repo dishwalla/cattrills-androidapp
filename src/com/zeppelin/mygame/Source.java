@@ -1,5 +1,8 @@
 package com.zeppelin.mygame;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class Source {
 
@@ -10,7 +13,6 @@ public class Source {
 	protected Integer iterations;
 	protected boolean saveHistory;
 	protected boolean soundsOn;
-	
 
 	public boolean isSaveHistory() {
 		return saveHistory;

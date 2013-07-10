@@ -45,7 +45,6 @@ public class Activity8 extends MenuAccess implements OnClickListener {
 			case R.id.game_commit:
 				//	String response = MainActivity.service.getResponse(); //The question is: , write your answer
 				//if (response.contains("answer")){
-
 				MainActivity.service.putString(writeA.getText().toString()); //we're writing our answer
 				MainActivity.service.putString("\n");
 				String response = MainActivity.service.getResponse(); // write your que: (if inverse)
@@ -56,16 +55,17 @@ public class Activity8 extends MenuAccess implements OnClickListener {
 					Intent intent4 = new Intent(Activity8.this, Activity9.class);
 					startActivity(intent4);
 					Activity8.this.finish();
+					MenuAccess.playMeow(commit.getContext());
 				}
 				else {
 					source.setActivityChangeCount(--acc);
 					Intent intent = new Intent(Activity8.this, Activity7.class);
 					startActivity(intent);
 					Activity8.this.finish();
+					MenuAccess.playMeow(commit.getContext());
 				}
 				break;
 			}
-			//}
 		}
 		catch (Exception e) {
 			e.printStackTrace();

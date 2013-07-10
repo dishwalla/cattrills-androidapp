@@ -94,6 +94,7 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 				try {
 					MainActivity.service.putString("y");
 					MainActivity.service.putString("\n");
+					MenuAccess.playPurr(quitY.getContext());
 					android.os.Process.killProcess(android.os.Process.myPid());
 					super.onDestroy();
 					break;}
@@ -109,6 +110,7 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 					Intent intent = new Intent(Activity9.this, Activity3.class);
 					startActivity(intent);
 					Activity9.this.finish();
+					MenuAccess.playMeow(quitN.getContext());
 					break;}
 				catch (Exception e) {
 					e.printStackTrace();

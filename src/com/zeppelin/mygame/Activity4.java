@@ -40,6 +40,7 @@ public class Activity4 extends MenuAccess implements OnClickListener{
 					Intent intent = new Intent(Activity4.this, Activity5.class);
 					startActivity(intent);
 					Activity4.this.finish();
+					MenuAccess.playMeow(Connect.getContext());
 					break;
 				}
 				catch (Exception e) {
@@ -57,9 +58,11 @@ public class Activity4 extends MenuAccess implements OnClickListener{
 						Intent intent = new Intent(Activity4.this, Activity11.class);
 						startActivity(intent);
 						Activity4.this.finish();
+						MenuAccess.playMeow(checkIt.getContext());
 					}
 					else {
 						Toast.makeText(getApplicationContext(),	getString(R.string.string_stillnot), Toast.LENGTH_SHORT).show();
+						MenuAccess.playMeow(checkIt.getContext());
 					}
 
 				}catch (Exception e) {

@@ -1,5 +1,7 @@
 package com.zeppelin.mygame;
 
+import java.util.Map;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +15,7 @@ public class Activity7 extends MenuAccess implements OnClickListener {
 	protected Button commit;
 	protected String question;
 	protected String user;
+	protected String anotherUser;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,41 +25,57 @@ public class Activity7 extends MenuAccess implements OnClickListener {
 		writeQ = (EditText) findViewById(R.id.game_writequestion);
 
 		commit.setOnClickListener(this);
-
 		Source source = MainActivity.getSource();
 		user = source.getUser();
+		anotherUser = source.getSelectedUser();
+
 	}
 
 	@Override
 	public void onClick(View v) {
+		Map<String, String> gamePares = MainActivity.gamePares;
+	//	while(true){
+			if (gamePares.containsKey(user) && gamePares.containsKey(anotherUser)){
+				//}
+				//}
+				try {
+					switch (v.getId()) {
+					case R.id.game_commit:
 
-		try {
-			switch (v.getId()) {
-			case R.id.game_commit:
+						MainActivity.service.putString(writeQ.getText().toString()); 
+						MainActivity.service.putString("\n");
 
-				MainActivity.service.putString(writeQ.getText().toString()); 
-				MainActivity.service.putString("\n");
+						Source source = MainActivity.getSource();
+						Integer acc = source.getActivityChangeCount();
 
-				Source source = MainActivity.getSource();
-				Integer acc = source.getActivityChangeCount();
-
-				if (acc == 1) {
-					Intent intent = new Intent(Activity7.this, Activity9.class);
-					startActivity(intent);
-					Activity7.this.finish();
-				} else {
-					source.setActivityChangeCount(--acc);
-					Intent intent2 = new Intent(Activity7.this, Activity8.class);
-					startActivity(intent2);
-					Activity7.this.finish();
+						if (acc == 1) {
+							Intent intent = new Intent(Activity7.this, Activity9.class);
+							startActivity(intent);
+							Activity7.this.finish();
+							MenuAccess.playMeow(commit.getContext());
+						} else {
+							source.setActivityChangeCount(--acc);
+							Intent intent2 = new Intent(Activity7.this, Activity8.class);
+							startActivity(intent2);
+							Activity7.this.finish();
+							MenuAccess.playMeow(commit.getContext());
+						}
+						break;
+					}
 				}
-				break;
+
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+
+			}
+
+			else {
+				Intent intent2 = new Intent(Activity7.this, Activity12.class);
+				startActivity(intent2);
+				Activity7.this.finish();
 			}
 		}
-
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+	//}
 
 }
