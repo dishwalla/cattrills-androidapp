@@ -52,6 +52,7 @@ public class CopyOfActivity6 extends MenuAccess implements OnClickListener{
 				else if (response.contains("valid")){
 					Intent intent3 = new Intent(CopyOfActivity6.this, CopyOfActivity6.class); 
 					startActivity(intent3);
+					CopyOfActivity6.this.finish();
 					MenuAccess.playMeow(commit.getContext());}
 			}
 

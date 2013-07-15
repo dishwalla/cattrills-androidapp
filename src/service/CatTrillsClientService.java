@@ -19,5 +19,7 @@ public interface CatTrillsClientService {
 	void putString(String str) throws Exception;
 	
 	String getEntireResult() throws IOException, InterruptedException, ExecutionException;
+	
+	boolean permanentCheck(String str) throws InterruptedException, ExecutionException;
 
 }

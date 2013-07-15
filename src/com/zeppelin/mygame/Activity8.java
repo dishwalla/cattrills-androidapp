@@ -15,6 +15,7 @@ public class Activity8 extends MenuAccess implements OnClickListener {
 	protected Button commit;
 	protected String answer;
 	private String one;
+	private String anotherUser;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -26,6 +27,7 @@ public class Activity8 extends MenuAccess implements OnClickListener {
 		one = getString(R.string.string_thequestis);
 		try {
 			answer =  MainActivity.service.getResponse();
+		//	 MainActivity.service
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -35,10 +37,11 @@ public class Activity8 extends MenuAccess implements OnClickListener {
 		commit = (Button)findViewById(R.id.game_commit);
 		writeA = (EditText)findViewById(R.id.game_writeanswer);
 		commit.setOnClickListener(this);
+		anotherUser = source.getSelectedUser();
 	}
+	 
 	@Override
 	public void onClick(View v){
-
 		try {	
 			switch (v.getId()) 
 			{
@@ -70,6 +73,19 @@ public class Activity8 extends MenuAccess implements OnClickListener {
 		catch (Exception e) {
 			e.printStackTrace();
 		}	
+		/*try {
+			if (!MainActivity.service.permanentCheck(anotherUser)) {
+			Intent intent2 = new Intent(Activity8.this, Activity12.class);
+			startActivity(intent2);
+			Activity8.this.finish();
+		}
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (ExecutionException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}*/
 	}
 
 

@@ -1,7 +1,5 @@
 package com.zeppelin.mygame;
 
-import java.util.Map;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +12,7 @@ public class Activity7 extends MenuAccess implements OnClickListener {
 	protected EditText writeQ;
 	protected Button commit;
 	protected String question;
-	protected String user;
+	//protected String user;
 	protected String anotherUser;
 
 	@Override
@@ -23,21 +21,16 @@ public class Activity7 extends MenuAccess implements OnClickListener {
 		setContentView(R.layout.activity7);
 		commit = (Button) findViewById(R.id.game_commit);
 		writeQ = (EditText) findViewById(R.id.game_writequestion);
-
 		commit.setOnClickListener(this);
 		Source source = MainActivity.getSource();
-		user = source.getUser();
+		//user = source.getUser();
 		anotherUser = source.getSelectedUser();
-
 	}
 
 	@Override
 	public void onClick(View v) {
-		Map<String, String> gamePares = MainActivity.gamePares;
-	//	while(true){
-			if (gamePares.containsKey(user) && gamePares.containsKey(anotherUser)){
-				//}
-				//}
+				//	Map<String, String> gamePares = MainActivity.gamePares;
+				//		if (gamePares.containsKey(user) && gamePares.containsKey(anotherUser)){
 				try {
 					switch (v.getId()) {
 					case R.id.game_commit:
@@ -63,19 +56,24 @@ public class Activity7 extends MenuAccess implements OnClickListener {
 						break;
 					}
 				}
-
 				catch (Exception e) {
-					e.printStackTrace();
-				}
-
-			}
-
-			else {
+					e.printStackTrace();}
+	/*try {
+		if (MainActivity.service.permanentCheck(anotherUser)) {
 				Intent intent2 = new Intent(Activity7.this, Activity12.class);
 				startActivity(intent2);
 				Activity7.this.finish();
+				MenuAccess.playPurr(commit.getContext());
 			}
-		}
-	//}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+
+}
+
 
 }

@@ -3,8 +3,10 @@ package com.zeppelin.mygame;
 
 import java.util.Iterator;
 import java.util.List;
+
 import android.app.ListActivity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -25,7 +27,6 @@ public class Activity5 extends ListActivity {
 	protected ListView l;
 	protected List<String> partys;
 	protected String name;
-	//protected String one;
 	protected String two;
 
 
@@ -36,7 +37,6 @@ public class Activity5 extends ListActivity {
 		choosePartner = (TextView)findViewById(R.id.game_choose);
 		Source source = MainActivity.getSource();
 		user = source.getUser().toUpperCase();
-		//one = getString(R.string.string_hello);
 		two = getString(R.string.string_choosepart);
 		choosePartner.setText(user + two);
 		l = (ListView)findViewById(android.R.id.list);
@@ -66,6 +66,8 @@ public class Activity5 extends ListActivity {
 		public void onItemClick(AdapterView<?> parent, View v,
 				int position, long id) {
 			name = parent.getItemAtPosition(position).toString();
+			MediaPlayer mp = MediaPlayer.create(parent.getContext(), R.raw.purr);  
+			mp.start();
 			try {
 				Source source = MainActivity.getSource();
 				source.setSelectedUser(name);

@@ -116,4 +116,20 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 		wr.flush();
 	}
 
+	@Override
+	public boolean permanentCheck(String str) throws InterruptedException{
+		boolean res;
+		try {
+			if (list().contains(str)) {
+				res = true;
+			}
+			else res = false;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			res = true;
+		}
+		return res;
+	}
+
 }

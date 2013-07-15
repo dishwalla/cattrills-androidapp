@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutionException;
 import service.CatTrillsClientService;
 import android.os.AsyncTask;
 
-public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
+public class CatTrillsAsyncClientServiceImpl extends AsyncTask implements CatTrillsClientService{
 
 	private CatTrillsClientService service = new CatTrillsClientServiceImpl(); 
 	//protected boolean res;
@@ -83,9 +83,9 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 				return res;
 			}
 		};
-	
-	String h = (String) task.execute().get();
-	return h;
+
+		String h = (String) task.execute().get();
+		return h;
 	}
 
 
@@ -126,22 +126,48 @@ public class CatTrillsAsyncClientServiceImpl implements CatTrillsClientService {
 
 	@Override
 	public String getEntireResult() throws IOException, InterruptedException, ExecutionException {
-		
+
 		AsyncTask task = new AsyncTask(){
 			String res;
 			protected Object doInBackground(Object... arg0) {
 				try {
 					res = service.getEntireResult();
 					return res;
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				return res;
 			}
-	};
+		};
 		String h = (String) task.execute().get();
 		return h;
 	}
 
+	@Override
+	public boolean permanentCheck(final String str) throws InterruptedException, ExecutionException{
+		AsyncTask task = new AsyncTask(){
+			boolean res;
+			protected Object doInBackground(Object... arg0) {
+				try {
+					res = service.permanentCheck(str);
+					return res;
+				} catch (Exception e) {
+					e.printStackTrace();
+				} 
+				return res;
+			}
+		};
+		boolean R = (Boolean) task.execute().get();
+		return R;
+	}
+	
+	protected void onProgressUpdate(Void[] values) {
+		super.onProgressUpdate(values);
+	}
 
+	@Override
+	protected Object doInBackground(Object... params) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

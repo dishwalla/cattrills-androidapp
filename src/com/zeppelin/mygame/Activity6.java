@@ -1,12 +1,7 @@
 package com.zeppelin.mygame;
 
-import java.util.Map;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -37,9 +32,9 @@ public class Activity6 extends MenuAccess implements OnClickListener{
 		questQuont = (EditText)findViewById(R.id.game_questquont);
 		commit = (Button) findViewById(R.id.game_commit);
 		commit.setOnClickListener(this);
-		Map<String, String> gamePares = MainActivity.gamePares;
-		gamePares.put(user, myself);
-		gamePares.put(myself, user);
+	//	Map<String, String> gamePares = MainActivity.gamePares;
+	//	gamePares.put(user, myself);
+	//	gamePares.put(myself, user);
 
 	}
 	@Override
@@ -61,14 +56,14 @@ public class Activity6 extends MenuAccess implements OnClickListener{
 					source.setActivityChangeCount(Integer.parseInt(questQuont.getText().toString())*2-1);}
 
 				else if (response.contains("valid")){
-					Intent intent3 = new Intent(Activity6.this, Activity6.class); 
+					Intent intent3 = new Intent(Activity6.this, CopyOfActivity6.class); 
 					startActivity(intent3);
+					Activity6.this.finish(); 
 					MenuAccess.playMeow(commit.getContext());}
 			}
 
 		} 
 		catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
