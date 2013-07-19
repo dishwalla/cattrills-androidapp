@@ -35,7 +35,6 @@ public class Activity3 extends MenuAccess implements OnClickListener {
 		Wait.setOnClickListener(this);
 	}
 	
-	//public void callIntent(View v){	
 	public void onClick(View v) {
 		try {	
 			switch (v.getId()) 
@@ -60,7 +59,6 @@ public class Activity3 extends MenuAccess implements OnClickListener {
 					startActivity(intent2);
 					Activity3.this.finish();
 					MenuAccess.playPurr(Wait.getContext());
-					//break;
 					}
 				catch (Exception e) {
 					e.printStackTrace();

@@ -92,6 +92,7 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 					MainActivity.service.putString("y");
 					MainActivity.service.putString("\n");
 					MenuAccess.playPurr(quitY.getContext());
+					Activity9.this.finish();
 					android.os.Process.killProcess(android.os.Process.myPid());
 					super.onDestroy();
 					break;}
@@ -152,8 +153,6 @@ public class Activity9 extends ListActivity  implements OnClickListener {
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		super.onCreateOptionsMenu(menu);
-		//	MenuInflater inflater = getMenuInflater();
-		//	inflater.inflate(R.menu.main, menu);
 		getMenuInflater().inflate(R.menu.settings, menu);
 		MenuItem pref = menu.findItem(R.id.action_prefs);
 		MenuItem exit = menu.findItem(R.id.action_exit);

@@ -10,7 +10,6 @@ import android.os.AsyncTask;
 public class CatTrillsAsyncClientServiceImpl extends AsyncTask implements CatTrillsClientService{
 
 	private CatTrillsClientService service = new CatTrillsClientServiceImpl(); 
-	//protected boolean res;
 	@Override
 	public boolean connect() throws Exception {
 		AsyncTask task = new AsyncTask(){
@@ -24,7 +23,6 @@ public class CatTrillsAsyncClientServiceImpl extends AsyncTask implements CatTri
 					e.printStackTrace();
 				}
 				return res;
-				//return null;
 			}
 		};
 		boolean R = (Boolean) task.execute().get();

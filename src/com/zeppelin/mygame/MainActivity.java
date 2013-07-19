@@ -53,12 +53,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		history = (Button)findViewById(R.id.game_showhistory);
 		Start.setOnClickListener(this);
 		history.setOnClickListener(this);
-		
-	/*	Start.setOnClickListener(new View.OnClickListener() {
-	        public void onClick(View v) {
-	            mp.start();
-	        }
-	    });*/
+	
 		boolean save = preferences.getBoolean("hist", false);
 		if (save == true){
 			source.setSaveHistory(true);
@@ -139,8 +134,6 @@ public class MainActivity extends Activity implements OnClickListener {
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		super.onCreateOptionsMenu(menu);
-		//	MenuInflater inflater = getMenuInflater();
-		//	inflater.inflate(R.menu.main, menu);
 		getMenuInflater().inflate(R.menu.settings, menu);
 		MenuItem pref = menu.findItem(R.id.action_prefs);
 		MenuItem exit = menu.findItem(R.id.action_exit);
@@ -153,52 +146,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		item.setChecked(true);
 		switch (item.getItemId())
 		{
-		/*		case R.id.history_save:          
-			hCategory = Category.HISTORYSAVE; 
-			Source source = MainActivity.getSource();
-			source.setSaveHistory(true);
-			if(item.isChecked())
-			{Editor editor = preferences.edit();
-			editor.putBoolean("historys", true);
-			editor.commit();}
-			return true;
-
-		/*	case R.id.language_def: 
-			lCategory = Category.LANGUAGEDEF;
-			Locale locale4 = new Locale("default");
-			Locale.setDefault(locale4);
-			Configuration config4 = new Configuration();
-			config4.locale = locale;
-			getBaseContext().getResources().updateConfiguration(config4, null); 
-			//	System.exit(1);
-			return true;
-		case R.id.language_eng: 
-			lCategory = Category.LANGUAGEENG; 
-			Locale locale = new Locale("en");
-			Locale.setDefault(locale);
-			Configuration config = new Configuration();
-			config.locale = locale;
-			getBaseContext().getResources().updateConfiguration(config, null); 
-			//	System.exit(1);
-			return true;
-		case R.id.language_ukr:  
-			lCategory = Category.LANGUAGEUKR; 
-			Locale locale3 = new Locale("ua");
-			Locale.setDefault(locale3);
-			Configuration config3 = new Configuration();
-			config3.locale = locale3;
-			getBaseContext().getResources().updateConfiguration(config3, null); 
-			//	editor = mSettings.edit();
-			//	editor.putString(APP_PREFERENCES_LANG, "ua");
-			//	editor.commit();
-			//	Toast.makeText(getApplicationContext(),	"Restart!" Toast.LENGTH_SHORT).show();
-			//	intent = PendingIntent.getActivity(getApplicationContext(), 0,
-			//		new Intent(getIntent()), 0);
-			//	AlarmManager mgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-			//	mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 1000, intent);
-			//	System.exit(1);
-			return true;
-		 */
 		case R.id.action_exit:
 			android.os.Process.killProcess(android.os.Process.myPid());
 			super.onDestroy();

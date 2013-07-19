@@ -66,10 +66,12 @@ public class Activity5 extends ListActivity {
 		public void onItemClick(AdapterView<?> parent, View v,
 				int position, long id) {
 			name = parent.getItemAtPosition(position).toString();
+			Source source = MainActivity.getSource();
+			if (source.isSoundsOn()){ 
 			MediaPlayer mp = MediaPlayer.create(parent.getContext(), R.raw.purr);  
-			mp.start();
+			mp.start();}
 			try {
-				Source source = MainActivity.getSource();
+				source = MainActivity.getSource();
 				source.setSelectedUser(name);
 				Toast.makeText(getApplicationContext(),	"Вы выбрали " + parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
 
@@ -102,8 +104,6 @@ public class Activity5 extends ListActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		super.onCreateOptionsMenu(menu);
-		//	MenuInflater inflater = getMenuInflater();
-		//	inflater.inflate(R.menu.main, menu);
 		getMenuInflater().inflate(R.menu.settings, menu);
 		MenuItem pref = menu.findItem(R.id.action_prefs);
 		MenuItem exit = menu.findItem(R.id.action_exit);

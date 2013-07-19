@@ -37,7 +37,7 @@ public class Activity7 extends MenuAccess implements OnClickListener {
 
 						MainActivity.service.putString(writeQ.getText().toString()); 
 						MainActivity.service.putString("\n");
-
+						
 						Source source = MainActivity.getSource();
 						Integer acc = source.getActivityChangeCount();
 

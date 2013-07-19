@@ -1,10 +1,7 @@
 package com.zeppelin.mygame;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -43,11 +40,6 @@ public class Activity10 extends MenuAccess implements OnClickListener {
 	
 	public void onClick(View v) {
 		try {	
-	//		String response = MainActivity.service.getResponse();
-	//		MainActivity.service.putString("n");
-	//		MainActivity.service.putString("\n");
-	//		response = MainActivity.service.getResponse();
-			
 			switch (v.getId()) 
 			{
 			case R.id.game_connect:

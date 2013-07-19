@@ -29,12 +29,11 @@ public class CatTrillsClientServiceImpl implements CatTrillsClientService{
 	public boolean connect() throws Exception{
 		//InetAddress addr = InetAddress.getLocalHost();
 		boolean res;
-		InetAddress addr = InetAddress.getByName("192.168.1.100");
+		InetAddress addr = InetAddress.getByName("212.109.36.245");
 		int port = 1234;
 		this.serverSocket =	new Socket(addr, port);
 		if (serverSocket.isConnected()) {
 			try {
-				//System.out.println("Connected");
 				this.is = serverSocket.getInputStream();
 				this.os = serverSocket.getOutputStream();
 				wr = new PrintWriter(new OutputStreamWriter(os, "UTF-8"), true);	

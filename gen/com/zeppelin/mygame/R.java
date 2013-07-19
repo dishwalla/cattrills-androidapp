@@ -34,7 +34,6 @@ public final class R {
         public static final int main=0x7f020002;
         public static final int nice=0x7f020003;
         public static final int nocon=0x7f020004;
-        public static final int test2=0x7f020005;
     }
     public static final class id {
         public static final int action_exit=0x7f0b001c;
@@ -102,7 +101,6 @@ public final class R {
     public static final class raw {
         public static final int meow=0x7f050000;
         public static final int purr=0x7f050001;
-        public static final int purr2=0x7f050002;
     }
     public static final class string {
         public static final int LangDialogTitle=0x7f080032;

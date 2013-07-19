@@ -44,7 +44,6 @@ public class Activity2 extends MenuAccess implements OnClickListener{
 					} 
 					else {
 						Intent intent2 = new Intent(Activity2.this, Activity3.class);
-						//intent2.putExtra("username", yourName.getText().toString()); // в ключ username пихаем текст из текстового поля
 						Source source = MainActivity.getSource();
 						source.setUser(yourName.getText().toString());
 					//	 Map<String, String> gamePares = MainActivity.gamePares;
@@ -53,7 +52,6 @@ public class Activity2 extends MenuAccess implements OnClickListener{
 						startActivity(intent2);
 						Activity2.this.finish();
 						MenuAccess.playMeow(Done.getContext());
-					//	break;
 					}
 				}
 			}
